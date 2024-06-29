@@ -6,10 +6,22 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-    internal class Turnos
+    internal class Turnos : Cliente
     {
-        public int Id { get; set; }
-        public DateTime HoraInicio { get; set; } }
+        public int Id_Turnos { get; set; }
+        public DateTime HoraInicio { get; set; }
+        public DateTime HoraFin { get; set; }
+        public int Administrador { get; set; }
+        public int Id_Cancha { get; set; }
+        public Cancha Cancha { get; set; }
 
+        public int Id_Administrador { get; set; }
+        public Administrador administrador { get; set; }
+
+        public int Id_Consumicion { get; set; }
+        public Consumicion Consumicion { get; set; }
+        public ICollection<Cliente> Cliente { get; set; }
     }
+
 }
+

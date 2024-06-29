@@ -8,5 +8,11 @@ namespace Shared.Entities
 {
     internal class Consumicion
     {
+        public int Id_Consumicion { get; set; }
+        public string Cantidad { get; set; }
+        public int Precio { get; set; }
+        public ICollection<Turnos> Turnos { get; set; }
+        public int Id_Producto{ get; set; }
+        public Producto Producto { get; set; }
     }
 }

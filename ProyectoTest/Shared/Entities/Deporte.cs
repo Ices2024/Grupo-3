@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-    internal class Deporte
-    {
+    internal class Deporte : Cancha
+    { 
+        public int Id_Deporte { get; set; }
+        public string TipoDeporte { get; set; }
+        public ICollection<Cancha> Cancha { get; set; }
     }
 }

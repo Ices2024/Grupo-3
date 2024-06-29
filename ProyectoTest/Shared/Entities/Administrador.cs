@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-    internal class Administrador
+    internal class Administrador : Turnos
     {
+        public int Id_Administrador { get; set; }
+        public string Nombre { get; set; }
+        public string Email { get; set; }
+        public ICollection<Turnos> Turnos { get; set; }
     }
 }

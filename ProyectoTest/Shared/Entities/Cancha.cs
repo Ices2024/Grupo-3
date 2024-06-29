@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-    internal class Cancha
+    internal class Cancha : Turnos
     {
+        public int Id_Cancha { get; set; }
+        public string Elementos { get; set; }
+        public ICollection<Turnos> Turnos { get; set; }
+        public int Id_Deporte { get; set; }
+        public Deporte Deporte { get; set; }
     }
 }

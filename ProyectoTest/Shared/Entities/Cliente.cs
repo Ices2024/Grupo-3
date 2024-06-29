@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-    internal class Cliente
+    internal class Cliente 
     {
+        public int Id_Cliente { get; set; }
+        public string Nombre { get; set; }
+        public long NumeroTelefono { get; set; }
+        public int Id_Turnos { get; set; }
+        public Turnos Turnos { get; set; }
     }
 }
