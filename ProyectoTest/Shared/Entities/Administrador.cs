@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-    internal class Administrador : Turnos
+    public class Administrador 
     {
         public int Id_Administrador { get; set; }
         public string Nombre { get; set; }

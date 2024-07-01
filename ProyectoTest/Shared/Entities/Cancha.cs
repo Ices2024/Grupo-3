@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-    internal class Cancha : Turnos
+    public class Cancha 
     {
         public int Id_Cancha { get; set; }
         public string Elementos { get; set; }

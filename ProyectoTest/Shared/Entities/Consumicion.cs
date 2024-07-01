@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-    internal class Consumicion
+    public class Consumicion
     {
         public int Id_Consumicion { get; set; }
         public string Cantidad { get; set; }

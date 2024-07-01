@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-    internal class EntityBase
+    public class EntityBase
     {
         public int Id { get; set; } 
         public DateTime CreatedDate { get; set; }

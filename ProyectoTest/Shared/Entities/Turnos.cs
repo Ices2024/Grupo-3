@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shared.Entities
 {
-    internal class Turnos : Cliente
+    public class Turnos 
     {
         public int Id_Turnos { get; set; }
         public DateTime HoraInicio { get; set; }
