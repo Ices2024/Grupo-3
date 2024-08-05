@@ -1,0 +1,16 @@
+C:\Users\mateo\source\repos\SportsTimeForm\bin\Debug\net8.0-windows\SportsTimeForm.exe
+C:\Users\mateo\source\repos\SportsTimeForm\bin\Debug\net8.0-windows\SportsTimeForm.deps.json
+C:\Users\mateo\source\repos\SportsTimeForm\bin\Debug\net8.0-windows\SportsTimeForm.runtimeconfig.json
+C:\Users\mateo\source\repos\SportsTimeForm\bin\Debug\net8.0-windows\SportsTimeForm.dll
+C:\Users\mateo\source\repos\SportsTimeForm\bin\Debug\net8.0-windows\SportsTimeForm.pdb
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\SportsTimeForm.Form1.resources
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\SportsTimeForm.csproj.GenerateResource.cache
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\SportsTimeForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\SportsTimeForm.AssemblyInfoInputs.cache
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\SportsTimeForm.AssemblyInfo.cs
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\SportsTimeForm.csproj.CoreCompileInputs.cache
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\SportsTimeForm.dll
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\refint\SportsTimeForm.dll
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\SportsTimeForm.pdb
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\SportsTimeForm.genruntimeconfig.cache
+C:\Users\mateo\source\repos\SportsTimeForm\obj\Debug\net8.0-windows\ref\SportsTimeForm.dll
