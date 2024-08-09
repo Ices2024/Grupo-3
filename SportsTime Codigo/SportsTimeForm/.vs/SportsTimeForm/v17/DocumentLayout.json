@@ -9,13 +9,10 @@
       "AbsoluteMoniker": "D:0:0:{06CA5906-F896-4F4B-A09C-7B689A5A6A19}|..\\SportsTime\\SportsTime.csproj|c:\\users\\mateo\\source\\repos\\sportstime\\proveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06CA5906-F896-4F4B-A09C-7B689A5A6A19}|..\\SportsTime\\SportsTime.csproj|c:\\users\\mateo\\source\\repos\\sportstime\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{06CA5906-F896-4F4B-A09C-7B689A5A6A19}|..\\SportsTime\\SportsTime.csproj|c:\\users\\mateo\\source\\repos\\sportstime\\canchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{06CA5906-F896-4F4B-A09C-7B689A5A6A19}|..\\SportsTime\\SportsTime.csproj|c:\\users\\mateo\\source\\repos\\sportstime\\elementos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06CA5906-F896-4F4B-A09C-7B689A5A6A19}|..\\SportsTime\\SportsTime.csproj|c:\\users\\mateo\\source\\repos\\sportstime\\deportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{06CA5906-F896-4F4B-A09C-7B689A5A6A19}|..\\SportsTime\\SportsTime.csproj|c:\\users\\mateo\\source\\repos\\sportstime\\consumiciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -24,7 +21,10 @@
       "AbsoluteMoniker": "D:0:0:{06CA5906-F896-4F4B-A09C-7B689A5A6A19}|..\\SportsTime\\SportsTime.csproj|c:\\users\\mateo\\source\\repos\\sportstime\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{06CA5906-F896-4F4B-A09C-7B689A5A6A19}|..\\SportsTime\\SportsTime.csproj|c:\\users\\mateo\\source\\repos\\sportstime\\deportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{06CA5906-F896-4F4B-A09C-7B689A5A6A19}|..\\SportsTime\\SportsTime.csproj|c:\\users\\mateo\\source\\repos\\sportstime\\canchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06CA5906-F896-4F4B-A09C-7B689A5A6A19}|..\\SportsTime\\SportsTime.csproj|c:\\users\\mateo\\source\\repos\\sportstime\\productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -56,27 +56,27 @@
               "RelativeDocumentMoniker": "..\\SportsTime\\Proveedores.cs",
               "ToolTip": "C:\\Users\\mateo\\source\\repos\\SportsTime\\Proveedores.cs",
               "RelativeToolTip": "..\\SportsTime\\Proveedores.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAfAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-09T20:02:32.09Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Elementos.cs",
               "DocumentMoniker": "C:\\Users\\mateo\\source\\repos\\SportsTime\\Elementos.cs",
               "RelativeDocumentMoniker": "..\\SportsTime\\Elementos.cs",
               "ToolTip": "C:\\Users\\mateo\\source\\repos\\SportsTime\\Elementos.cs",
               "RelativeToolTip": "..\\SportsTime\\Elementos.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAUAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-09T19:58:42.634Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Canchas.cs",
               "DocumentMoniker": "C:\\Users\\mateo\\source\\repos\\SportsTime\\Canchas.cs",
               "RelativeDocumentMoniker": "..\\SportsTime\\Canchas.cs",
@@ -89,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Clientes.cs",
               "DocumentMoniker": "C:\\Users\\mateo\\source\\repos\\SportsTime\\Clientes.cs",
               "RelativeDocumentMoniker": "..\\SportsTime\\Clientes.cs",
@@ -102,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Consumiciones.cs",
               "DocumentMoniker": "C:\\Users\\mateo\\source\\repos\\SportsTime\\Consumiciones.cs",
               "RelativeDocumentMoniker": "..\\SportsTime\\Consumiciones.cs",
@@ -115,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Productos.cs",
               "DocumentMoniker": "C:\\Users\\mateo\\source\\repos\\SportsTime\\Productos.cs",
               "RelativeDocumentMoniker": "..\\SportsTime\\Productos.cs",
@@ -123,8 +123,7 @@
               "RelativeToolTip": "..\\SportsTime\\Productos.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T22:17:24.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-05T22:17:24.857Z"
             },
             {
               "$type": "Document",
@@ -134,22 +133,23 @@
               "RelativeDocumentMoniker": "..\\SportsTime\\ProyectoDBcontext.cs",
               "ToolTip": "C:\\Users\\mateo\\source\\repos\\SportsTime\\ProyectoDBcontext.cs",
               "RelativeToolTip": "..\\SportsTime\\ProyectoDBcontext.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAUwBMAAAA7AAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAUwBMAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-05T22:17:07.388Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "Deportes.cs",
               "DocumentMoniker": "C:\\Users\\mateo\\source\\repos\\SportsTime\\Deportes.cs",
               "RelativeDocumentMoniker": "..\\SportsTime\\Deportes.cs",
               "ToolTip": "C:\\Users\\mateo\\source\\repos\\SportsTime\\Deportes.cs",
               "RelativeToolTip": "..\\SportsTime\\Deportes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T22:17:30.378Z"
+              "WhenOpened": "2024-08-05T22:17:30.378Z",
+              "EditorCaption": ""
             }
           ]
         }
