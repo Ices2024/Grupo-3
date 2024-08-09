@@ -16,6 +16,8 @@ namespace SportsTime
         public DbSet<Productos> Productos { get; set; }
         public DbSet<Turnos> Turnos { get; set; }
         public DbSet<Clientes> Clientes { get; set; }
+        public DbSet<Elementos> Elementos { get; set; }
+        public DbSet<Proveedores> Proveedores { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

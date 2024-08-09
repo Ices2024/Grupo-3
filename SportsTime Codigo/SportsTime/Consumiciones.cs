@@ -13,7 +13,7 @@ namespace SportsTime
         public int Consumicion_ID { get; set; }
         public int Cantidad { get; set; }
         public bool Precio { get; set; }
-        public int Cod_Producto { get; set; }
+        public int Cod_Producto { get; set; } // Clave Foranea
 
         public Productos? Producto { get; set; }
     }

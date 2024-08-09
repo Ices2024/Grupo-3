@@ -13,6 +13,8 @@ namespace SportsTime
         public int Producto_ID { get; set; }
         public string? Tipo { get; set; }
         public string? Descripcion { get; set; }
+        public int Proveedor_ID { get; set; }
+        public Proveedores? Proveedores { get; set; }
 
         public ICollection<Consumiciones>? Consumiciones { get; set; }
     }

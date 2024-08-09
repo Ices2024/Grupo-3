@@ -11,10 +11,11 @@ namespace SportsTime
     {
         [Key]
         public int Cancha_ID { get; set; }
-        public string? Elementos { get; set; }
         public int Codigo_Deporte { get; set; }
+        public Deportes? Deporte { get; set; }
 
         public ICollection<Turnos>? Turnos { get; set; }
-        public Deportes? Deporte { get; set; }
+        public ICollection<Elementos>? Elementos { get; set; }
+
     }
 }
