@@ -21,7 +21,7 @@ namespace SportsTime
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server = LAPTOP-TI84IK3Q\\SQLEXPRESS; database = SportsTimeDB; trusted_connection = true; Encrypt = False");
+            optionsBuilder.UseSqlServer("server = PCLEO\\SQLEXPRESS; database=SportsTimeDB; trusted_connection =true; Encrypt =False");
         }
     }
 }
