@@ -5,13 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SportsTime.Entities
+namespace SportsTime
 {
-    public class Clientes
+    public class Administrador
     {
         [Key]
-        public int Cliente_ID { get; set; }
+        public int Admin_ID { get; set; }
         public string? Nombre { get; set; }
-        public int NumeroTelefono { get; set; }
+        public string? Email { get; set; }
+
+        public ICollection<Turnos>? Turnos { get; set; }
     }
 }

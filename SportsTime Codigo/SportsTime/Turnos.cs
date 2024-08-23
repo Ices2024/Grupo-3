@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SportsTime.Entities
+namespace SportsTime
 {
     public class Turnos
     {

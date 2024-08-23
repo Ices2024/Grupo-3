@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SportsTime.Entities
+namespace SportsTime
 {
     public class Productos
     {
