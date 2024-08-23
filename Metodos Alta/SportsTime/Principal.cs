@@ -46,6 +46,100 @@ namespace SportsTime
             context.SaveChanges();
         }
 
+        public void AltaDeporte(string tipo)
+        {
+            Deportes deporteNuevo = new Deportes
+            {
+                Tipo = tipo,
+            };
+
+            context.Deportes.Add(deporteNuevo);
+            context.SaveChanges();
+        }
+
+        public void AltaElementos(string nombre, int cantidad, int canchaId)
+        {
+            Canchas canchas = context.Canchas.Find(canchaId);
+
+            if (canchas != null)
+            {
+                Elementos elementoNuevo = new Elementos
+                {
+                    Nombre = nombre,
+                    Cantidad = cantidad,
+                    Cancha_ID = canchaId,
+                    Canchas = canchas
+                };
+
+                context.Elementos.Add(elementoNuevo);
+                context.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine("Error: Cancha no encontrada.");
+            }
+        }
+
+
+        public void AltaProducto(string tipo, string descripcion, int proveedorId)
+        {
+            Proveedores proveedor = context.Proveedores.Find(proveedorId);
+
+            if (proveedor != null)
+            {
+                Productos nuevoProducto = new Productos
+                {
+                    Tipo = tipo,
+                    Descripcion = descripcion,
+                    Proveedor_ID = proveedorId,
+                    Proveedores = proveedor
+                };
+
+                context.Productos.Add(nuevoProducto);
+                context.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine("Error: Proveedor no encontrado.");
+            }
+        }
+        
+        public void AltaProveedor(string nombre, string email, string telefono)
+        {
+            Proveedores nuevoProveedor = new Proveedores
+            {
+                Nombre = nombre,
+                Email = email,
+                Telefono = telefono
+            };
+
+            context.Proveedores.Add(nuevoProveedor);
+            context.SaveChanges();
+        }
+
+        public void AltaConsumicion(int cantidad, bool precio, int codProducto)
+        {
+            Productos productos = context.Productos.Find(codProducto);
+
+            if (productos != null)  // Corrige la condición
+            {
+                Consumiciones nuevaConsumicion = new Consumiciones
+                {
+                    Cantidad = cantidad,
+                    Precio = precio,
+                    Cod_Producto = codProducto,
+                    Producto = productos
+                };
+
+                context.Consumiciones.Add(nuevaConsumicion);
+                context.SaveChanges();
+            }
+            else
+            {
+                Console.WriteLine("Error: Producto no encontrado.");
+            }
+        }
+
         public void AltaTurno(int adminId, int canchaId, DateTime horaInicio, DateTime horaFin, int consumicionId)
         {
             
@@ -77,6 +171,6 @@ namespace SportsTime
         }
     }
 }
-    }
-}
-}
+    
+
+
