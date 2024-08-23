@@ -4074,11 +4074,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mateo\\source\\repos\\SportsTime\\SportsTime.csproj",
+      "projectUniqueName": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\Metodos Alta\\SportsTime\\SportsTime.csproj",
       "projectName": "SportsTime",
-      "projectPath": "C:\\Users\\mateo\\source\\repos\\SportsTime\\SportsTime.csproj",
+      "projectPath": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\Metodos Alta\\SportsTime\\SportsTime.csproj",
       "packagesPath": "C:\\Users\\mateo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mateo\\source\\repos\\SportsTime\\obj\\",
+      "outputPath": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\Metodos Alta\\SportsTime\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
