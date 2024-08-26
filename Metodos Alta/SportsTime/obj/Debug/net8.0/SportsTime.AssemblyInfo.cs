@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SportsTime")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60d9c6c5e0c2c2df83081fd4c29a0326eb2dfff6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b2fc4ef60a340121254b72ede3956b961b69835")]
 [assembly: System.Reflection.AssemblyProductAttribute("SportsTime")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SportsTime")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
