@@ -1,0 +1,14 @@
+C:\Users\mateo\source\repos\SportsTime\obj\Debug\net8.0\SportsTime.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateo\source\repos\SportsTime\obj\Debug\net8.0\SportsTime.AssemblyInfoInputs.cache
+C:\Users\mateo\source\repos\SportsTime\obj\Debug\net8.0\SportsTime.AssemblyInfo.cs
+C:\Users\mateo\source\repos\SportsTime\obj\Debug\net8.0\SportsTime.csproj.CoreCompileInputs.cache
+C:\Users\mateo\source\repos\SportsTime\bin\Debug\net8.0\SportsTime.deps.json
+C:\Users\mateo\source\repos\SportsTime\bin\Debug\net8.0\SportsTime.runtimeconfig.json
+C:\Users\mateo\source\repos\SportsTime\bin\Debug\net8.0\SportsTime.dll
+C:\Users\mateo\source\repos\SportsTime\bin\Debug\net8.0\SportsTime.pdb
+C:\Users\mateo\source\repos\SportsTime\obj\Debug\net8.0\SportsTime.csproj.AssemblyReference.cache
+C:\Users\mateo\source\repos\SportsTime\obj\Debug\net8.0\SportsTime.dll
+C:\Users\mateo\source\repos\SportsTime\obj\Debug\net8.0\refint\SportsTime.dll
+C:\Users\mateo\source\repos\SportsTime\obj\Debug\net8.0\SportsTime.pdb
+C:\Users\mateo\source\repos\SportsTime\obj\Debug\net8.0\SportsTime.genruntimeconfig.cache
+C:\Users\mateo\source\repos\SportsTime\obj\Debug\net8.0\ref\SportsTime.dll
