@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace SportsTime
 {
     public class ProyectoDBcontext : DbContext
