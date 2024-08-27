@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\leosi\\OneDrive\\Documentos\\GitHub\\Grupo3\\Grupo-3\\SportsTime Codigo\\SportsTimeForm\\SportsTimeForm.csproj",
+      "projectUniqueName": "C:\\Users\\leosi\\Grupo-3\\SportsTime Codigo\\SportsTimeForm\\SportsTimeForm.csproj",
       "projectName": "SportsTimeForm",
-      "projectPath": "C:\\Users\\leosi\\OneDrive\\Documentos\\GitHub\\Grupo3\\Grupo-3\\SportsTime Codigo\\SportsTimeForm\\SportsTimeForm.csproj",
+      "projectPath": "C:\\Users\\leosi\\Grupo-3\\SportsTime Codigo\\SportsTimeForm\\SportsTimeForm.csproj",
       "packagesPath": "C:\\Users\\leosi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leosi\\OneDrive\\Documentos\\GitHub\\Grupo3\\Grupo-3\\SportsTime Codigo\\SportsTimeForm\\obj\\",
+      "outputPath": "C:\\Users\\leosi\\Grupo-3\\SportsTime Codigo\\SportsTimeForm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0gRql6gSkrfnQ9cJDAPqmU53fk2GBMPdA4pXO/wAo0Z68qBTSBgwBdh73RPXUiqOnVCmxdFhyFaqZarR/kjzcA==",
+  "dgSpecHash": "kvQ9P4R33gMVazFBQKeHfYCeXy5TPB/+sP7VVDf/dJnisEHBmKiibDECvrcXGlRmnHKQ1to3mWlK7x2V1VTzcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\leosi\\OneDrive\\Documentos\\GitHub\\Grupo3\\Grupo-3\\SportsTime Codigo\\SportsTime\\SportsTime.csproj",
+  "projectFilePath": "C:\\Users\\leosi\\Grupo-3\\SportsTime Codigo\\SportsTime\\CDatos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leosi\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\leosi\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
