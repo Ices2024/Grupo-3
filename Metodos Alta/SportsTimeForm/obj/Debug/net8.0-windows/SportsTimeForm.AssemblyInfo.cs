@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SportsTimeForm")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0eca3362ce50966a8160cd6ae68cedf7828eefbe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69dd5c5b994d56ba7ba234dd3b5d8c579a961fcf")]
 [assembly: System.Reflection.AssemblyProductAttribute("SportsTimeForm")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SportsTimeForm")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

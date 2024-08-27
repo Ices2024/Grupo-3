@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsTimeForm", "SportsTim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CDatos", "..\SportsTime\CDatos.csproj", "{06CA5906-F896-4F4B-A09C-7B689A5A6A19}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CEntidades", "..\CEntidades\CEntidades.csproj", "{3140374F-63CE-42F4-9C32-07FE809CA396}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEntidades", "..\CEntidades\CEntidades.csproj", "{3140374F-63CE-42F4-9C32-07FE809CA396}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLogica", "..\CLogica\CLogica.csproj", "{D0476CCF-578D-45F6-B210-B06245BB9841}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLogica", "..\CLogica\CLogica.csproj", "{D0476CCF-578D-45F6-B210-B06245BB9841}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "..\Web\Web.csproj", "{41D49FDB-38B6-47C9-9F09-E299B17BADAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "..\Web\Web.csproj", "{41D49FDB-38B6-47C9-9F09-E299B17BADAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
