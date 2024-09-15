@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Negocio.Contracts
+namespace Negocio.Implementations
 {
-    internal class Class1
+    internal class ConsumicionLogic
     {
     }
 }

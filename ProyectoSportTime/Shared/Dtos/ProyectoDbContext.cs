@@ -11,7 +11,7 @@ namespace Shared.Dtos
     public class ProyectoDbContext : DbContext
     {
         public DbSet<Administrador> Administradores { get; set; }
-        public DbSet<Canchas> Canchas { get; set; }
+        public DbSet<Cancha> Canchas { get; set; }
         public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Consumiciones> Consumiciones { get; set; }
         public DbSet<Deportes> Deportes { get; set; }
