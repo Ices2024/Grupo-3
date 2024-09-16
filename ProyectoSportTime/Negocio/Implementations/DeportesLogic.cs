@@ -10,44 +10,42 @@ using System.Threading.Tasks;
 
 namespace Negocio.Implementations
 {
-    public class AdministradorLogic : InterfaceAdministrador
+    public class DeportesLogic : InterfaceDeportes
     {
-        public void AltaAdministrador(string nombre, string email)
+        public void AltaDeporte(string tipo)
         {
             using (var context = new ProyectoDbContext())
             {
-                var nuevoAdmin = new Administrador
+                var nuevoDeporte = new Deportes
                 {
-                    Nombre = nombre,
-                    Email = email
+                    Tipo = tipo
                 };
-                context.Administradores.Add(nuevoAdmin);
+                context.Deportes.Add(nuevoDeporte);
                 context.SaveChanges();
             }
         }
 
-        public void ModificarAdministrador(int adminID, string nuevoNombre, string nuevoEmail)
+        public void ModificarDeporte(int deporteID, string nuevoTipo)
         {
             using (var context = new ProyectoDbContext())
             {
-                var admin = context.Administradores.Find(adminID);
-                if (admin != null)
+                var deporte = context.Deportes.Find(deporteID);
+                if (deporte != null)
                 {
-                    admin.Nombre = nuevoNombre;
-                    admin.Email = nuevoEmail;
+                    deporte.Tipo = nuevoTipo;
                     context.SaveChanges();
                 }
             }
         }
 
-        public void BajaAdministrador(int adminID)
+        public void BajaDeporte(int deporteID)
         {
             using (var context = new ProyectoDbContext())
             {
-                var admin = context.Administradores.Find(adminID);
-                if (admin != null)
+                var deporte = context.Deportes.Find(deporteID);
+                if (deporte != null)
                 {
-                    context.Administradores.Remove(admin);
+                    context.Deportes.Remove(deporte);
                     context.SaveChanges();
                 }
             }

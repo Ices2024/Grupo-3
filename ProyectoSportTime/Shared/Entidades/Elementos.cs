@@ -18,4 +18,4 @@ namespace Shared.Entidades
         public Canchas? Canchas { get; set; }
     }
 }
-}
+

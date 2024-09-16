@@ -10,44 +10,42 @@ using System.Threading.Tasks;
 
 namespace Negocio.Implementations
 {
-    public class AdministradorLogic : InterfaceAdministrador
+    public class CanchasLogic : InterfaceCanchas
     {
-        public void AltaAdministrador(string nombre, string email)
+        public void AltaCancha(int codigoDeporte)
         {
             using (var context = new ProyectoDbContext())
             {
-                var nuevoAdmin = new Administrador
+                var nuevaCancha = new Canchas
                 {
-                    Nombre = nombre,
-                    Email = email
+                    Codigo_Deporte = codigoDeporte
                 };
-                context.Administradores.Add(nuevoAdmin);
+                context.Canchas.Add(nuevaCancha);
                 context.SaveChanges();
             }
         }
 
-        public void ModificarAdministrador(int adminID, string nuevoNombre, string nuevoEmail)
+        public void ModificarCancha(int canchaID, int nuevoCodigoDeporte)
         {
             using (var context = new ProyectoDbContext())
             {
-                var admin = context.Administradores.Find(adminID);
-                if (admin != null)
+                var cancha = context.Canchas.Find(canchaID);
+                if (cancha != null)
                 {
-                    admin.Nombre = nuevoNombre;
-                    admin.Email = nuevoEmail;
+                    cancha.Codigo_Deporte = nuevoCodigoDeporte;
                     context.SaveChanges();
                 }
             }
         }
 
-        public void BajaAdministrador(int adminID)
+        public void BajaCancha(int canchaID)
         {
             using (var context = new ProyectoDbContext())
             {
-                var admin = context.Administradores.Find(adminID);
-                if (admin != null)
+                var cancha = context.Canchas.Find(canchaID);
+                if (cancha != null)
                 {
-                    context.Administradores.Remove(admin);
+                    context.Canchas.Remove(cancha);
                     context.SaveChanges();
                 }
             }

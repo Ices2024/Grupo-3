@@ -10,44 +10,44 @@ using System.Threading.Tasks;
 
 namespace Negocio.Implementations
 {
-    public class AdministradorLogic : InterfaceAdministrador
+    public class ClientesLogic : InterfaceClientes
     {
-        public void AltaAdministrador(string nombre, string email)
+        public void AltaCliente(string nombre, int numeroTelefono)
         {
             using (var context = new ProyectoDbContext())
             {
-                var nuevoAdmin = new Administrador
+                var nuevoCliente = new Clientes
                 {
                     Nombre = nombre,
-                    Email = email
+                    NumeroTelefono = numeroTelefono
                 };
-                context.Administradores.Add(nuevoAdmin);
+                context.Clientes.Add(nuevoCliente);
                 context.SaveChanges();
             }
         }
 
-        public void ModificarAdministrador(int adminID, string nuevoNombre, string nuevoEmail)
+        public void ModificarCliente(int clienteID, string nuevoNombre, int nuevoTelefono)
         {
             using (var context = new ProyectoDbContext())
             {
-                var admin = context.Administradores.Find(adminID);
-                if (admin != null)
+                var cliente = context.Clientes.Find(clienteID);
+                if (cliente != null)
                 {
-                    admin.Nombre = nuevoNombre;
-                    admin.Email = nuevoEmail;
+                    cliente.Nombre = nuevoNombre;
+                    cliente.NumeroTelefono = nuevoTelefono;
                     context.SaveChanges();
                 }
             }
         }
 
-        public void BajaAdministrador(int adminID)
+        public void BajaCliente(int clienteID)
         {
             using (var context = new ProyectoDbContext())
             {
-                var admin = context.Administradores.Find(adminID);
-                if (admin != null)
+                var cliente = context.Clientes.Find(clienteID);
+                if (cliente != null)
                 {
-                    context.Administradores.Remove(admin);
+                    context.Clientes.Remove(cliente);
                     context.SaveChanges();
                 }
             }

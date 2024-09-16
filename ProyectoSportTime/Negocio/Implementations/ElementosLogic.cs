@@ -10,44 +10,45 @@ using System.Threading.Tasks;
 
 namespace Negocio.Implementations
 {
-    public class AdministradorLogic : InterfaceAdministrador
+    public class ElementosLogic : InterfaceElementos
     {
-        public void AltaAdministrador(string nombre, string email)
+        public void AltaElemento(string nombre, int cantidad, int canchaID)
         {
             using (var context = new ProyectoDbContext())
             {
-                var nuevoAdmin = new Administrador
+                var nuevoElemento = new Elementos
                 {
                     Nombre = nombre,
-                    Email = email
+                    Cantidad = cantidad,
+                    Cancha_ID = canchaID
                 };
-                context.Administradores.Add(nuevoAdmin);
+                context.Elementos.Add(nuevoElemento);
                 context.SaveChanges();
             }
         }
 
-        public void ModificarAdministrador(int adminID, string nuevoNombre, string nuevoEmail)
+        public void ModificarElemento(int elementoID, string nuevoNombre, int nuevaCantidad)
         {
             using (var context = new ProyectoDbContext())
             {
-                var admin = context.Administradores.Find(adminID);
-                if (admin != null)
+                var elemento = context.Elementos.Find(elementoID);
+                if (elemento != null)
                 {
-                    admin.Nombre = nuevoNombre;
-                    admin.Email = nuevoEmail;
+                    elemento.Nombre = nuevoNombre;
+                    elemento.Cantidad = nuevaCantidad;
                     context.SaveChanges();
                 }
             }
         }
 
-        public void BajaAdministrador(int adminID)
+        public void BajaElemento(int elementoID)
         {
             using (var context = new ProyectoDbContext())
             {
-                var admin = context.Administradores.Find(adminID);
-                if (admin != null)
+                var elemento = context.Elementos.Find(elementoID);
+                if (elemento != null)
                 {
-                    context.Administradores.Remove(admin);
+                    context.Elementos.Remove(elemento);
                     context.SaveChanges();
                 }
             }
