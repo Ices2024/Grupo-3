@@ -3,44 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\negocio\\contracts\\interfaceturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\interfaceturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Consumiciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Entidades\\Consumiciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\negocio\\contracts\\interfaceproveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\interfaceproveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\shared\\dtos\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\negocio\\contracts\\interfaceproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\interfaceproductos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\shared\\shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|solutionrelative:shared\\shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\negocio\\contracts\\interfaceelementos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\interfaceelementos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\negocio\\contracts\\interfacedeportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\interfacedeportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Entidades\\Clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\negocio\\contracts\\interfaceconsumicion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\interfaceconsumicion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Deportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Entidades\\Deportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\negocio\\contracts\\interfaceclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\interfaceclientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Elementos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Entidades\\Elementos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\negocio\\contracts\\interfacecanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\interfacecanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Canchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Entidades\\Canchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\negocio\\contracts\\interfaceadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\interfaceadministrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Entidades\\Administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\shared\\entidades\\proveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|solutionrelative:shared\\entidades\\proveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Turnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Entidades\\Turnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Entidades\\Productos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Proveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shared\\Entidades\\Proveedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -61,134 +69,150 @@
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "InterfaceConsumicion.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceConsumicion.cs",
-              "RelativeDocumentMoniker": "Negocio\\Contracts\\InterfaceConsumicion.cs",
-              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceConsumicion.cs",
-              "RelativeToolTip": "Negocio\\Contracts\\InterfaceConsumicion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T20:40:35.815Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "InterfaceDeportes.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceDeportes.cs",
-              "RelativeDocumentMoniker": "Negocio\\Contracts\\InterfaceDeportes.cs",
-              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceDeportes.cs",
-              "RelativeToolTip": "Negocio\\Contracts\\InterfaceDeportes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAoAAAA",
+              "Title": "Clientes.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Clientes.cs",
+              "RelativeDocumentMoniker": "Shared\\Entidades\\Clientes.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Clientes.cs",
+              "RelativeToolTip": "Shared\\Entidades\\Clientes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T20:40:55.635Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InterfaceProductos.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceProductos.cs",
-              "RelativeDocumentMoniker": "Negocio\\Contracts\\InterfaceProductos.cs",
-              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceProductos.cs",
-              "RelativeToolTip": "Negocio\\Contracts\\InterfaceProductos.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T20:41:48.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InterfaceElementos.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceElementos.cs",
-              "RelativeDocumentMoniker": "Negocio\\Contracts\\InterfaceElementos.cs",
-              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceElementos.cs",
-              "RelativeToolTip": "Negocio\\Contracts\\InterfaceElementos.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T20:41:26.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InterfaceProveedores.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceProveedores.cs",
-              "RelativeDocumentMoniker": "Negocio\\Contracts\\InterfaceProveedores.cs",
-              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceProveedores.cs",
-              "RelativeToolTip": "Negocio\\Contracts\\InterfaceProveedores.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T20:42:10.502Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T19:40:39.559Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "InterfaceTurnos.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceTurnos.cs",
-              "RelativeDocumentMoniker": "Negocio\\Contracts\\InterfaceTurnos.cs",
-              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceTurnos.cs",
-              "RelativeToolTip": "Negocio\\Contracts\\InterfaceTurnos.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAkAAAA",
+              "Title": "Consumiciones.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Consumiciones.cs",
+              "RelativeDocumentMoniker": "Shared\\Entidades\\Consumiciones.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Consumiciones.cs",
+              "RelativeToolTip": "Shared\\Entidades\\Consumiciones.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T20:42:43.38Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T19:40:55.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Deportes.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Deportes.cs",
+              "RelativeDocumentMoniker": "Shared\\Entidades\\Deportes.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Deportes.cs",
+              "RelativeToolTip": "Shared\\Entidades\\Deportes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T19:41:39.173Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "InterfaceClientes.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceClientes.cs",
-              "RelativeDocumentMoniker": "Negocio\\Contracts\\InterfaceClientes.cs",
-              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceClientes.cs",
-              "RelativeToolTip": "Negocio\\Contracts\\InterfaceClientes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAsAAAA",
+              "Title": "Elementos.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Elementos.cs",
+              "RelativeDocumentMoniker": "Shared\\Entidades\\Elementos.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Elementos.cs",
+              "RelativeToolTip": "Shared\\Entidades\\Elementos.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T20:38:47.749Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T19:42:07.333Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "InterfaceCanchas.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceCanchas.cs",
-              "RelativeDocumentMoniker": "Negocio\\Contracts\\InterfaceCanchas.cs",
-              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceCanchas.cs",
-              "RelativeToolTip": "Negocio\\Contracts\\InterfaceCanchas.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "Title": "Canchas.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Canchas.cs",
+              "RelativeDocumentMoniker": "Shared\\Entidades\\Canchas.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Canchas.cs",
+              "RelativeToolTip": "Shared\\Entidades\\Canchas.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T20:38:34.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T19:40:27.231Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "InterfaceAdministrador.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceAdministrador.cs",
-              "RelativeDocumentMoniker": "Negocio\\Contracts\\InterfaceAdministrador.cs",
-              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceAdministrador.cs",
-              "RelativeToolTip": "Negocio\\Contracts\\InterfaceAdministrador.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAsAAAA",
+              "Title": "Administrador.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Administrador.cs",
+              "RelativeDocumentMoniker": "Shared\\Entidades\\Administrador.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Administrador.cs",
+              "RelativeToolTip": "Shared\\Entidades\\Administrador.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T20:37:35.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T19:38:59.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProyectoDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Dtos\\ProyectoDbContext.cs",
+              "RelativeDocumentMoniker": "Shared\\Dtos\\ProyectoDbContext.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Dtos\\ProyectoDbContext.cs",
+              "RelativeToolTip": "Shared\\Dtos\\ProyectoDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T19:49:32.933Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "Turnos.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Turnos.cs",
+              "RelativeDocumentMoniker": "Shared\\Entidades\\Turnos.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Turnos.cs",
+              "RelativeToolTip": "Shared\\Entidades\\Turnos.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T19:43:04.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Productos.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Productos.cs",
+              "RelativeDocumentMoniker": "Shared\\Entidades\\Productos.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Productos.cs",
+              "RelativeToolTip": "Shared\\Entidades\\Productos.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T19:42:28.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Proveedores.cs",
               "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Proveedores.cs",
               "RelativeDocumentMoniker": "Shared\\Entidades\\Proveedores.cs",
               "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Proveedores.cs",
               "RelativeToolTip": "Shared\\Entidades\\Proveedores.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAKAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAIwAkAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T19:42:52.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-15T19:42:52.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Shared.csproj",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Shared.csproj",
+              "RelativeDocumentMoniker": "Shared\\Shared.csproj",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Shared.csproj",
+              "RelativeToolTip": "Shared\\Shared.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-15T19:24:46.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form1.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp1\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T19:23:42.194Z"
             }
           ]
         }
