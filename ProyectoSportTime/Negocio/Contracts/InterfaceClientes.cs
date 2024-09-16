@@ -8,8 +8,9 @@ namespace Negocio.Contracts
 {
     public interface InterfaceClientes
     {
-        void AltaAdministrador(string nombre, string email);
-        void ModificarAdministrador(int adminID, string nuevoNombre, string nuevoEmail);
-        void BajaAdministrador(int adminID);
+        void AltaCliente(string nombre, int numeroTelefono);
+        void ModificarCliente(int clienteID, string nuevoNombre, int nuevoTelefono);
+        void BajaCliente(int clienteID);
     }
+
 }
