@@ -20,6 +20,8 @@ namespace Shared.Dtos
         public DbSet<Proveedores> Proveedores { get; set; }
         public DbSet<Turnos> Turnos { get; set; }
 
+        public DbSet<Ejemplo> Ejemplo { get; set; }
+
         // Constructor sin parámetros para Entity Framework
         public ProyectoDbContext() : base()
         {
@@ -36,8 +38,9 @@ namespace Shared.Dtos
             // Solo se configura aquí si no se pasan opciones desde el constructor
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("server=LAPTOP-TI84IK3Q\\SQLEXPRESS;database=SportsTimeDB;trusted_connection=true;Encrypt=False");
+                optionsBuilder.UseSqlServer("server=PCLEO\\SQLEXPRESS;database=SportsTimeDB;trusted_connection=true;Encrypt=False");
             }
         }
     }
+}
 
