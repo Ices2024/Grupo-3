@@ -9,7 +9,7 @@ using Shared.Entidades;
 namespace Shared.Dtos
 {
     public class ProyectoDbContext : DbContext
-    {
+    { 
         public DbSet<Administrador> Administradores { get; set; }
         public DbSet<Canchas> Canchas { get; set; }
         public DbSet<Clientes> Clientes { get; set; }
