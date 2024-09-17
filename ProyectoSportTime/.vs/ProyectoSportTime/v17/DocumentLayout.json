@@ -7,18 +7,18 @@
       "RelativeMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|C:\\Users\\leosi\\Grupo-3\\ProyectoSportTime\\shared\\shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|c:\\users\\leosi\\grupo-3\\proyectosporttime\\shared\\shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|solutionrelative:shared\\shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|C:\\Users\\leosi\\Grupo-3\\ProyectoSportTime\\shared\\entidades\\ejemplo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|c:\\users\\leosi\\grupo-3\\proyectosporttime\\shared\\entidades\\ejemplo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|solutionrelative:shared\\entidades\\ejemplo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\leosi\\AppData\\Local\\Temp\\88eb97fc-774f-455f-8273-389589348ce8_Grupo-3-main.zip.ce8\\Grupo-3-main\\SportsTime Codigo\\SportsTime\\Migrations\\20240805222523_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|C:\\Users\\leosi\\Grupo-3\\ProyectoSportTime\\winformsapp1\\formcanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\leosi\\grupo-3\\proyectosporttime\\winformsapp1\\formcanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\formcanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -37,20 +37,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -61,7 +49,8 @@
               "RelativeToolTip": "Shared\\Entidades\\Ejemplo.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T20:52:44.594Z"
+              "WhenOpened": "2024-09-17T20:52:44.594Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -71,7 +60,7 @@
               "RelativeDocumentMoniker": "Shared\\Dtos\\ProyectoDbContext.cs",
               "ToolTip": "C:\\Users\\leosi\\Grupo-3\\ProyectoSportTime\\Shared\\Dtos\\ProyectoDbContext.cs",
               "RelativeToolTip": "Shared\\Dtos\\ProyectoDbContext.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T20:28:17.411Z",
               "EditorCaption": ""
@@ -86,7 +75,8 @@
               "RelativeToolTip": "..\\..\\AppData\\Local\\Temp\\88eb97fc-774f-455f-8273-389589348ce8_Grupo-3-main.zip.ce8\\Grupo-3-main\\SportsTime Codigo\\SportsTime\\Migrations\\20240805222523_InitialCreate.cs [Solo lectura]",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T20:05:01.264Z"
+              "WhenOpened": "2024-09-17T20:05:01.264Z",
+              "EditorCaption": " [Solo lectura]"
             },
             {
               "$type": "Document",
@@ -98,7 +88,20 @@
               "RelativeToolTip": "Shared\\Shared.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-17T19:56:15.33Z"
+              "WhenOpened": "2024-09-17T19:56:15.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -109,7 +112,8 @@
               "ToolTip": "C:\\Users\\leosi\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormCanchas.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormsApp1\\FormCanchas.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T22:09:51.505Z"
+              "WhenOpened": "2024-09-16T22:09:51.505Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
@@ -120,7 +124,8 @@
               "ToolTip": "C:\\Users\\leosi\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormAdministradores.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormsApp1\\FormAdministradores.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T22:05:08.507Z"
+              "WhenOpened": "2024-09-16T22:05:08.507Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
@@ -131,7 +136,8 @@
               "ToolTip": "C:\\Users\\leosi\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormMain.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormsApp1\\FormMain.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T19:23:42.194Z"
+              "WhenOpened": "2024-09-15T19:23:42.194Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
