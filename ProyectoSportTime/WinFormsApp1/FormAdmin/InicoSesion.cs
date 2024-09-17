@@ -8,13 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinForm
+namespace WinForm.FormAdmin
 {
-    public partial class Form3 : Form
+    public partial class InicoSesion : Form
     {
-        public Form3()
+        public InicoSesion()
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+    
+        }
     }
-}
