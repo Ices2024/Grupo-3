@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zh8Kj1zvdd4=",
+  "dgSpecHash": "d/DS/k5OjfM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mateo\\Desktop\\ProyectoSportTime\\Shared\\Shared.csproj",
+  "projectFilePath": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\Shared\\Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mateo\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\mateo\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
