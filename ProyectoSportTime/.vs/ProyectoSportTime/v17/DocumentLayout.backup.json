@@ -1,34 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\",
+  "WorkspaceRootPath": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\bosca\\source\\repos\\proyectosporttime\\negocio\\negocio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\negocio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\bosca\\grupo-3\\proyectosporttime\\winformsapp1\\form-home\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\bosca\\source\\repos\\proyectosporttime\\negocio\\contracts\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\bosca\\grupo-3\\proyectosporttime\\winformsapp1\\form-home\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|c:\\users\\bosca\\source\\repos\\proyectosporttime\\shared\\shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|solutionrelative:shared\\shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\bosca\\grupo-3\\proyectosporttime\\winformsapp1\\formadmin\\inicosesion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\formadmin\\inicosesion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|c:\\users\\bosca\\source\\repos\\proyectosporttime\\shared\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|solutionrelative:shared\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\bosca\\grupo-3\\proyectosporttime\\winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\bosca\\grupo-3\\proyectosporttime\\winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\bosca\\source\\repos\\proyectosporttime\\negocio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE08628F-34C3-4635-A8DB-49973890D0F9}|ProyectoSportTime\\ProyectoSportTime.csproj|c:\\users\\bosca\\source\\repos\\proyectosporttime\\proyectosporttime\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE08628F-34C3-4635-A8DB-49973890D0F9}|ProyectoSportTime\\ProyectoSportTime.csproj|solutionrelative:proyectosporttime\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\bosca\\grupo-3\\proyectosporttime\\winformsapp1\\.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,91 +39,77 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\Negocio\\Contracts\\Class1.cs",
-              "RelativeDocumentMoniker": "Negocio\\Contracts\\Class1.cs",
-              "ToolTip": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\Negocio\\Contracts\\Class1.cs",
-              "RelativeToolTip": "Negocio\\Contracts\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\Form1.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\Form1.cs",
+              "ToolTip": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\Form1.cs",
+              "RelativeToolTip": "WinFormsApp1\\Form-Home\\Form1.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAASwBEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T23:07:43.594Z",
+              "WhenOpened": "2024-09-17T21:23:25.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Negocio",
-              "DocumentMoniker": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\Negocio\\Negocio.csproj",
-              "RelativeDocumentMoniker": "Negocio\\Negocio.csproj",
-              "ToolTip": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\Negocio\\Negocio.csproj",
-              "RelativeToolTip": "Negocio\\Negocio.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-13T23:07:06.36Z",
-              "EditorCaption": ""
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\Form1.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\Form1.cs",
+              "ToolTip": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp1\\Form-Home\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T21:16:04.833Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": ".cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\.cs",
+              "ToolTip": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp1\\.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T21:04:51.221Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Shared",
-              "DocumentMoniker": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\Shared\\Shared.csproj",
-              "RelativeDocumentMoniker": "Shared\\Shared.csproj",
-              "ToolTip": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\Shared\\Shared.csproj",
-              "RelativeToolTip": "Shared\\Shared.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-13T23:04:52.488Z",
+              "Title": "InicoSesion.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.Designer.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\FormAdmin\\InicoSesion.Designer.cs",
+              "ToolTip": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.Designer.cs",
+              "RelativeToolTip": "WinFormsApp1\\FormAdmin\\InicoSesion.Designer.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T21:04:11.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InicoSesion.cs",
+              "DocumentMoniker": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "ToolTip": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "RelativeToolTip": "WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T20:41:53.337Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\WinFormsApp1\\Form1.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\WinFormsApp1\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp1\\Form1.cs [Dise\u00F1o]",
+              "Title": "InicoSesion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "ToolTip": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp1\\FormAdmin\\InicoSesion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T22:48:29.376Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\Shared\\Class1.cs",
-              "RelativeDocumentMoniker": "Shared\\Class1.cs",
-              "ToolTip": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\Shared\\Class1.cs",
-              "RelativeToolTip": "Shared\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T22:47:57.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\Negocio\\Class1.cs",
-              "RelativeDocumentMoniker": "Negocio\\Class1.cs",
-              "ToolTip": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\Negocio\\Class1.cs",
-              "RelativeToolTip": "Negocio\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T22:47:37.893Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\ProyectoSportTime\\Class1.cs",
-              "RelativeDocumentMoniker": "ProyectoSportTime\\Class1.cs",
-              "ToolTip": "C:\\Users\\bosca\\source\\repos\\ProyectoSportTime\\ProyectoSportTime\\Class1.cs",
-              "RelativeToolTip": "ProyectoSportTime\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T22:45:54.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T20:38:33.854Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
