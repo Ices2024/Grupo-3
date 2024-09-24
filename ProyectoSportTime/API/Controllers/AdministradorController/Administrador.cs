@@ -8,9 +8,9 @@ namespace API.Controllers.AdministradorController
     [ApiController]
     public class AdministradorController : ControllerBase
     {
-        private readonly IInterfaceAdministrador _adminLogic;
+        private readonly InterfaceAdministrador _adminLogic;
 
-        public AdministradorController(IInterfaceAdministrador adminLogic)
+        public AdministradorController(InterfaceAdministrador adminLogic)
         {
             _adminLogic = adminLogic;
         }

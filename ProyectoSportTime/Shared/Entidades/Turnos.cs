@@ -16,6 +16,8 @@ namespace Shared.Entidades
         public DateTime HoraInicio { get; set; }
         public DateTime HoraFin { get; set; }
         public int Consumicion_ID { get; set; } // Clave Foránea
+        public int Cliente_ID { get; set; } // Clave Foránea a Clientes
+
 
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public DateTime? UpdatedDate { get; set; }
@@ -23,5 +25,6 @@ namespace Shared.Entidades
         public Administrador? Administrador { get; set; }
         public Canchas? Canchas { get; set; }
         public Consumiciones? Consumicion { get; set; }
+        public Clientes? Cliente { get; set; } // Relación con Cliente
     }
 }

@@ -21,14 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\CanchasController\" />
-    <Folder Include="Controllers\ClientesControllers\" />
-    <Folder Include="Controllers\ConsumicionController\" />
-    <Folder Include="Controllers\DeportesController\" />
-    <Folder Include="Controllers\ElementosController\" />
-    <Folder Include="Controllers\TurnosController\" />
     <Folder Include="Controllers\ProveedoresController\" />
-    <Folder Include="Controllers\ProductosController\" />
   </ItemGroup>
 
 </Project>
