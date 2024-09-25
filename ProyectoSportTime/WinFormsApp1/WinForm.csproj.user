@@ -13,8 +13,5 @@
     <Compile Update=".cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>
