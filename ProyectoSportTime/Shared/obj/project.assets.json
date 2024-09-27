@@ -4068,19 +4068,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bosca\\.nuget\\packages\\": {}
+    "C:\\Users\\leosi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\Shared\\Shared.csproj",
+      "projectUniqueName": "C:\\Users\\leosi\\Grupo-3\\ProyectoSportTime\\Shared\\Shared.csproj",
       "projectName": "Shared",
-      "projectPath": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\Shared\\Shared.csproj",
-      "packagesPath": "C:\\Users\\bosca\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bosca\\Grupo-3\\ProyectoSportTime\\Shared\\obj\\",
+      "projectPath": "C:\\Users\\leosi\\Grupo-3\\ProyectoSportTime\\Shared\\Shared.csproj",
+      "packagesPath": "C:\\Users\\leosi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\leosi\\Grupo-3\\ProyectoSportTime\\Shared\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\bosca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\leosi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4088,7 +4093,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4143,7 +4147,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

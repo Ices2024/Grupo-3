@@ -12,7 +12,7 @@ namespace Negocio.Implementations
 {
     public class ConsumicionesLogic : InterfaceConsumicion
     {
-        public void AltaConsumicion(int cantidad, bool precio, int codProducto)
+        public void AltaConsumicion(int cantidad, decimal precio, int codProducto)
         {
             using (var context = new ProyectoDbContext())
             {
@@ -27,7 +27,7 @@ namespace Negocio.Implementations
             }
         }
 
-        public void ModificarConsumicion(int consumicionID, int nuevaCantidad, bool nuevoPrecio)
+        public void ModificarConsumicion(int consumicionID, int nuevaCantidad, decimal nuevoPrecio)
         {
             using (var context = new ProyectoDbContext())
             {

@@ -98,7 +98,7 @@ namespace API.Controllers.AdministradorController
         }
     }
 }
-*/
+
     [Route("api/[controller]")]
     [ApiController]
     public class AdministradorController : ControllerBase
@@ -139,4 +139,5 @@ namespace API.Controllers.AdministradorController
             return NoContent();
         }
     }
+*/
 }

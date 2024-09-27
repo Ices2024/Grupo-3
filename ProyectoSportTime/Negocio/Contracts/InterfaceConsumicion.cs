@@ -8,8 +8,8 @@ namespace Negocio.Contracts
 {
     public interface InterfaceConsumicion
     {
-        void AltaConsumicion(int cantidad, bool precio, int codProducto);
-        void ModificarConsumicion(int consumicionID, int nuevaCantidad, bool nuevoPrecio);
+        void AltaConsumicion(int cantidad, decimal precio, int codProducto);
+        void ModificarConsumicion(int consumicionID, int nuevaCantidad, decimal nuevoPrecio);
         void BajaConsumicion(int consumicionID);
     }
 
