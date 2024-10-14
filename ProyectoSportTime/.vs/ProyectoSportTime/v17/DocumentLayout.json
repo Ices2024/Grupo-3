@@ -1,10 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\",
+  "WorkspaceRootPath": "C:\\Users\\mateo\\Desktop\\Grupo-3\\ProyectoSportTime\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\winformsapp1\\formcanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\desktop\\grupo-3\\proyectosporttime\\winformsapp1\\formcanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\formcanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\desktop\\grupo-3\\proyectosporttime\\negocio\\implementations\\canchaslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\implementations\\canchaslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|c:\\users\\mateo\\desktop\\grupo-3\\proyectosporttime\\shared\\entidades\\canchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|solutionrelative:shared\\entidades\\canchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\desktop\\grupo-3\\proyectosporttime\\negocio\\contracts\\interfacecanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\contracts\\interfacecanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,11 +42,50 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Canchas.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Canchas.cs",
+              "RelativeDocumentMoniker": "Shared\\Entidades\\Canchas.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3\\ProyectoSportTime\\Shared\\Entidades\\Canchas.cs",
+              "RelativeToolTip": "Shared\\Entidades\\Canchas.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T18:51:48.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CanchasLogic.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3\\ProyectoSportTime\\Negocio\\Implementations\\CanchasLogic.cs",
+              "RelativeDocumentMoniker": "Negocio\\Implementations\\CanchasLogic.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3\\ProyectoSportTime\\Negocio\\Implementations\\CanchasLogic.cs",
+              "RelativeToolTip": "Negocio\\Implementations\\CanchasLogic.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAA5wDMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T18:50:45.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InterfaceCanchas.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceCanchas.cs",
+              "RelativeDocumentMoniker": "Negocio\\Contracts\\InterfaceCanchas.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3\\ProyectoSportTime\\Negocio\\Contracts\\InterfaceCanchas.cs",
+              "RelativeToolTip": "Negocio\\Contracts\\InterfaceCanchas.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-13T18:50:40.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "FormCanchas.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormCanchas.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormCanchas.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\FormCanchas.cs",
-              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormCanchas.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormCanchas.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormsApp1\\FormCanchas.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-13T18:45:44.615Z",
