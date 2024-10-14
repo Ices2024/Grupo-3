@@ -1,143 +1,81 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Shared.Dtos;
 using Shared.Entidades;
 using System.Collections.Generic;
 using System.Linq;
+using BCrypt.Net;
 
 
 
 namespace API.Controllers.AdministradorController
 {
-    /*[Route("api/[controller]")]
+
     [ApiController]
-    public class AdministradorController : ControllerBase
-    {
-        private static List<Administrador> administradores = new List<Administrador>();
-
-        // GET: api/Administradores
-        [HttpGet]
-        public ActionResult<List<Administrador>> Get()
-        {
-            return Ok(administradores);
-        }
-
-        // GET: api/Administradores/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Administrador>> GetAdministrador(int id)
-        {
-            var administrador = await _context.Administradores.FindAsync(id);
-
-            if (administrador == null)
-            {
-                return NotFound();
-            }
-
-            return administrador;
-        }
-
-        // POST: api/Administradores
-        [HttpPost]
-        public async Task<ActionResult<Administrador>> PostAdministrador(Administrador administrador)
-        {
-            _context.Administradores.Add(administrador);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetAdministrador), new { id = administrador.Admin_ID }, administrador);
-        }
-
-        // PUT: api/Administradores/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAdministrador(int id, Administrador administrador)
-        {
-            if (id != administrador.Admin_ID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(administrador).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!AdministradorExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // DELETE: api/Administradores/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAdministrador(int id)
-        {
-            var administrador = await _context.Administradores.FindAsync(id);
-            if (administrador == null)
-            {
-                return NotFound();
-            }
-
-            _context.Administradores.Remove(administrador);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        private bool AdministradorExists(int id)
-        {
-            return _context.Administradores.Any(e => e.Admin_ID == id);
-        }
-    }
-}
-
     [Route("api/[controller]")]
-    [ApiController]
     public class AdministradorController : ControllerBase
     {
-        private readonly InterfaceAdministrador _adminLogic;
-
-        public AdministradorController(InterfaceAdministrador AdminstradorLogic)
+        // Simulamos un administrador único en memoria
+        private static AdministradorDTO administrador = new AdministradorDTO
         {
-            _adminLogic = AdministradorLogic;
+            Admin_ID = 1,
+            Nombre = "Admin",
+            Email = "admin@example.com",
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword("password123"), // Hash de la contraseña para seguridad
+            LastLogin = DateTime.Now,
+            IsSuperAdmin = true
+        };
+
+        // POST: api/administrador/login (Autenticación del administrador)
+        [HttpPost("login")]
+        public ActionResult Login([FromBody] LoginDTO loginDto)
+        {
+            // Verificamos el email y la contraseña
+            if (administrador.Email == loginDto.Email && BCrypt.Net.BCrypt.Verify(loginDto.Password, administrador.PasswordHash))
+            {
+                administrador.LastLogin = DateTime.Now; // Actualizamos el último login
+
+                // Aquí deberías generar y devolver un token JWT o algo similar para autenticar futuras solicitudes.
+                return Ok(new { message = "Login successful", lastLogin = administrador.LastLogin });
+            }
+            return Unauthorized(new { message = "Invalid credentials" });
         }
 
-        [HttpPost]
-        public IActionResult AltaAdministrador([FromBody] CrearAdministradorDTO nuevoAdminDto)
+        // GET: api/administrador (Obtener los datos del administrador)
+        [HttpGet]
+        public ActionResult<AdministradorDTO> Get()
         {
-            _adminLogic.AltaAdministrador(nuevoAdminDto.Nombre, nuevoAdminDto.Email);
-            return CreatedAtAction(nameof(GetAdministrador), new { id = nuevoAdminDto.Id }, nuevoAdminDto);
+            // Retornamos los datos del administrador
+            return Ok(administrador);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<Administrador> Get(int id)
+        // PUT: api/administrador (Actualizar los datos del administrador)
+        [HttpPut]
+        public ActionResult Update([FromBody] AdministradorDTO updatedAdmin)
         {
-            var admin = administrador.FirstOrDefault(a => a.Admin_ID == id); // lógica para obtener el administrador por ID
-            if (admin == null) return NotFound();
-            return Ok(admin);
-        }
+            // Aquí actualizamos solo los campos permitidos del administrador
+            administrador.Nombre = updatedAdmin.Nombre;
+            administrador.Email = updatedAdmin.Email;
 
-        [HttpPut("{id}")]
-        public IActionResult ModificarAdministrador(int id, [FromBody] ModificarAdministradorDTO adminModificarDto)
-        {
-            _adminLogic.ModificarAdministrador(id, adminModificarDto.NuevoNombre, adminModificarDto.NuevoEmail);
+            // Si se desea actualizar la contraseña, debemos encriptarla
+            if (!string.IsNullOrEmpty(updatedAdmin.PasswordHash))
+            {
+                administrador.PasswordHash = BCrypt.Net.BCrypt.HashPassword(updatedAdmin.PasswordHash);
+            }
+
+            administrador.LastLogin = updatedAdmin.LastLogin; // Actualizamos la fecha de login
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult BajaAdministrador(int id)
+        // DELETE: api/administrador (Eliminar al administrador)
+        // En este caso, como es un único administrador, esta acción puede no ser necesaria
+        // pero si quieres implementarla, sería algo así:
+        [HttpDelete]
+        public ActionResult Delete()
         {
-            _adminLogic.BajaAdministrador(id);
+            administrador = null; // Simulamos la eliminación del administrador
             return NoContent();
         }
     }
-*/
 }
