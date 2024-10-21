@@ -3,15 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\api\\data\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\data\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\winformsapp1\\form-home\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\winformsapp1\\form-home\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -39,39 +47,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProyectoDBcontext.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\API\\Data\\ProyectoDBcontext.cs",
+              "RelativeDocumentMoniker": "API\\Data\\ProyectoDBcontext.cs",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\API\\Data\\ProyectoDBcontext.cs",
+              "RelativeToolTip": "API\\Data\\ProyectoDBcontext.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAowGgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T19:45:34.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\API\\appsettings.json",
+              "RelativeDocumentMoniker": "API\\appsettings.json",
+              "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\API\\appsettings.json",
+              "RelativeToolTip": "API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-21T19:44:28.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TurnoForm.cs",
               "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "RelativeToolTip": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
-              "ViewState": "AQIAAMIAAAAAAAAAAAAAwCQAAABXAAAA",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAmwCQAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T19:50:46.206Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TurnoForm.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormsApp1\\Form-Home\\TurnoForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T19:46:02.114Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-10-20T19:46:02.114Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\Form1.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\Form1.cs",
               "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\Form1.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormsApp1\\Form-Home\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T20:33:12.062Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-09-24T20:33:12.062Z"
             }
           ]
         }
