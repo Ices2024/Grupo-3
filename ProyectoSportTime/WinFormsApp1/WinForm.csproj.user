@@ -4,6 +4,9 @@
     <Compile Update="Form-Home\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Form-Home\FormCanchas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form-Home\TurnoForm.cs">
       <SubType>Form</SubType>
     </Compile>
