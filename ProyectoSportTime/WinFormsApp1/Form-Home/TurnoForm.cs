@@ -10,88 +10,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio.Implementations;
 
 namespace WinForm.Form_Home
 {
     public partial class TurnoForm : Form
     {
-        private string? deporteSeleccionado;
-
         public TurnoForm()
         {
             InitializeComponent();
-            CargarCancha(); // Cargar las canchas al inicio
-            CargarProductos(); // Cargar productos al inicio
         }
 
-        public void SetDeporteSeleccionado(int deporteId)
+        private void TurnoForm_Load(object sender, EventArgs e)
         {
-            Deporte_ID = deporteId; // Guarda el ID del deporte
-                                    // Opcionalmente puedes mostrar información relacionada al deporte aquí
+            CargarDatos();
         }
 
-        private void CargarCancha()
+        private void CargarDatos()
         {
-            using (var context = new ProyectoDbContext())
+            try
             {
-                var canchas = context.Canchas.Where(c => c.Codigo_Deporte == Deporte_ID).ToList();
-                comboBoxCancha.DataSource = canchas;
-                comboBoxCancha.DisplayMember = "Cancha_ID"; // Asegúrate de que muestre un campo representativo
-                comboBoxCancha.ValueMember = "Cancha_ID"; // ID de la cancha
-            }
-        }
-
-        private void ActualizarDataGridView()
-        {
-            using (var context = new ProyectoDbContext())
-            {
-                // Obtiene la lista de turnos con sus consumiciones y canchas
-                var turnos = context.Turnos
-                    .Include(t => t.Consumicion) // Asegúrate de que la relación esté cargada
-                    .Include(t => t.Canchas) // Incluye la relación con Canchas
-                    .ToList();
-
-                // Limpia el DataGridView
-                dataGridViewTurnos.DataSource = null;
-                dataGridViewTurnos.Rows.Clear();
-
-                // Establece el DataSource del DataGridView
-                dataGridViewTurnos.DataSource = turnos.Select(t => new
+                using (var context = new ProyectoDbContext())
                 {
-                    Turno_ID = t.Turno_ID,
-                    Cancha_ID = t.Cancha_ID,
-                    HoraInicio = t.HoraInicio,
-                    HoraFin = t.HoraFin,
-                    Consumicion = t.Consumicion?.Producto?.Tipo, // Muestra el nombre del producto
-                    Cantidad = t.Consumicion?.Cantidad // Muestra la cantidad
-                }).ToList();
+                    // Cargar deportes
+                    var deportes = context.Deportes.ToList();
+                    comboBoxDeporte.DataSource = deportes;
+                    comboBoxDeporte.DisplayMember = "Tipo"; // Cambiar según la propiedad que quieras mostrar
+                    comboBoxDeporte.ValueMember = "Deporte_ID";
 
-                // Configura las columnas si es necesario
-                dataGridViewTurnos.Columns["Turno_ID"].Visible = false; // Ocultar el ID si no es necesario mostrarlo
+                    // Cargar canchas
+                    var canchas = context.Canchas.ToList();
+                    comboBoxCancha.DataSource = canchas;
+                    comboBoxCancha.DisplayMember = "Codigo_Deporte"; // O una propiedad relevante para mostrar el nombre
+                    comboBoxCancha.ValueMember = "Cancha_ID";
+
+                    // Cargar productos
+                    var productos = context.Productos.ToList();
+                    comboBoxConsumicion.DataSource = productos;
+                    comboBoxConsumicion.DisplayMember = "Tipo"; // Cambiar según la propiedad que quieras mostrar
+                    comboBoxConsumicion.ValueMember = "Producto_ID";
+                }
             }
-        }
-
-
-        private void CargarProductos()
-        {
-            using (var context = new ProyectoDbContext())
+            catch (Exception ex)
             {
-                var productos = context.Productos.ToList();
-                comboBoxConsumicion.DataSource = productos;
-                comboBoxConsumicion.DisplayMember = "Tipo"; // Nombre del producto
-                comboBoxConsumicion.ValueMember = "Producto_ID"; // ID del producto
+                MessageBox.Show($"Error al cargar los datos: {ex.Message}");
             }
         }
-
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-
-            // Asegúrate de que la selección sea válida
             if (comboBoxCancha.SelectedValue is int canchaId &&
                 comboBoxConsumicion.SelectedValue is int productoId)
             {
-                // Obtén la cantidad del NumericUpDown
                 int cantidad = (int)numericUpDownCantidad.Value;
 
                 using (var context = new ProyectoDbContext())
@@ -117,7 +87,7 @@ namespace WinForm.Form_Home
                     context.SaveChanges();
 
                     MessageBox.Show("Turno guardado correctamente.");
-                    ActualizarDataGridView(); // Actualiza el DataGridView si es necesario
+                    ActualizarDataGridView();
                 }
             }
             else
@@ -207,8 +177,31 @@ namespace WinForm.Form_Home
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             this.Close(); // Cierra el formulario actual
-            var homeForm = new Form1(); // Reemplaza HomeForm con el nombre real de tu formulario de inicio
+            var homeForm = new Form1(); // Reemplaza Form1 con el nombre real de tu formulario de inicio
             homeForm.Show(); // Muestra el formulario de inicio
         }
+
+        private void ActualizarDataGridView()
+        {
+            using (var context = new ProyectoDbContext())
+            {
+                var turnos = context.Turnos
+                    .Include(t => t.Canchas)
+                    .Include(t => t.Consumicion) // Esta línea se debe ajustar para mostrar productos
+                    .ToList();
+
+                dataGridViewTurnos.DataSource = turnos.Select(t => new
+                {
+                    t.Turno_ID,
+                    Cancha = t.Canchas.Codigo_Deporte, // Muestra el nombre o código de la cancha
+                    Producto = context.Productos.FirstOrDefault(p => p.Producto_ID == t.Consumicion_ID)?.Tipo, // Muestra el tipo de producto
+                    t.HoraInicio,
+                    t.HoraFin
+                }).ToList();
+            }
+        }
     }
+
+
+
 }

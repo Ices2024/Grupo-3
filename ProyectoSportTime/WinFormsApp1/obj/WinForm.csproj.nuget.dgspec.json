@@ -282,6 +282,9 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
+              "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\API.csproj": {
+                "projectPath": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\API.csproj"
+              },
               "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\Negocio\\Negocio.csproj": {
                 "projectPath": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\Negocio\\Negocio.csproj"
               }
@@ -302,6 +305,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

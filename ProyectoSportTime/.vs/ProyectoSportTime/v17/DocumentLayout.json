@@ -3,20 +3,83 @@
   "WorkspaceRootPath": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\winformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\api\\controllers\\administradorcontroller\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\controllers\\administradorcontroller\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\shared\\dtos\\administradordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|solutionrelative:shared\\dtos\\administradordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\negocio\\implementations\\administradorlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\implementations\\administradorlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\api\\controllers\\clientescontrollers\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\controllers\\clientescontrollers\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\api\\controllers\\canchascontroller\\canchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\controllers\\canchascontroller\\canchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\herna\\AppData\\Local\\Temp\\.vsdbgsrc\\106739112c966cc39d25dd039145ce9de2cff17182935e358a18dd53276b70ce\\MethodBaseInvoker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\winformsapp1\\form-home\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\api\\data\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\data\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\winformsapp1\\form-home\\formcanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\formcanchas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\api\\data\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\data\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\api\\api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\negocio\\implementations\\clienteslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\implementations\\clienteslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\api\\controllers\\proveedorescontroller\\proveedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\controllers\\proveedorescontroller\\proveedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\api\\controllers\\deportescontroller\\deportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\controllers\\deportescontroller\\deportes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\api\\controllers\\consumicioncontroller\\consumicion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17E5789E-13E8-4F2C-A8E7-9FF419CD9E3F}|API\\API.csproj|solutionrelative:api\\controllers\\consumicioncontroller\\consumicion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE08628F-34C3-4635-A8DB-49973890D0F9}|ProyectoSportTime\\Console.csproj|c:\\users\\mateo\\desktop\\grupo-3-develop\\proyectosporttime\\proyectosporttime\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE08628F-34C3-4635-A8DB-49973890D0F9}|ProyectoSportTime\\Console.csproj|solutionrelative:proyectosporttime\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +89,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,52 +105,245 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormCanchas.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\FormCanchas.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\FormCanchas.cs",
-              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\FormCanchas.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp1\\Form-Home\\FormCanchas.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "TurnoForm.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
+              "RelativeToolTip": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowEoAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T22:33:21.856Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-10-24T20:17:23.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InicoSesion.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "RelativeToolTip": "WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:28:42.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InicoSesion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\FormAdmin\\InicoSesion.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "WinFormsApp1\\FormAdmin\\InicoSesion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:28:40.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdministradorLogic.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\Negocio\\Implementations\\AdministradorLogic.cs",
+              "RelativeDocumentMoniker": "Negocio\\Implementations\\AdministradorLogic.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\Negocio\\Implementations\\AdministradorLogic.cs",
+              "RelativeToolTip": "Negocio\\Implementations\\AdministradorLogic.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowDoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:26:38.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Administrador.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\AdministradorController\\Administrador.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\AdministradorController\\Administrador.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\AdministradorController\\Administrador.cs",
+              "RelativeToolTip": "API\\Controllers\\AdministradorController\\Administrador.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAmwBkAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:15:25.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Canchas.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\CanchasController\\Canchas.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\CanchasController\\Canchas.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\CanchasController\\Canchas.cs",
+              "RelativeToolTip": "API\\Controllers\\CanchasController\\Canchas.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:17:51.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Clientes.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\ClientesControllers\\Clientes.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ClientesControllers\\Clientes.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\ClientesControllers\\Clientes.cs",
+              "RelativeToolTip": "API\\Controllers\\ClientesControllers\\Clientes.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:18:20.633Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Program.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Program.cs",
+              "RelativeToolTip": "WinFormsApp1\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:24:44.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdministradorDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\Shared\\Dtos\\AdministradorDTO.cs",
+              "RelativeDocumentMoniker": "Shared\\Dtos\\AdministradorDTO.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\Shared\\Dtos\\AdministradorDTO.cs",
+              "RelativeToolTip": "Shared\\Dtos\\AdministradorDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:40:41.192Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MethodBaseInvoker.cs",
+              "DocumentMoniker": "C:\\Users\\herna\\AppData\\Local\\Temp\\.vsdbgsrc\\106739112c966cc39d25dd039145ce9de2cff17182935e358a18dd53276b70ce\\MethodBaseInvoker.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\herna\\AppData\\Local\\Temp\\.vsdbgsrc\\106739112c966cc39d25dd039145ce9de2cff17182935e358a18dd53276b70ce\\MethodBaseInvoker.cs",
+              "ToolTip": "C:\\Users\\herna\\AppData\\Local\\Temp\\.vsdbgsrc\\106739112c966cc39d25dd039145ce9de2cff17182935e358a18dd53276b70ce\\MethodBaseInvoker.cs [Solo lectura]",
+              "RelativeToolTip": "..\\..\\..\\..\\herna\\AppData\\Local\\Temp\\.vsdbgsrc\\106739112c966cc39d25dd039145ce9de2cff17182935e358a18dd53276b70ce\\MethodBaseInvoker.cs [Solo lectura]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T20:14:35.613Z",
+              "EditorCaption": " [Solo lectura]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\Form1.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\Form1.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\Form1.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\Form-Home\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T20:04:29.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProyectoDBcontext.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Data\\ProyectoDBcontext.cs",
+              "RelativeDocumentMoniker": "API\\Data\\ProyectoDBcontext.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Data\\ProyectoDBcontext.cs",
+              "RelativeToolTip": "API\\Data\\ProyectoDBcontext.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAwwCIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:19:37.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "TurnoForm.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs [Dise\u00F1o]",
               "RelativeToolTip": "WinFormsApp1\\Form-Home\\TurnoForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-20T19:46:02.114Z",
+              "WhenOpened": "2024-10-22T10:28:31.088Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProyectoDBcontext.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Data\\ProyectoDBcontext.cs",
-              "RelativeDocumentMoniker": "API\\Data\\ProyectoDBcontext.cs",
-              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Data\\ProyectoDBcontext.cs",
-              "RelativeToolTip": "API\\Data\\ProyectoDBcontext.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAAAGAAAABGAAAA",
+              "DocumentIndex": 15,
+              "Title": "ClientesLogic.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\Negocio\\Implementations\\ClientesLogic.cs",
+              "RelativeDocumentMoniker": "Negocio\\Implementations\\ClientesLogic.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\Negocio\\Implementations\\ClientesLogic.cs",
+              "RelativeToolTip": "Negocio\\Implementations\\ClientesLogic.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAxwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T21:22:04.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T10:26:58.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\Form1.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\Form1.cs",
-              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "WinFormsApp1\\Form-Home\\Form1.cs [Dise\u00F1o]",
+              "DocumentIndex": 14,
+              "Title": "API.http",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\API.http",
+              "RelativeDocumentMoniker": "API\\API.http",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\API.http",
+              "RelativeToolTip": "API\\API.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-10-22T10:27:13.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Deportes.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\DeportesController\\Deportes.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\DeportesController\\Deportes.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\DeportesController\\Deportes.cs",
+              "RelativeToolTip": "API\\Controllers\\DeportesController\\Deportes.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T20:33:12.062Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-10-22T10:18:32.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Program.cs",
+              "RelativeDocumentMoniker": "API\\Program.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Program.cs",
+              "RelativeToolTip": "API\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:11:56.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProveedorController.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\ProveedoresController\\ProveedorController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ProveedoresController\\ProveedorController.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\ProveedoresController\\ProveedorController.cs",
+              "RelativeToolTip": "API\\Controllers\\ProveedoresController\\ProveedorController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAIBJwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:18:50.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Consumicion.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\ConsumicionController\\Consumicion.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ConsumicionController\\Consumicion.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\API\\Controllers\\ConsumicionController\\Consumicion.cs",
+              "RelativeToolTip": "API\\Controllers\\ConsumicionController\\Consumicion.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:18:24.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\ProyectoSportTime\\Class1.cs",
+              "RelativeDocumentMoniker": "ProyectoSportTime\\Class1.cs",
+              "ToolTip": "C:\\Users\\mateo\\Desktop\\Grupo-3-Develop\\ProyectoSportTime\\ProyectoSportTime\\Class1.cs",
+              "RelativeToolTip": "ProyectoSportTime\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T10:11:43.93Z"
             }
           ]
         }

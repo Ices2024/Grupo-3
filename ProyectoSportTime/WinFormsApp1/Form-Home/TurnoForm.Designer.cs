@@ -43,6 +43,8 @@
             buttonEliminar = new Button();
             buttonLimpiar = new Button();
             buttonVolver = new Button();
+            comboBoxDeporte = new ComboBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTurnos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCantidad).BeginInit();
             SuspendLayout();
@@ -58,7 +60,7 @@
             // comboBoxCancha
             // 
             comboBoxCancha.FormattingEnabled = true;
-            comboBoxCancha.Location = new Point(32, 300);
+            comboBoxCancha.Location = new Point(173, 299);
             comboBoxCancha.Name = "comboBoxCancha";
             comboBoxCancha.Size = new Size(121, 23);
             comboBoxCancha.TabIndex = 1;
@@ -66,28 +68,28 @@
             // comboBoxConsumicion
             // 
             comboBoxConsumicion.FormattingEnabled = true;
-            comboBoxConsumicion.Location = new Point(190, 300);
+            comboBoxConsumicion.Location = new Point(326, 299);
             comboBoxConsumicion.Name = "comboBoxConsumicion";
             comboBoxConsumicion.Size = new Size(121, 23);
             comboBoxConsumicion.TabIndex = 2;
             // 
             // numericUpDownCantidad
             // 
-            numericUpDownCantidad.Location = new Point(317, 301);
+            numericUpDownCantidad.Location = new Point(453, 299);
             numericUpDownCantidad.Name = "numericUpDownCantidad";
             numericUpDownCantidad.Size = new Size(30, 23);
             numericUpDownCantidad.TabIndex = 3;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(396, 301);
+            dateTimePicker1.Location = new Point(543, 301);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(98, 23);
             dateTimePicker1.TabIndex = 4;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(500, 301);
+            dateTimePicker2.Location = new Point(647, 301);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(98, 23);
             dateTimePicker2.TabIndex = 5;
@@ -95,7 +97,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(32, 282);
+            label1.Location = new Point(173, 281);
             label1.Name = "label1";
             label1.Size = new Size(47, 15);
             label1.TabIndex = 6;
@@ -104,7 +106,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(190, 282);
+            label2.Location = new Point(326, 281);
             label2.Name = "label2";
             label2.Size = new Size(78, 15);
             label2.TabIndex = 7;
@@ -113,7 +115,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(396, 282);
+            label3.Location = new Point(543, 282);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 8;
@@ -122,7 +124,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(500, 282);
+            label4.Location = new Point(647, 283);
             label4.Name = "label4";
             label4.Size = new Size(23, 15);
             label4.TabIndex = 9;
@@ -178,11 +180,30 @@
             buttonVolver.UseVisualStyleBackColor = true;
             buttonVolver.Click += buttonVolver_Click;
             // 
+            // comboBoxDeporte
+            // 
+            comboBoxDeporte.FormattingEnabled = true;
+            comboBoxDeporte.Location = new Point(32, 301);
+            comboBoxDeporte.Name = "comboBoxDeporte";
+            comboBoxDeporte.Size = new Size(121, 23);
+            comboBoxDeporte.TabIndex = 15;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(32, 283);
+            label5.Name = "label5";
+            label5.Size = new Size(49, 15);
+            label5.TabIndex = 16;
+            label5.Text = "Deporte";
+            // 
             // TurnoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
+            Controls.Add(comboBoxDeporte);
             Controls.Add(buttonVolver);
             Controls.Add(buttonLimpiar);
             Controls.Add(buttonEliminar);
@@ -223,5 +244,7 @@
         private Button buttonEliminar;
         private Button buttonLimpiar;
         private Button buttonVolver;
+        private ComboBox comboBoxDeporte;
+        private Label label5;
     }
 }

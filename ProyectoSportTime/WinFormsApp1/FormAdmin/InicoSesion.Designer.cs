@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicoSesion));
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            textBoxEmail = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            textBoxPassword = new TextBox();
+            buttonInSc = new Button();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -42,9 +42,9 @@
             // label1
             // 
             label1.Font = new Font("MS PGothic", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 30);
+            label1.Location = new Point(14, 40);
             label1.Name = "label1";
-            label1.Size = new Size(382, 92);
+            label1.Size = new Size(437, 123);
             label1.TabIndex = 0;
             label1.Text = "Bienvenidos a SportTime";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -53,68 +53,74 @@
             // label2
             // 
             label2.Font = new Font("MS PGothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(26, 132);
+            label2.Location = new Point(30, 176);
             label2.Name = "label2";
-            label2.Size = new Size(87, 22);
+            label2.Size = new Size(99, 29);
             label2.TabIndex = 1;
             label2.Text = "Email";
             // 
-            // textBox1
+            // textBoxEmail
             // 
-            textBox1.Location = new Point(26, 157);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(269, 23);
-            textBox1.TabIndex = 2;
+            textBoxEmail.Location = new Point(30, 209);
+            textBoxEmail.Margin = new Padding(3, 4, 3, 4);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(307, 27);
+            textBoxEmail.TabIndex = 2;
             // 
             // label3
             // 
             label3.Font = new Font("MS PGothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(26, 220);
+            label3.Location = new Point(30, 293);
             label3.Name = "label3";
-            label3.Size = new Size(87, 22);
+            label3.Size = new Size(99, 29);
             label3.TabIndex = 3;
             label3.Text = "Contraseña";
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            textBox2.Location = new Point(26, 256);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(269, 23);
-            textBox2.TabIndex = 4;
+            textBoxPassword.Location = new Point(30, 341);
+            textBoxPassword.Margin = new Padding(3, 4, 3, 4);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(307, 27);
+            textBoxPassword.TabIndex = 4;
             // 
-            // button1
+            // buttonInSc
             // 
-            button1.Font = new Font("MS PGothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(48, 355);
-            button1.Name = "button1";
-            button1.Size = new Size(220, 35);
-            button1.TabIndex = 5;
-            button1.Text = "Iniciar Sesion";
-            button1.UseVisualStyleBackColor = true;
+            buttonInSc.Font = new Font("MS PGothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonInSc.Location = new Point(55, 473);
+            buttonInSc.Margin = new Padding(3, 4, 3, 4);
+            buttonInSc.Name = "buttonInSc";
+            buttonInSc.Size = new Size(251, 47);
+            buttonInSc.TabIndex = 5;
+            buttonInSc.Text = "Iniciar Sesion";
+            buttonInSc.UseVisualStyleBackColor = true;
+            buttonInSc.Click += buttonInSc_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(400, 0);
+            pictureBox1.Location = new Point(457, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(400, 453);
+            pictureBox1.Size = new Size(457, 604);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // Form1
+            // InicoSesion
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(pictureBox1);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
+            Controls.Add(buttonInSc);
+            Controls.Add(textBoxPassword);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxEmail);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Form1";
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "InicoSesion";
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -126,10 +132,10 @@
 
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox textBoxEmail;
         private Label label3;
-        private TextBox textBox2;
-        private Button button1;
+        private TextBox textBoxPassword;
+        private Button buttonInSc;
         private PictureBox pictureBox1;
     }
 }

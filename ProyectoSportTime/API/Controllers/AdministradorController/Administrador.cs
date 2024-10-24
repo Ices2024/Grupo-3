@@ -6,6 +6,8 @@ using Shared.Entidades;
 using System.Collections.Generic;
 using System.Linq;
 using BCrypt.Net;
+using API.Data;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
@@ -27,17 +29,25 @@ namespace API.Controllers.AdministradorController
             IsSuperAdmin = true
         };
 
+        // Usamos "context" para mantener consistencia con el resto del proyecto
+        private ProyectoDbContext context = new ProyectoDbContext();
+
         // POST: api/administrador/login (Autenticación del administrador)
         [HttpPost("login")]
         public ActionResult Login([FromBody] LoginDTO loginDto)
         {
-            // Verificamos el email y la contraseña
-            if (administrador.Email == loginDto.Email && BCrypt.Net.BCrypt.Verify(loginDto.Password, administrador.PasswordHash))
-            {
-                administrador.LastLogin = DateTime.Now; // Actualizamos el último login
+            // Consultar el administrador por su email
+            var administrador = context.Administradores.FirstOrDefault(a => a.Email == loginDto.Email);
 
-                // Aquí deberías generar y devolver un token JWT o algo similar para autenticar futuras solicitudes.
-                return Ok(new { message = "Login successful", lastLogin = administrador.LastLogin });
+            // Verificamos el email y la contraseña
+            if (administrador != null && BCrypt.Net.BCrypt.Verify(loginDto.Password, administrador.Contraseña))
+            {
+                // Actualizamos el campo UpdatedDate con la fecha del login
+                administrador.UpdatedDate = DateTime.Now;
+                context.SaveChanges(); // No olvides guardar el cambio
+
+                // Devuelve un JSON con el mensaje y la fecha de última actualización (login)
+                return Ok(new { message = "Login successful", lastLogin = administrador.UpdatedDate });
             }
             return Unauthorized(new { message = "Invalid credentials" });
         }
@@ -54,23 +64,21 @@ namespace API.Controllers.AdministradorController
         [HttpPut]
         public ActionResult Update([FromBody] AdministradorDTO updatedAdmin)
         {
-            // Aquí actualizamos solo los campos permitidos del administrador
+            // Actualizamos solo los campos permitidos
             administrador.Nombre = updatedAdmin.Nombre;
             administrador.Email = updatedAdmin.Email;
 
-            // Si se desea actualizar la contraseña, debemos encriptarla
+            // Si se desea actualizar la contraseña, la encriptamos
             if (!string.IsNullOrEmpty(updatedAdmin.PasswordHash))
             {
                 administrador.PasswordHash = BCrypt.Net.BCrypt.HashPassword(updatedAdmin.PasswordHash);
             }
 
-            administrador.LastLogin = updatedAdmin.LastLogin; // Actualizamos la fecha de login
-            return NoContent();
+            administrador.LastLogin = updatedAdmin.LastLogin; // Actualizamos el último login
+            return NoContent(); // No contenido, porque la actualización fue exitosa
         }
 
         // DELETE: api/administrador (Eliminar al administrador)
-        // En este caso, como es un único administrador, esta acción puede no ser necesaria
-        // pero si quieres implementarla, sería algo así:
         [HttpDelete]
         public ActionResult Delete()
         {
@@ -78,4 +86,5 @@ namespace API.Controllers.AdministradorController
             return NoContent();
         }
     }
+
 }

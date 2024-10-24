@@ -29,7 +29,7 @@ namespace API.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=LAPTOP-TI84IK3Q\\SQLEXPRESS;Database=SportsTimeDB;Trusted_Connection=True;Encrypt=False");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-4U7JAH5\\SQLEXPRESS;Database=SportsTimeDB;Trusted_Connection=True;Encrypt=False");
             }
         }
 
