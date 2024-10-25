@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Shared.Entidades;
+using API.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers.ConsumicionController
 {
@@ -9,21 +11,27 @@ namespace API.Controllers.ConsumicionController
     [Route("api/[controller]")]
     public class ConsumicionesController : ControllerBase
     {
-        // Simulamos una base de datos en memoria para las consumiciones
-        private static List<Consumiciones> consumiciones = new List<Consumiciones>();
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public ConsumicionesController(ProyectoDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: api/consumiciones (Obtener todas las consumiciones)
         [HttpGet]
-        public ActionResult<List<Consumiciones>> Get()
+        public async Task<ActionResult<List<Consumiciones>>> Get()
         {
+            var consumiciones = await _context.Consumiciones.ToListAsync();
             return Ok(consumiciones);
         }
 
         // GET: api/consumiciones/{id} (Obtener una consumición específica por ID)
         [HttpGet("{id}")]
-        public ActionResult<Consumiciones> Get(int id)
+        public async Task<ActionResult<Consumiciones>> Get(int id)
         {
-            var consumicion = consumiciones.FirstOrDefault(c => c.Consumicion_ID == id);
+            var consumicion = await _context.Consumiciones.FindAsync(id);
             if (consumicion == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra la consumición
@@ -33,18 +41,19 @@ namespace API.Controllers.ConsumicionController
 
         // POST: api/consumiciones (Alta de una nueva consumición)
         [HttpPost]
-        public ActionResult<Consumiciones> Post([FromBody] Consumiciones nuevaConsumicion)
+        public async Task<ActionResult<Consumiciones>> Post([FromBody] Consumiciones nuevaConsumicion)
         {
-            nuevaConsumicion.Consumicion_ID = consumiciones.Count + 1; // Simulación de ID auto-generado
-            consumiciones.Add(nuevaConsumicion);
+            _context.Consumiciones.Add(nuevaConsumicion);
+            await _context.SaveChangesAsync();
+
             return CreatedAtAction(nameof(Get), new { id = nuevaConsumicion.Consumicion_ID }, nuevaConsumicion);
         }
 
         // PUT: api/consumiciones/{id} (Modificar una consumición existente)
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Consumiciones consumicionModificada)
+        public async Task<ActionResult> Put(int id, [FromBody] Consumiciones consumicionModificada)
         {
-            var consumicion = consumiciones.FirstOrDefault(c => c.Consumicion_ID == id);
+            var consumicion = await _context.Consumiciones.FindAsync(id);
             if (consumicion == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra la consumición
@@ -53,23 +62,27 @@ namespace API.Controllers.ConsumicionController
             // Actualizamos los datos de la consumición
             consumicion.Cantidad = consumicionModificada.Cantidad;
             consumicion.Precio = consumicionModificada.Precio;
-            consumicion.Cod_Producto = consumicionModificada.Cod_Producto;
+            consumicion.Cod_Producto = consumicionModificada.Cod_Producto; // Asegúrate de que esto exista en tu modelo
             consumicion.UpdatedDate = DateTime.Now;
+
+            await _context.SaveChangesAsync();
 
             return NoContent(); // Devuelve 204 No Content
         }
 
         // DELETE: api/consumiciones/{id} (Eliminar una consumición)
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var consumicion = consumiciones.FirstOrDefault(c => c.Consumicion_ID == id);
+            var consumicion = await _context.Consumiciones.FindAsync(id);
             if (consumicion == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra la consumición
             }
 
-            consumiciones.Remove(consumicion);
+            _context.Consumiciones.Remove(consumicion);
+            await _context.SaveChangesAsync();
+
             return NoContent(); // Devuelve 204 No Content
         }
     }

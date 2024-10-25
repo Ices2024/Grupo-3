@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using API.Data;
+using Microsoft.AspNetCore.Mvc;
 using Shared.Entidades;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers.ElementosController
 {
@@ -9,21 +11,27 @@ namespace API.Controllers.ElementosController
     [Route("api/[controller]")]
     public class ElementosController : ControllerBase
     {
-        // Simulamos una base de datos en memoria para los elementos
-        private static List<Elementos> elementos = new List<Elementos>();
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public ElementosController(ProyectoDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: api/elementos (Obtener todos los elementos)
         [HttpGet]
-        public ActionResult<List<Elementos>> Get()
+        public async Task<ActionResult<List<Elementos>>> Get()
         {
+            var elementos = await _context.Elementos.ToListAsync();
             return Ok(elementos);
         }
 
         // GET: api/elementos/{id} (Obtener un elemento específico por ID)
         [HttpGet("{id}")]
-        public ActionResult<ElementosController> Get(int id)
+        public async Task<ActionResult<Elementos>> Get(int id)
         {
-            var elemento = elementos.FirstOrDefault(e => e.Elemento_ID == id);
+            var elemento = await _context.Elementos.FindAsync(id);
             if (elemento == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el elemento
@@ -33,18 +41,19 @@ namespace API.Controllers.ElementosController
 
         // POST: api/elementos (Alta de un nuevo elemento)
         [HttpPost]
-        public ActionResult<Elementos> Post([FromBody] Elementos nuevoElemento)
+        public async Task<ActionResult<Elementos>> Post([FromBody] Elementos nuevoElemento)
         {
-            nuevoElemento.Elemento_ID = elementos.Count + 1; // Simulación de ID auto-generado
-            elementos.Add(nuevoElemento);
+            _context.Elementos.Add(nuevoElemento);
+            await _context.SaveChangesAsync();
+
             return CreatedAtAction(nameof(Get), new { id = nuevoElemento.Elemento_ID }, nuevoElemento);
         }
 
         // PUT: api/elementos/{id} (Modificar un elemento existente)
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Elementos elementoModificado)
+        public async Task<ActionResult> Put(int id, [FromBody] Elementos elementoModificado)
         {
-            var elemento = elementos.FirstOrDefault(e => e.Elemento_ID == id);
+            var elemento = await _context.Elementos.FindAsync(id);
             if (elemento == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el elemento
@@ -55,20 +64,24 @@ namespace API.Controllers.ElementosController
             elemento.Cantidad = elementoModificado.Cantidad;
             elemento.UpdatedDate = DateTime.Now;
 
+            await _context.SaveChangesAsync();
+
             return NoContent(); // Devuelve 204 No Content
         }
 
         // DELETE: api/elementos/{id} (Eliminar un elemento)
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var elemento = elementos.FirstOrDefault(e => e.Elemento_ID == id);
+            var elemento = await _context.Elementos.FindAsync(id);
             if (elemento == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el elemento
             }
 
-            elementos.Remove(elemento);
+            _context.Elementos.Remove(elemento);
+            await _context.SaveChangesAsync();
+
             return NoContent(); // Devuelve 204 No Content
         }
     }

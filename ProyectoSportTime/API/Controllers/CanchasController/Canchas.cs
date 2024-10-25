@@ -2,28 +2,37 @@
 using Shared.Entidades;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using API.Data;
 
 namespace API.Controllers.CanchasController
 {
+
     [ApiController]
     [Route("api/[controller]")]
     public class CanchasController : ControllerBase
     {
-        // Simulamos una base de datos en memoria para las canchas
-        private static List<Canchas> canchas = new List<Canchas>();
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public CanchasController(ProyectoDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: api/canchas (Obtener todas las canchas)
         [HttpGet]
-        public ActionResult<List<Canchas>> Get()
+        public async Task<ActionResult<List<Canchas>>> Get()
         {
+            var canchas = await _context.Canchas.ToListAsync();
             return Ok(canchas);
         }
 
         // GET: api/canchas/{id} (Obtener una cancha específica por ID)
         [HttpGet("{id}")]
-        public ActionResult<Canchas> Get(int id)
+        public async Task<ActionResult<Canchas>> Get(int id)
         {
-            var cancha = canchas.FirstOrDefault(c => c.Cancha_ID == id);
+            var cancha = await _context.Canchas.FindAsync(id);
             if (cancha == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra la cancha
@@ -33,43 +42,49 @@ namespace API.Controllers.CanchasController
 
         // POST: api/canchas (Alta de una nueva cancha)
         [HttpPost]
-        public ActionResult<Canchas> Post([FromBody] Canchas nuevaCancha)
+        public async Task<ActionResult<Canchas>> Post([FromBody] Canchas nuevaCancha)
         {
-            nuevaCancha.Cancha_ID = canchas.Count + 1; // Simulación de ID auto-generado
-            canchas.Add(nuevaCancha);
+            _context.Canchas.Add(nuevaCancha);
+            await _context.SaveChangesAsync();
+
             return CreatedAtAction(nameof(Get), new { id = nuevaCancha.Cancha_ID }, nuevaCancha);
         }
 
         // PUT: api/canchas/{id} (Modificar una cancha existente)
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Canchas canchaModificada)
+        public async Task<ActionResult> Put(int id, [FromBody] Canchas canchaModificada)
         {
-            var cancha = canchas.FirstOrDefault(c => c.Cancha_ID == id);
+            var cancha = await _context.Canchas.FindAsync(id);
             if (cancha == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra la cancha
             }
 
             // Actualizamos los datos de la cancha
-            cancha.Codigo_Deporte = canchaModificada.Codigo_Deporte;
-            cancha.Deporte = canchaModificada.Deporte;
+            cancha.Deporte_ID = canchaModificada.Deporte_ID;
+            cancha.Deporte = canchaModificada.Deporte;  // Asegúrate de que esto sea correcto según el modelo
             cancha.UpdatedDate = DateTime.Now;
+
+            await _context.SaveChangesAsync();
 
             return NoContent(); // Devuelve 204 No Content
         }
 
         // DELETE: api/canchas/{id} (Eliminar una cancha)
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var cancha = canchas.FirstOrDefault(c => c.Cancha_ID == id);
+            var cancha = await _context.Canchas.FindAsync(id);
             if (cancha == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra la cancha
             }
 
-            canchas.Remove(cancha);
+            _context.Canchas.Remove(cancha);
+            await _context.SaveChangesAsync();
+
             return NoContent(); // Devuelve 204 No Content
         }
     }
+
 }

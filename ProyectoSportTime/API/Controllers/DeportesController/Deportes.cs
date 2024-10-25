@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using Shared.Entidades;
+using API.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers.DeportesController
 {
@@ -9,21 +11,27 @@ namespace API.Controllers.DeportesController
     [Route("api/[controller]")]
     public class DeportesController : ControllerBase
     {
-        // Simulamos una base de datos en memoria para los deportes
-        private static List<Deportes> deportes = new List<Deportes>();
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public DeportesController(ProyectoDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: api/deportes (Obtener todos los deportes)
         [HttpGet]
-        public ActionResult<List<Deportes>> Get()
+        public async Task<ActionResult<List<Deportes>>> Get()
         {
+            var deportes = await _context.Deportes.ToListAsync();
             return Ok(deportes);
         }
 
         // GET: api/deportes/{id} (Obtener un deporte específico por ID)
         [HttpGet("{id}")]
-        public ActionResult<Deportes> Get(int id)
+        public async Task<ActionResult<Deportes>> Get(int id)
         {
-            var deporte = deportes.FirstOrDefault(d => d.Deporte_ID == id);
+            var deporte = await _context.Deportes.FindAsync(id);
             if (deporte == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el deporte
@@ -33,18 +41,19 @@ namespace API.Controllers.DeportesController
 
         // POST: api/deportes (Alta de un nuevo deporte)
         [HttpPost]
-        public ActionResult<Deportes> Post([FromBody] Deportes nuevoDeporte)
+        public async Task<ActionResult<Deportes>> Post([FromBody] Deportes nuevoDeporte)
         {
-            nuevoDeporte.Deporte_ID = deportes.Count + 1; // Simulación de ID auto-generado
-            deportes.Add(nuevoDeporte);
+            _context.Deportes.Add(nuevoDeporte);
+            await _context.SaveChangesAsync();
+
             return CreatedAtAction(nameof(Get), new { id = nuevoDeporte.Deporte_ID }, nuevoDeporte);
         }
 
         // PUT: api/deportes/{id} (Modificar un deporte existente)
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Deportes deporteModificado)
+        public async Task<ActionResult> Put(int id, [FromBody] Deportes deporteModificado)
         {
-            var deporte = deportes.FirstOrDefault(d => d.Deporte_ID == id);
+            var deporte = await _context.Deportes.FindAsync(id);
             if (deporte == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el deporte
@@ -54,20 +63,24 @@ namespace API.Controllers.DeportesController
             deporte.Tipo = deporteModificado.Tipo;
             deporte.UpdatedDate = DateTime.Now;
 
+            await _context.SaveChangesAsync();
+
             return NoContent(); // Devuelve 204 No Content
         }
 
         // DELETE: api/deportes/{id} (Eliminar un deporte)
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var deporte = deportes.FirstOrDefault(d => d.Deporte_ID == id);
+            var deporte = await _context.Deportes.FindAsync(id);
             if (deporte == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el deporte
             }
 
-            deportes.Remove(deporte);
+            _context.Deportes.Remove(deporte);
+            await _context.SaveChangesAsync();
+
             return NoContent(); // Devuelve 204 No Content
         }
     }

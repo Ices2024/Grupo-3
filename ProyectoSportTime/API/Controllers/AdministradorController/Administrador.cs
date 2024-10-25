@@ -19,7 +19,7 @@ namespace API.Controllers.AdministradorController
     public class AdministradorController : ControllerBase
     {
         // Simulamos un administrador único en memoria
-        private static AdministradorDTO administrador = new AdministradorDTO
+        private static AdministradorDTO? administrador = new AdministradorDTO
         {
             Admin_ID = 1,
             Nombre = "Admin",

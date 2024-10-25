@@ -37,7 +37,7 @@ namespace API.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Canchas>().HasIndex(x => x.Codigo_Deporte);
+            modelBuilder.Entity<Canchas>().HasIndex(x => x.Deporte_ID);
 
             foreach (var entity in modelBuilder.Model.GetEntityTypes())
             {

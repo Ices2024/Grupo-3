@@ -11,8 +11,8 @@ namespace Shared.Entidades
     {
         [Key]
         public int Cancha_ID { get; set; }
-        public int Codigo_Deporte { get; set; }
-        public Deportes? Deporte { get; set; }
+        public int Deporte_ID { get; set; }
+        public Deportes? Deporte { get; set; }  // Propiedad de navegación
 
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public DateTime? UpdatedDate { get; set; }
@@ -20,4 +20,5 @@ namespace Shared.Entidades
         public ICollection<Turnos>? Turnos { get; set; }
         public ICollection<Elementos>? Elementos { get; set; }
     }
+
 }

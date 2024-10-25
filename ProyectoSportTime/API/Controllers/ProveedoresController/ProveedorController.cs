@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using API.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Dtos;
 using Shared.Entidades;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers.ProveedoresController
 {
@@ -9,13 +11,22 @@ namespace API.Controllers.ProveedoresController
     [Route("api/[controller]")]
     public class ProveedoresController : ControllerBase
     {
-        // Simulamos una base de datos en memoria para los proveedores
-        private static List<Proveedores> proveedores = new List<Proveedores>();
+        private readonly ProyectoDbContext _context;
+
+        // Inyectamos el DbContext en el controlador
+        public ProveedoresController(ProyectoDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: api/proveedores (Obtener todos los proveedores)
         [HttpGet]
-        public ActionResult<List<ProveedorDTO>> Get()
+        public async Task<ActionResult<List<ProveedorDTO>>> Get()
         {
+            var proveedores = await _context.Proveedores
+                .Include(p => p.Productos) // Incluye los productos relacionados
+                .ToListAsync();
+
             var proveedorDTO = proveedores.Select(p => new ProveedorDTO
             {
                 Proveedor_ID = p.Proveedor_ID,
@@ -35,9 +46,12 @@ namespace API.Controllers.ProveedoresController
 
         // GET: api/proveedores/{id} (Obtener un proveedor específico por ID)
         [HttpGet("{id}")]
-        public ActionResult<ProveedorDTO> Get(int id)
+        public async Task<ActionResult<ProveedorDTO>> Get(int id)
         {
-            var proveedor = proveedores.FirstOrDefault(p => p.Proveedor_ID == id);
+            var proveedor = await _context.Proveedores
+                .Include(p => p.Productos)
+                .FirstOrDefaultAsync(p => p.Proveedor_ID == id);
+
             if (proveedor == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el proveedor
@@ -62,11 +76,10 @@ namespace API.Controllers.ProveedoresController
 
         // POST: api/proveedores (Alta de un nuevo proveedor)
         [HttpPost]
-        public ActionResult<ProveedorDTO> Post([FromBody] ProveedorDTO nuevoProveedorDTO)
+        public async Task<ActionResult<ProveedorDTO>> Post([FromBody] ProveedorDTO nuevoProveedorDTO)
         {
             var nuevoProveedor = new Proveedores
             {
-                Proveedor_ID = proveedores.Count + 1, // Simulación de ID auto-generado
                 Nombre = nuevoProveedorDTO.Nombre,
                 Telefono = nuevoProveedorDTO.Telefono,
                 Email = nuevoProveedorDTO.Email,
@@ -78,16 +91,17 @@ namespace API.Controllers.ProveedoresController
                 }).ToList()
             };
 
-            proveedores.Add(nuevoProveedor);
+            _context.Proveedores.Add(nuevoProveedor);
+            await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(Get), new { id = nuevoProveedor.Proveedor_ID }, nuevoProveedorDTO);
         }
 
         // PUT: api/proveedores/{id} (Modificar un proveedor existente)
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] ProveedorDTO proveedorModificadoDTO)
+        public async Task<ActionResult> Put(int id, [FromBody] ProveedorDTO proveedorModificadoDTO)
         {
-            var proveedor = proveedores.FirstOrDefault(p => p.Proveedor_ID == id);
+            var proveedor = await _context.Proveedores.FindAsync(id);
             if (proveedor == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el proveedor
@@ -104,22 +118,25 @@ namespace API.Controllers.ProveedoresController
                 Descripcion = prod.Descripcion
             }).ToList();
 
+            await _context.SaveChangesAsync();
+
             return NoContent(); // Devuelve 204 No Content
         }
 
         // DELETE: api/proveedores/{id} (Eliminar un proveedor)
         [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var proveedor = proveedores.FirstOrDefault(p => p.Proveedor_ID == id);
+            var proveedor = await _context.Proveedores.FindAsync(id);
             if (proveedor == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el proveedor
             }
 
-            proveedores.Remove(proveedor);
+            _context.Proveedores.Remove(proveedor);
+            await _context.SaveChangesAsync();
+
             return NoContent(); // Devuelve 204 No Content
         }
     }
-
 }

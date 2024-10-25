@@ -193,7 +193,7 @@ namespace WinForm.Form_Home
                 dataGridViewTurnos.DataSource = turnos.Select(t => new
                 {
                     t.Turno_ID,
-                    Cancha = t.Canchas.Codigo_Deporte, // Muestra el nombre o código de la cancha
+                    Cancha = t.Canchas.Deporte_ID, // Muestra el nombre o código de la cancha
                     Producto = context.Productos.FirstOrDefault(p => p.Producto_ID == t.Consumicion_ID)?.Tipo, // Muestra el tipo de producto
                     t.HoraInicio,
                     t.HoraFin
