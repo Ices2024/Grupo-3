@@ -15,9 +15,6 @@ namespace Shared.Entidades
         public string? Email { get; set; }
         public string? Telefono { get; set; }
 
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public DateTime? UpdatedDate { get; set; }
-
         public ICollection<Productos> Productos { get; set; } = new List<Productos>();
     }
 }

@@ -14,7 +14,5 @@ namespace Shared.Entidades
         public string? Nombre { get; set; }
         public int NumeroTelefono { get; set; }
 
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public DateTime? UpdatedDate { get; set; }
     }
 }

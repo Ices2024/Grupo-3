@@ -15,9 +15,6 @@ namespace Shared.Entidades
         public string? Email { get; set; }
         public string? Contraseña { get; set; }
 
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public DateTime? UpdatedDate { get; set; }
-
         public ICollection<Turnos>? Turnos { get; set; }
     }
 }

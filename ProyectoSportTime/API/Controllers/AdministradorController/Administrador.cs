@@ -18,7 +18,14 @@ namespace API.Controllers.AdministradorController
     [Route("api/[controller]")]
     public class AdministradorController : ControllerBase
     {
-        // Simulamos un administrador único en memoria
+        private readonly ProyectoDbContext _context;
+
+        public AdministradorController(ProyectoDbContext context)
+        {
+            _context = context;
+        }
+
+        // Definimos un administrador en memoria para simular uno único (esto es sólo para ejemplo)
         private static AdministradorDTO? administrador = new AdministradorDTO
         {
             Admin_ID = 1,
@@ -29,25 +36,20 @@ namespace API.Controllers.AdministradorController
             IsSuperAdmin = true
         };
 
-        // Usamos "context" para mantener consistencia con el resto del proyecto
-        private ProyectoDbContext context = new ProyectoDbContext();
-
         // POST: api/administrador/login (Autenticación del administrador)
         [HttpPost("login")]
         public ActionResult Login([FromBody] LoginDTO loginDto)
         {
             // Consultar el administrador por su email
-            var administrador = context.Administradores.FirstOrDefault(a => a.Email == loginDto.Email);
+            var administrador = _context.Administradores.FirstOrDefault(a => a.Email == loginDto.Email);
 
             // Verificamos el email y la contraseña
             if (administrador != null && BCrypt.Net.BCrypt.Verify(loginDto.Password, administrador.Contraseña))
             {
-                // Actualizamos el campo UpdatedDate con la fecha del login
-                administrador.UpdatedDate = DateTime.Now;
-                context.SaveChanges(); // No olvides guardar el cambio
+                _context.SaveChanges(); // Guardar cambios si hay alguno, aunque aquí no afecta nada sin UpdatedDate
 
-                // Devuelve un JSON con el mensaje y la fecha de última actualización (login)
-                return Ok(new { message = "Login successful", lastLogin = administrador.UpdatedDate });
+                // Devolver un mensaje de éxito
+                return Ok(new { message = "Login successful" });
             }
             return Unauthorized(new { message = "Invalid credentials" });
         }
@@ -56,7 +58,6 @@ namespace API.Controllers.AdministradorController
         [HttpGet]
         public ActionResult<AdministradorDTO> Get()
         {
-            // Retornamos los datos del administrador
             return Ok(administrador);
         }
 
@@ -65,18 +66,23 @@ namespace API.Controllers.AdministradorController
         public ActionResult Update([FromBody] AdministradorDTO updatedAdmin)
         {
             // Actualizamos solo los campos permitidos
-            administrador.Nombre = updatedAdmin.Nombre;
-            administrador.Email = updatedAdmin.Email;
-
-            // Si se desea actualizar la contraseña, la encriptamos
-            if (!string.IsNullOrEmpty(updatedAdmin.PasswordHash))
+            if (administrador != null) // Verifica que el administrador exista antes de actualizar
             {
-                administrador.PasswordHash = BCrypt.Net.BCrypt.HashPassword(updatedAdmin.PasswordHash);
-            }
+                administrador.Nombre = updatedAdmin.Nombre;
+                administrador.Email = updatedAdmin.Email;
 
-            administrador.LastLogin = updatedAdmin.LastLogin; // Actualizamos el último login
-            return NoContent(); // No contenido, porque la actualización fue exitosa
+                // Si se desea actualizar la contraseña, la encriptamos
+                if (!string.IsNullOrEmpty(updatedAdmin.PasswordHash))
+                {
+                    administrador.PasswordHash = BCrypt.Net.BCrypt.HashPassword(updatedAdmin.PasswordHash);
+                }
+
+                administrador.LastLogin = updatedAdmin.LastLogin; // Actualizamos el último login
+                return NoContent(); // No contenido, porque la actualización fue exitosa
+            }
+            return NotFound(new { message = "Administrador no encontrado" });
         }
+
 
         // DELETE: api/administrador (Eliminar al administrador)
         [HttpDelete]
@@ -86,5 +92,5 @@ namespace API.Controllers.AdministradorController
             return NoContent();
         }
     }
-
 }
+

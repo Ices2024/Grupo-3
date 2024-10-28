@@ -13,7 +13,7 @@ namespace API.Controllers.ProveedoresController
     {
         private readonly ProyectoDbContext _context;
 
-        // Inyectamos el DbContext en el controlador
+        // Constructor donde se inyecta el DbContext
         public ProveedoresController(ProyectoDbContext context)
         {
             _context = context;
@@ -24,24 +24,15 @@ namespace API.Controllers.ProveedoresController
         public async Task<ActionResult<List<ProveedorDTO>>> Get()
         {
             var proveedores = await _context.Proveedores
-                .Include(p => p.Productos) // Incluye los productos relacionados
-                .ToListAsync();
-
-            var proveedorDTO = proveedores.Select(p => new ProveedorDTO
-            {
-                Proveedor_ID = p.Proveedor_ID,
-                Nombre = p.Nombre,
-                Telefono = p.Telefono,
-                Email = p.Email,
-                Productos = p.Productos?.Select(prod => new ProductoDTO
+                .Select(p => new ProveedorDTO
                 {
-                    Producto_ID = prod.Producto_ID,
-                    Tipo = prod.Tipo,
-                    Descripcion = prod.Descripcion
-                }).ToList()
-            }).ToList();
+                    Proveedor_ID = p.Proveedor_ID,
+                    Nombre = p.Nombre,
+                    Telefono = p.Telefono,
+                    Email = p.Email
+                }).ToListAsync();
 
-            return Ok(proveedorDTO);
+            return Ok(proveedores);
         }
 
         // GET: api/proveedores/{id} (Obtener un proveedor específico por ID)
@@ -49,57 +40,43 @@ namespace API.Controllers.ProveedoresController
         public async Task<ActionResult<ProveedorDTO>> Get(int id)
         {
             var proveedor = await _context.Proveedores
-                .Include(p => p.Productos)
+                .Select(p => new ProveedorDTO
+                {
+                    Proveedor_ID = p.Proveedor_ID,
+                    Nombre = p.Nombre,
+                    Telefono = p.Telefono,
+                    Email = p.Email
+                })
                 .FirstOrDefaultAsync(p => p.Proveedor_ID == id);
 
             if (proveedor == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el proveedor
             }
-
-            var proveedorDTO = new ProveedorDTO
-            {
-                Proveedor_ID = proveedor.Proveedor_ID,
-                Nombre = proveedor.Nombre,
-                Telefono = proveedor.Telefono,
-                Email = proveedor.Email,
-                Productos = proveedor.Productos?.Select(prod => new ProductoDTO
-                {
-                    Producto_ID = prod.Producto_ID,
-                    Tipo = prod.Tipo,
-                    Descripcion = prod.Descripcion
-                }).ToList()
-            };
-
-            return Ok(proveedorDTO);
+            return Ok(proveedor);
         }
 
         // POST: api/proveedores (Alta de un nuevo proveedor)
         [HttpPost]
-        public async Task<ActionResult<ProveedorDTO>> Post([FromBody] ProveedorDTO nuevoProveedorDTO)
+        public async Task<ActionResult<ProveedorDTO>> Post([FromBody] ProveedorDTO nuevoProveedor)
         {
-            var nuevoProveedor = new Proveedores
+            var proveedor = new Proveedores
             {
-                Nombre = nuevoProveedorDTO.Nombre,
-                Telefono = nuevoProveedorDTO.Telefono,
-                Email = nuevoProveedorDTO.Email,
-                Productos = nuevoProveedorDTO.Productos?.Select(prod => new Productos
-                {
-                    Producto_ID = prod.Producto_ID,
-                    Tipo = prod.Tipo,
-                    Descripcion = prod.Descripcion
-                }).ToList()
+                Nombre = nuevoProveedor.Nombre,
+                Telefono = nuevoProveedor.Telefono,
+                Email = nuevoProveedor.Email
             };
 
-            _context.Proveedores.Add(nuevoProveedor);
+            _context.Proveedores.Add(proveedor);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(Get), new { id = nuevoProveedor.Proveedor_ID }, nuevoProveedorDTO);
+            nuevoProveedor.Proveedor_ID = proveedor.Proveedor_ID; // Asignar el ID generado
+            return CreatedAtAction(nameof(Get), new { id = proveedor.Proveedor_ID }, nuevoProveedor);
         }
 
         // PUT: api/proveedores/{id} (Modificar un proveedor existente)
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] ProveedorDTO proveedorModificadoDTO)
+        public async Task<ActionResult> Put(int id, [FromBody] ProveedorDTO proveedorModificado)
         {
             var proveedor = await _context.Proveedores.FindAsync(id);
             if (proveedor == null)
@@ -108,15 +85,9 @@ namespace API.Controllers.ProveedoresController
             }
 
             // Actualizamos los datos del proveedor
-            proveedor.Nombre = proveedorModificadoDTO.Nombre;
-            proveedor.Telefono = proveedorModificadoDTO.Telefono;
-            proveedor.Email = proveedorModificadoDTO.Email;
-            proveedor.Productos = proveedorModificadoDTO.Productos?.Select(prod => new Productos
-            {
-                Producto_ID = prod.Producto_ID,
-                Tipo = prod.Tipo,
-                Descripcion = prod.Descripcion
-            }).ToList();
+            proveedor.Nombre = proveedorModificado.Nombre;
+            proveedor.Telefono = proveedorModificado.Telefono;
+            proveedor.Email = proveedorModificado.Email;
 
             await _context.SaveChangesAsync();
 
@@ -139,4 +110,5 @@ namespace API.Controllers.ProveedoresController
             return NoContent(); // Devuelve 204 No Content
         }
     }
+
 }

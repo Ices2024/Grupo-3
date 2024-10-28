@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using API.Data;
+using Shared.Dtos;
 
 namespace API.Controllers.CanchasController
 {
@@ -42,8 +43,15 @@ namespace API.Controllers.CanchasController
 
         // POST: api/canchas (Alta de una nueva cancha)
         [HttpPost]
-        public async Task<ActionResult<Canchas>> Post([FromBody] Canchas nuevaCancha)
+        public async Task<ActionResult<Canchas>> Post([FromBody] CanchaDTO nuevaCanchaDto)
         {
+            var nuevaCancha = new Canchas
+            {
+                Deporte_ID = nuevaCanchaDto.Deporte_ID,
+                // Puedes establecer la propiedad Deporte aquí si es necesario, 
+                // o dejarla en null si no se necesita
+            };
+
             _context.Canchas.Add(nuevaCancha);
             await _context.SaveChangesAsync();
 
@@ -52,7 +60,7 @@ namespace API.Controllers.CanchasController
 
         // PUT: api/canchas/{id} (Modificar una cancha existente)
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] Canchas canchaModificada)
+        public async Task<ActionResult> Put(int id, [FromBody] CanchaDTO canchaModificadaDto)
         {
             var cancha = await _context.Canchas.FindAsync(id);
             if (cancha == null)
@@ -61,9 +69,8 @@ namespace API.Controllers.CanchasController
             }
 
             // Actualizamos los datos de la cancha
-            cancha.Deporte_ID = canchaModificada.Deporte_ID;
-            cancha.Deporte = canchaModificada.Deporte;  // Asegúrate de que esto sea correcto según el modelo
-            cancha.UpdatedDate = DateTime.Now;
+            cancha.Deporte_ID = canchaModificadaDto.Deporte_ID;
+            // Puedes actualizar la propiedad Deporte si es necesario
 
             await _context.SaveChangesAsync();
 

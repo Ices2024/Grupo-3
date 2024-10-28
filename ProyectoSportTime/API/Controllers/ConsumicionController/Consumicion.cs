@@ -4,6 +4,7 @@ using System.Linq;
 using Shared.Entidades;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
+using Shared.Dtos;
 
 namespace API.Controllers.ConsumicionController
 {
@@ -21,37 +22,63 @@ namespace API.Controllers.ConsumicionController
 
         // GET: api/consumiciones (Obtener todas las consumiciones)
         [HttpGet]
-        public async Task<ActionResult<List<Consumiciones>>> Get()
+        public async Task<ActionResult<List<ConsumicionDTO>>> Get()
         {
             var consumiciones = await _context.Consumiciones.ToListAsync();
-            return Ok(consumiciones);
+            var consumicionDtos = consumiciones.Select(c => new ConsumicionDTO
+            {
+                Consumicion_ID = c.Consumicion_ID,
+                Cantidad = c.Cantidad,
+                Precio = c.Precio,
+                Cod_Producto = c.Cod_Producto
+            }).ToList();
+
+            return Ok(consumicionDtos);
         }
 
         // GET: api/consumiciones/{id} (Obtener una consumición específica por ID)
         [HttpGet("{id}")]
-        public async Task<ActionResult<Consumiciones>> Get(int id)
+        public async Task<ActionResult<ConsumicionDTO>> Get(int id)
         {
             var consumicion = await _context.Consumiciones.FindAsync(id);
             if (consumicion == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra la consumición
             }
-            return Ok(consumicion);
+
+            var consumicionDto = new ConsumicionDTO
+            {
+                Consumicion_ID = consumicion.Consumicion_ID,
+                Cantidad = consumicion.Cantidad,
+                Precio = consumicion.Precio,
+                Cod_Producto = consumicion.Cod_Producto
+            };
+
+            return Ok(consumicionDto);
         }
 
         // POST: api/consumiciones (Alta de una nueva consumición)
         [HttpPost]
-        public async Task<ActionResult<Consumiciones>> Post([FromBody] Consumiciones nuevaConsumicion)
+        public async Task<ActionResult<ConsumicionDTO>> Post([FromBody] ConsumicionDTO nuevaConsumicionDto)
         {
+            var nuevaConsumicion = new Consumiciones
+            {
+                Cantidad = nuevaConsumicionDto.Cantidad,
+                Precio = nuevaConsumicionDto.Precio,
+                Cod_Producto = nuevaConsumicionDto.Cod_Producto
+            };
+
             _context.Consumiciones.Add(nuevaConsumicion);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(Get), new { id = nuevaConsumicion.Consumicion_ID }, nuevaConsumicion);
+            nuevaConsumicionDto.Consumicion_ID = nuevaConsumicion.Consumicion_ID; // Asignar el ID generado al DTO
+
+            return CreatedAtAction(nameof(Get), new { id = nuevaConsumicion.Consumicion_ID }, nuevaConsumicionDto);
         }
 
         // PUT: api/consumiciones/{id} (Modificar una consumición existente)
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] Consumiciones consumicionModificada)
+        public async Task<ActionResult> Put(int id, [FromBody] ConsumicionDTO consumicionModificadaDto)
         {
             var consumicion = await _context.Consumiciones.FindAsync(id);
             if (consumicion == null)
@@ -60,10 +87,9 @@ namespace API.Controllers.ConsumicionController
             }
 
             // Actualizamos los datos de la consumición
-            consumicion.Cantidad = consumicionModificada.Cantidad;
-            consumicion.Precio = consumicionModificada.Precio;
-            consumicion.Cod_Producto = consumicionModificada.Cod_Producto; // Asegúrate de que esto exista en tu modelo
-            consumicion.UpdatedDate = DateTime.Now;
+            consumicion.Cantidad = consumicionModificadaDto.Cantidad;
+            consumicion.Precio = consumicionModificadaDto.Precio;
+            consumicion.Cod_Producto = consumicionModificadaDto.Cod_Producto; // Asegúrate de que esto exista en tu modelo
 
             await _context.SaveChangesAsync();
 
@@ -86,4 +112,5 @@ namespace API.Controllers.ConsumicionController
             return NoContent(); // Devuelve 204 No Content
         }
     }
+
 }

@@ -11,7 +11,6 @@ namespace Shared.Dtos
         public int Cliente_ID { get; set; }
         public string? Nombre { get; set; }
         public int NumeroTelefono { get; set; }
-        public DateTime UpdatedDate { get; set; }
     }
 
 }

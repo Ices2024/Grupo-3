@@ -4,6 +4,7 @@ using Shared.Entidades;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Shared.Dtos;
 
 namespace API.Controllers.ElementosController
 {
@@ -21,37 +22,68 @@ namespace API.Controllers.ElementosController
 
         // GET: api/elementos (Obtener todos los elementos)
         [HttpGet]
-        public async Task<ActionResult<List<Elementos>>> Get()
+        public async Task<ActionResult<List<ElementoDTO>>> Get()
         {
             var elementos = await _context.Elementos.ToListAsync();
-            return Ok(elementos);
+            // Mapeo de la entidad a DTO
+            var elementosDto = elementos.Select(e => new ElementoDTO
+            {
+                Elemento_ID = e.Elemento_ID,
+                Nombre = e.Nombre,
+                Cantidad = e.Cantidad
+            }).ToList();
+
+            return Ok(elementosDto);
         }
 
         // GET: api/elementos/{id} (Obtener un elemento específico por ID)
         [HttpGet("{id}")]
-        public async Task<ActionResult<Elementos>> Get(int id)
+        public async Task<ActionResult<ElementoDTO>> Get(int id)
         {
             var elemento = await _context.Elementos.FindAsync(id);
             if (elemento == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el elemento
             }
-            return Ok(elemento);
+
+            // Mapeo de la entidad a DTO
+            var elementoDto = new ElementoDTO
+            {
+                Elemento_ID = elemento.Elemento_ID,
+                Nombre = elemento.Nombre,
+                Cantidad = elemento.Cantidad
+            };
+
+            return Ok(elementoDto);
         }
 
         // POST: api/elementos (Alta de un nuevo elemento)
         [HttpPost]
-        public async Task<ActionResult<Elementos>> Post([FromBody] Elementos nuevoElemento)
+        public async Task<ActionResult<ElementoDTO>> Post([FromBody] ElementoDTO nuevoElementoDto)
         {
+            if (nuevoElementoDto == null)
+            {
+                return BadRequest("Elemento no puede ser nulo.");
+            }
+
+            var nuevoElemento = new Elementos
+            {
+                Nombre = nuevoElementoDto.Nombre,
+                Cantidad = nuevoElementoDto.Cantidad
+            };
+
             _context.Elementos.Add(nuevoElemento);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(Get), new { id = nuevoElemento.Elemento_ID }, nuevoElemento);
+            // Mapeo de la entidad a DTO
+            nuevoElementoDto.Elemento_ID = nuevoElemento.Elemento_ID; // Asignar el ID generado
+
+            return CreatedAtAction(nameof(Get), new { id = nuevoElemento.Elemento_ID }, nuevoElementoDto);
         }
 
         // PUT: api/elementos/{id} (Modificar un elemento existente)
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] Elementos elementoModificado)
+        public async Task<ActionResult> Put(int id, [FromBody] ElementoDTO elementoDto)
         {
             var elemento = await _context.Elementos.FindAsync(id);
             if (elemento == null)
@@ -60,9 +92,8 @@ namespace API.Controllers.ElementosController
             }
 
             // Actualizamos los datos del elemento
-            elemento.Nombre = elementoModificado.Nombre;
-            elemento.Cantidad = elementoModificado.Cantidad;
-            elemento.UpdatedDate = DateTime.Now;
+            elemento.Nombre = elementoDto.Nombre;
+            elemento.Cantidad = elementoDto.Cantidad;
 
             await _context.SaveChangesAsync();
 
@@ -86,3 +117,4 @@ namespace API.Controllers.ElementosController
         }
     }
 }
+

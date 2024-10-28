@@ -11,7 +11,6 @@ namespace Shared.Dtos
         public int Elemento_ID { get; set; }
         public string? Nombre { get; set; }
         public int Cantidad { get; set; }
-        public DateTime UpdatedDate { get; set; }
     }
 
 }

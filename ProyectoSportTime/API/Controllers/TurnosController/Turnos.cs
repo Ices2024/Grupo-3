@@ -4,6 +4,7 @@ using Shared.Entidades;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Shared.Dtos;
 
 namespace API.Controllers.TurnosController
 {
@@ -21,13 +22,23 @@ namespace API.Controllers.TurnosController
 
         // GET: api/turnos (Obtener todos los turnos)
         [HttpGet]
-        public async Task<ActionResult<List<Turnos>>> Get()
+        public async Task<ActionResult<List<TurnoDTO>>> Get()
         {
             var turnos = await _context.Turnos
                 .Include(t => t.Administrador) // Incluye el administrador relacionado
                 .Include(t => t.Canchas) // Incluye la cancha relacionada
                 .Include(t => t.Consumicion) // Incluye la consumición relacionada
                 .Include(t => t.Cliente) // Incluye el cliente relacionado
+                .Select(t => new TurnoDTO
+                {
+                    Turno_ID = t.Turno_ID,
+                    Admin_ID = t.Admin_ID,
+                    Cancha_ID = t.Cancha_ID,
+                    HoraInicio = t.HoraInicio,
+                    HoraFin = t.HoraFin,
+                    Consumicion_ID = t.Consumicion_ID,
+                    Cliente_ID = t.Cliente_ID // Agregado para reflejar la relación con Cliente
+                })
                 .ToListAsync();
 
             return Ok(turnos);
@@ -35,14 +46,25 @@ namespace API.Controllers.TurnosController
 
         // GET: api/turnos/{id} (Obtener un turno específico por ID)
         [HttpGet("{id}")]
-        public async Task<ActionResult<Turnos>> Get(int id)
+        public async Task<ActionResult<TurnoDTO>> Get(int id)
         {
             var turno = await _context.Turnos
                 .Include(t => t.Administrador)
                 .Include(t => t.Canchas)
                 .Include(t => t.Consumicion)
                 .Include(t => t.Cliente)
-                .FirstOrDefaultAsync(t => t.Turno_ID == id);
+                .Where(t => t.Turno_ID == id)
+                .Select(t => new TurnoDTO
+                {
+                    Turno_ID = t.Turno_ID,
+                    Admin_ID = t.Admin_ID,
+                    Cancha_ID = t.Cancha_ID,
+                    HoraInicio = t.HoraInicio,
+                    HoraFin = t.HoraFin,
+                    Consumicion_ID = t.Consumicion_ID,
+                    Cliente_ID = t.Cliente_ID // Agregado para reflejar la relación con Cliente
+                })
+                .FirstOrDefaultAsync();
 
             if (turno == null)
             {
@@ -54,17 +76,28 @@ namespace API.Controllers.TurnosController
 
         // POST: api/turnos (Alta de un nuevo turno)
         [HttpPost]
-        public async Task<ActionResult<Turnos>> Post([FromBody] Turnos nuevoTurno)
+        public async Task<ActionResult<TurnoDTO>> Post([FromBody] TurnoDTO nuevoTurno)
         {
-            _context.Turnos.Add(nuevoTurno);
+            var turno = new Turnos
+            {
+                Admin_ID = nuevoTurno.Admin_ID,
+                Cancha_ID = nuevoTurno.Cancha_ID,
+                HoraInicio = nuevoTurno.HoraInicio,
+                HoraFin = nuevoTurno.HoraFin,
+                Consumicion_ID = nuevoTurno.Consumicion_ID,
+                Cliente_ID = nuevoTurno.Cliente_ID // Agregado para reflejar la relación con Cliente
+            };
+
+            _context.Turnos.Add(turno);
             await _context.SaveChangesAsync();
 
+            nuevoTurno.Turno_ID = turno.Turno_ID; // Asignar el ID generado
             return CreatedAtAction(nameof(Get), new { id = nuevoTurno.Turno_ID }, nuevoTurno);
         }
 
         // PUT: api/turnos/{id} (Modificar un turno existente)
         [HttpPut("{id}")]
-        public async Task<ActionResult> Put(int id, [FromBody] Turnos turnoModificado)
+        public async Task<ActionResult> Put(int id, [FromBody] TurnoDTO turnoModificado)
         {
             var turno = await _context.Turnos.FindAsync(id);
             if (turno == null)
@@ -74,11 +107,11 @@ namespace API.Controllers.TurnosController
 
             // Actualizamos los datos del turno
             turno.Admin_ID = turnoModificado.Admin_ID;
-            turno.Canchas = turnoModificado.Canchas; // Cambiado de Cancha_ID a Canchas
+            turno.Cancha_ID = turnoModificado.Cancha_ID; // Cambiado de Canchas a Cancha_ID
             turno.HoraInicio = turnoModificado.HoraInicio;
             turno.HoraFin = turnoModificado.HoraFin;
             turno.Consumicion_ID = turnoModificado.Consumicion_ID;
-            turno.UpdatedDate = DateTime.Now;
+            turno.Cliente_ID = turnoModificado.Cliente_ID; // Agregado para reflejar la relación con Cliente
 
             await _context.SaveChangesAsync();
 
@@ -101,4 +134,5 @@ namespace API.Controllers.TurnosController
             return NoContent(); // Devuelve 204 No Content
         }
     }
+
 }

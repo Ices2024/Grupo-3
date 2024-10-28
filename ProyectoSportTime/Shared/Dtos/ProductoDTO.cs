@@ -12,7 +12,6 @@ namespace Shared.Dtos
         public string? Tipo { get; set; }
         public string? Descripcion { get; set; }
         public int Proveedor_ID { get; set; }
-        public DateTime UpdatedDate { get; set; }
     }
 
 }

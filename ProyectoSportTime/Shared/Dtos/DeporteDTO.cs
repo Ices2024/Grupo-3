@@ -10,7 +10,6 @@ namespace Shared.Dtos
     {
         public int Deporte_ID { get; set; }
         public string? Tipo { get; set; }
-        public DateTime UpdatedDate { get; set; }
     }
 
 }

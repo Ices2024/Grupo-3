@@ -12,46 +12,53 @@ namespace Negocio.Implementations
 {
     public class ProveedoresLogic : InterfaceProveedores
     {
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public ProveedoresLogic(ProyectoDbContext context)
+        {
+            _context = context;
+        }
+
         public void AltaProveedor(string nombre, string email, string telefono)
         {
-            using (var context = new ProyectoDbContext())
+            var nuevoProveedor = new Proveedores
             {
-                var nuevoProveedor = new Proveedores
-                {
-                    Nombre = nombre,
-                    Email = email,
-                    Telefono = telefono
-                };
-                context.Proveedores.Add(nuevoProveedor);
-                context.SaveChanges();
-            }
+                Nombre = nombre,
+                Email = email,
+                Telefono = telefono
+            };
+            _context.Proveedores.Add(nuevoProveedor);
+            _context.SaveChanges();
         }
 
         public void ModificarProveedor(int proveedorID, string nuevoNombre, string nuevoEmail, string nuevoTelefono)
         {
-            using (var context = new ProyectoDbContext())
+            var proveedor = _context.Proveedores.Find(proveedorID);
+            if (proveedor != null)
             {
-                var proveedor = context.Proveedores.Find(proveedorID);
-                if (proveedor != null)
-                {
-                    proveedor.Nombre = nuevoNombre;
-                    proveedor.Email = nuevoEmail;
-                    proveedor.Telefono = nuevoTelefono;
-                    context.SaveChanges();
-                }
+                proveedor.Nombre = nuevoNombre;
+                proveedor.Email = nuevoEmail;
+                proveedor.Telefono = nuevoTelefono;
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró un proveedor con ID {proveedorID}.");
             }
         }
 
         public void BajaProveedor(int proveedorID)
         {
-            using (var context = new ProyectoDbContext())
+            var proveedor = _context.Proveedores.Find(proveedorID);
+            if (proveedor != null)
             {
-                var proveedor = context.Proveedores.Find(proveedorID);
-                if (proveedor != null)
-                {
-                    context.Proveedores.Remove(proveedor);
-                    context.SaveChanges();
-                }
+                _context.Proveedores.Remove(proveedor);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró un proveedor con ID {proveedorID}.");
             }
         }
     }

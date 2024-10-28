@@ -14,7 +14,8 @@ namespace Shared.Dtos
         public DateTime HoraInicio { get; set; }
         public DateTime HoraFin { get; set; }
         public int Consumicion_ID { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public int Cliente_ID { get; set; } // Agregado para reflejar la relación con Cliente
     }
+
 
 }

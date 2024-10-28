@@ -12,44 +12,51 @@ namespace Negocio.Implementations
 {
     public class ClientesLogic : InterfaceClientes
     {
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public ClientesLogic(ProyectoDbContext context)
+        {
+            _context = context;
+        }
+
         public void AltaCliente(string nombre, int numeroTelefono)
         {
-            using (var context = new ProyectoDbContext())
+            var nuevoCliente = new Clientes
             {
-                var nuevoCliente = new Clientes
-                {
-                    Nombre = nombre,
-                    NumeroTelefono = numeroTelefono
-                };
-                context.Clientes.Add(nuevoCliente);
-                context.SaveChanges();
-            }
+                Nombre = nombre,
+                NumeroTelefono = numeroTelefono
+            };
+            _context.Clientes.Add(nuevoCliente);
+            _context.SaveChanges();
         }
 
         public void ModificarCliente(int clienteID, string nuevoNombre, int nuevoTelefono)
         {
-            using (var context = new ProyectoDbContext())
+            var cliente = _context.Clientes.Find(clienteID);
+            if (cliente != null)
             {
-                var cliente = context.Clientes.Find(clienteID);
-                if (cliente != null)
-                {
-                    cliente.Nombre = nuevoNombre;
-                    cliente.NumeroTelefono = nuevoTelefono;
-                    context.SaveChanges();
-                }
+                cliente.Nombre = nuevoNombre;
+                cliente.NumeroTelefono = nuevoTelefono;
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró un cliente con ID {clienteID}.");
             }
         }
 
         public void BajaCliente(int clienteID)
         {
-            using (var context = new ProyectoDbContext())
+            var cliente = _context.Clientes.Find(clienteID);
+            if (cliente != null)
             {
-                var cliente = context.Clientes.Find(clienteID);
-                if (cliente != null)
-                {
-                    context.Clientes.Remove(cliente);
-                    context.SaveChanges();
-                }
+                _context.Clientes.Remove(cliente);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró un cliente con ID {clienteID}.");
             }
         }
     }

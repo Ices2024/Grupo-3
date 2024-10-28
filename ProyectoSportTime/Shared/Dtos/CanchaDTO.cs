@@ -9,9 +9,9 @@ namespace Shared.Dtos
     public class CanchaDTO
     {
         public int Cancha_ID { get; set; }
-        public int Codigo_Deporte { get; set; }
-        public string? Deporte { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public int Deporte_ID { get; set; } // Asegúrate de que esto sea parte del DTO
+        public string? Deporte { get; set; } // Este puede ser un string o un DTO de deportes si necesitas más información
     }
+
 
 }

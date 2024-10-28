@@ -14,9 +14,6 @@ namespace Shared.Entidades
         public string? Tipo { get; set; }
         public string? Descripcion { get; set; }
 
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public DateTime? UpdatedDate { get; set; }
-
         public int Proveedor_ID { get; set; } // Clave Foránea
         public Proveedores? Proveedores { get; set; }
 

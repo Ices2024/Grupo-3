@@ -21,69 +21,19 @@ namespace API.Data
         public ProyectoDbContext(DbContextOptions<ProyectoDbContext> options)
             : base(options) { }
 
-        public ProyectoDbContext()
-        {
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-4U7JAH5\\SQLEXPRESS;Database=SportsTimeDB;Trusted_Connection=True;Encrypt=False");
-            }
-        }
-
+        // Configuraciones del modelo
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Canchas>().HasIndex(x => x.Deporte_ID);
-
-            foreach (var entity in modelBuilder.Model.GetEntityTypes())
-            {
-                var createdDateProp = entity.FindProperty("CreatedDate");
-                if (createdDateProp != null)
-                {
-                    createdDateProp.SetDefaultValueSql("GETDATE()");
-                }
-
-                var updatedDateProp = entity.FindProperty("UpdatedDate");
-                if (updatedDateProp != null)
-                {
-                    updatedDateProp.SetValueConverter(new ValueConverter<DateTime?, DateTime?>(
-                        v => v.HasValue ? v.Value : null,
-                        v => v.HasValue ? v.Value : null));
-                }
-            }
-
-            DisableCascadingDelete(modelBuilder); // Deshabilitar eliminación en cascada
+            // Deshabilitar eliminación en cascada
+            DisableCascadingDelete(modelBuilder);
         }
 
-        public override int SaveChanges(bool acceptAllChangesOnSuccess)
-        {
-            this.DoCustomEntityPreparations();
-            return base.SaveChanges(acceptAllChangesOnSuccess);
-        }
-
+        // Guardar cambios de forma asíncrona
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            this.DoCustomEntityPreparations();
             return await base.SaveChangesAsync(cancellationToken);
-        }
-
-        private void DoCustomEntityPreparations()
-        {
-            var modifiedEntitiesWithTrackDate = this
-                .ChangeTracker.Entries()
-                .Where(c => c.State == EntityState.Modified);
-
-            foreach (var entityEntry in modifiedEntitiesWithTrackDate)
-            {
-                if (entityEntry.Properties.Any(c => c.Metadata.Name == "UpdatedDate"))
-                {
-                    entityEntry.Property("UpdatedDate").CurrentValue = DateTime.Now;
-                }
-            }
         }
 
         private void DisableCascadingDelete(ModelBuilder modelBuilder)
@@ -94,10 +44,11 @@ namespace API.Data
 
             foreach (var relationship in relationships)
             {
-                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+                relationship.DeleteBehavior = DeleteBehavior.Restrict; // Configurar comportamiento de eliminación
             }
         }
     }
+
 }
 
 

@@ -15,9 +15,6 @@ namespace Shared.Entidades
         public decimal Precio { get; set; } // Debería ser decimal en lugar de bool
         public int Cod_Producto { get; set; } // Clave Foránea
 
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public DateTime? UpdatedDate { get; set; }
-
         public Productos? Producto { get; set; }
     }
 }

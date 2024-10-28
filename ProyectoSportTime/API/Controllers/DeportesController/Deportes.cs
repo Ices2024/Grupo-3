@@ -61,7 +61,6 @@ namespace API.Controllers.DeportesController
 
             // Actualizamos los datos del deporte
             deporte.Tipo = deporteModificado.Tipo;
-            deporte.UpdatedDate = DateTime.Now;
 
             await _context.SaveChangesAsync();
 
@@ -84,4 +83,5 @@ namespace API.Controllers.DeportesController
             return NoContent(); // Devuelve 204 No Content
         }
     }
+
 }

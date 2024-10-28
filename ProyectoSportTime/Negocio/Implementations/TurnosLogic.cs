@@ -12,47 +12,55 @@ namespace Negocio.Implementations
 {
     public class TurnosLogic : InterfaceTurnos
     {
-        public void AltaTurno(int adminID, int canchaID, DateTime horaInicio, DateTime horaFin, int consumicionID)
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public TurnosLogic(ProyectoDbContext context)
         {
-            using (var context = new ProyectoDbContext())
+            _context = context;
+        }
+
+        public void AltaTurno(int adminID, int canchaID, DateTime horaInicio, DateTime horaFin, int consumicionID, int clienteID)
+        {
+            var nuevoTurno = new Turnos
             {
-                var nuevoTurno = new Turnos
-                {
-                    Admin_ID = adminID,
-                    Cancha_ID = canchaID,
-                    HoraInicio = horaInicio,
-                    HoraFin = horaFin,
-                    Consumicion_ID = consumicionID
-                };
-                context.Turnos.Add(nuevoTurno);
-                context.SaveChanges();
-            }
+                Admin_ID = adminID,
+                Cancha_ID = canchaID,
+                HoraInicio = horaInicio,
+                HoraFin = horaFin,
+                Consumicion_ID = consumicionID,
+                Cliente_ID = clienteID
+            };
+            _context.Turnos.Add(nuevoTurno);
+            _context.SaveChanges();
         }
 
         public void ModificarTurno(int turnoID, DateTime nuevaHoraInicio, DateTime nuevaHoraFin)
         {
-            using (var context = new ProyectoDbContext())
+            var turno = _context.Turnos.Find(turnoID);
+            if (turno != null)
             {
-                var turno = context.Turnos.Find(turnoID);
-                if (turno != null)
-                {
-                    turno.HoraInicio = nuevaHoraInicio;
-                    turno.HoraFin = nuevaHoraFin;
-                    context.SaveChanges();
-                }
+                turno.HoraInicio = nuevaHoraInicio;
+                turno.HoraFin = nuevaHoraFin;
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró un turno con ID {turnoID}.");
             }
         }
 
         public void BajaTurno(int turnoID)
         {
-            using (var context = new ProyectoDbContext())
+            var turno = _context.Turnos.Find(turnoID);
+            if (turno != null)
             {
-                var turno = context.Turnos.Find(turnoID);
-                if (turno != null)
-                {
-                    context.Turnos.Remove(turno);
-                    context.SaveChanges();
-                }
+                _context.Turnos.Remove(turno);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró un turno con ID {turnoID}.");
             }
         }
     }

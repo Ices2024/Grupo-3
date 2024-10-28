@@ -13,9 +13,6 @@ namespace Shared.Entidades
         public int Deporte_ID { get; set; }
         public string? Tipo { get; set; }
 
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public DateTime? UpdatedDate { get; set; }
-
         public ICollection<Canchas>? Canchas { get; set; }
     }
 }
