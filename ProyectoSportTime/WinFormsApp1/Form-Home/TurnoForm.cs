@@ -16,40 +16,53 @@ namespace WinForm.Form_Home
 {
     public partial class TurnoForm : Form
     {
+        private readonly HttpClient _httpClient;
+
         public TurnoForm()
         {
             InitializeComponent();
+            _httpClient = new HttpClient { BaseAddress = new Uri("http://tu-api-url/api/") };
         }
 
-        private void TurnoForm_Load(object sender, EventArgs e)
+        private async void TurnoForm_Load(object sender, EventArgs e)
         {
-            CargarDatos();
+            await CargarDatos();
+            await ActualizarDataGridView();
+
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now.AddHours(1);
         }
 
-        private void CargarDatos()
+        private async Task CargarDatos()
         {
             try
             {
-                using (var context = new ProyectoDbContext())
-                {
-                    // Cargar deportes
-                    var deportes = context.Deportes.ToList();
-                    comboBoxDeporte.DataSource = deportes;
-                    comboBoxDeporte.DisplayMember = "Tipo"; // Cambiar según la propiedad que quieras mostrar
-                    comboBoxDeporte.ValueMember = "Deporte_ID";
+                // Cargar deportes
+                var deportes = await _httpClient.GetFromJsonAsync<List<Deportes>>("deportes");
+                comboBoxDeporte.DataSource = deportes;
+                comboBoxDeporte.DisplayMember = "Tipo";
+                comboBoxDeporte.ValueMember = "Deporte_ID";
 
-                    // Cargar canchas
-                    var canchas = context.Canchas.ToList();
-                    comboBoxCancha.DataSource = canchas;
-                    comboBoxCancha.DisplayMember = "Codigo_Deporte"; // O una propiedad relevante para mostrar el nombre
-                    comboBoxCancha.ValueMember = "Cancha_ID";
+                // Cargar canchas
+                var canchas = await _httpClient.GetFromJsonAsync<List<Canchas>>("canchas");
+                comboBoxCancha.DataSource = canchas;
+                comboBoxCancha.DisplayMember = "Codigo_Deporte";
+                comboBoxCancha.ValueMember = "Cancha_ID";
 
-                    // Cargar productos
-                    var productos = context.Productos.ToList();
-                    comboBoxConsumicion.DataSource = productos;
-                    comboBoxConsumicion.DisplayMember = "Tipo"; // Cambiar según la propiedad que quieras mostrar
-                    comboBoxConsumicion.ValueMember = "Producto_ID";
-                }
+                // Cargar productos
+                var productos = await _httpClient.GetFromJsonAsync<List<Productos>>("productos");
+                comboBoxConsumicion.DataSource = productos;
+                comboBoxConsumicion.DisplayMember = "Tipo";
+                comboBoxConsumicion.ValueMember = "Producto_ID";
+
+                // Cargar clientes
+                var clientes = await _httpClient.GetFromJsonAsync<List<Clientes>>("clientes");
+                comboBoxCliente.DataSource = clientes;
+                comboBoxCliente.DisplayMember = "Nombre";
+                comboBoxCliente.ValueMember = "Cliente_ID";
             }
             catch (Exception ex)
             {
@@ -57,38 +70,40 @@ namespace WinForm.Form_Home
             }
         }
 
-        private void buttonGuardar_Click(object sender, EventArgs e)
+        private async void buttonGuardar_Click(object sender, EventArgs e)
         {
             if (comboBoxCancha.SelectedValue is int canchaId &&
-                comboBoxConsumicion.SelectedValue is int productoId)
+                comboBoxConsumicion.SelectedValue is int productoId &&
+                comboBoxCliente.SelectedValue is int clienteId)
             {
                 int cantidad = (int)numericUpDownCantidad.Value;
 
-                using (var context = new ProyectoDbContext())
+                var nuevaConsumicion = new Consumiciones
                 {
-                    var nuevaConsumicion = new Consumiciones
-                    {
-                        Cantidad = cantidad,
-                        Cod_Producto = productoId
-                    };
+                    Cantidad = cantidad,
+                    Cod_Producto = productoId
+                };
 
-                    context.Consumiciones.Add(nuevaConsumicion);
-                    context.SaveChanges();
+                // Enviar nueva consumición a la API
+                var responseConsumicion = await _httpClient.PostAsJsonAsync("consumiciones", nuevaConsumicion);
+                responseConsumicion.EnsureSuccessStatusCode();
+                var consumicionCreada = await responseConsumicion.Content.ReadFromJsonAsync<Consumiciones>();
 
-                    var nuevoTurno = new Turnos
-                    {
-                        Cancha_ID = canchaId,
-                        HoraInicio = dateTimePicker1.Value,
-                        HoraFin = dateTimePicker2.Value,
-                        Consumicion_ID = nuevaConsumicion.Consumicion_ID // Guardar ID de consumición
-                    };
+                var nuevoTurno = new Turnos
+                {
+                    Cancha_ID = canchaId,
+                    HoraInicio = dateTimePicker1.Value,
+                    HoraFin = dateTimePicker2.Value,
+                    Consumicion_ID = consumicionCreada.Consumicion_ID,
+                    Cliente_ID = clienteId
+                };
 
-                    context.Turnos.Add(nuevoTurno);
-                    context.SaveChanges();
+                // Enviar nuevo turno a la API
+                var responseTurno = await _httpClient.PostAsJsonAsync("turnos", nuevoTurno);
+                responseTurno.EnsureSuccessStatusCode();
 
-                    MessageBox.Show("Turno guardado correctamente.");
-                    ActualizarDataGridView();
-                }
+                MessageBox.Show("Turno guardado correctamente.");
+                await ActualizarDataGridView();
             }
             else
             {
@@ -96,33 +111,42 @@ namespace WinForm.Form_Home
             }
         }
 
-        private void buttonModificar_Click(object sender, EventArgs e)
+        private async void buttonModificar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewTurnos.SelectedRows.Count > 0)
+            if (dataGridViewTurnos.SelectedRows.Count > 0 &&
+                comboBoxCliente.SelectedValue is int clienteId)
             {
                 var filaSeleccionada = dataGridViewTurnos.SelectedRows[0];
                 int turnoId = (int)filaSeleccionada.Cells["Turno_ID"].Value;
 
-                using (var context = new ProyectoDbContext())
+                // Obtener el turno existente desde la API
+                var response = await _httpClient.GetAsync($"turnos/{turnoId}");
+                if (response.IsSuccessStatusCode)
                 {
-                    var turno = context.Turnos.Find(turnoId);
+                    var turno = await response.Content.ReadFromJsonAsync<Turnos>();
                     if (turno != null)
                     {
                         turno.Cancha_ID = (int)comboBoxCancha.SelectedValue;
                         turno.HoraInicio = dateTimePicker1.Value;
                         turno.HoraFin = dateTimePicker2.Value;
+                        turno.Cliente_ID = clienteId;
 
-                        // Actualiza la consumición
-                        var consumicion = context.Consumiciones.Find(turno.Consumicion_ID);
-                        if (consumicion != null)
+                        // Obtener y modificar la consumición existente
+                        var consumicionResponse = await _httpClient.GetAsync($"consumiciones/{turno.Consumicion_ID}");
+                        if (consumicionResponse.IsSuccessStatusCode)
                         {
+                            var consumicion = await consumicionResponse.Content.ReadFromJsonAsync<Consumiciones>();
                             consumicion.Cantidad = (int)numericUpDownCantidad.Value;
                             consumicion.Cod_Producto = (int)comboBoxConsumicion.SelectedValue;
+
+                            // Actualizar la consumición
+                            await _httpClient.PutAsJsonAsync($"consumiciones/{consumicion.Consumicion_ID}", consumicion);
                         }
 
-                        context.SaveChanges();
+                        // Actualizar el turno
+                        await _httpClient.PutAsJsonAsync($"turnos/{turnoId}", turno);
                         MessageBox.Show("Turno modificado correctamente.");
-                        ActualizarDataGridView();
+                        await ActualizarDataGridView();
                     }
                 }
             }
@@ -132,29 +156,27 @@ namespace WinForm.Form_Home
             }
         }
 
-        private void buttonEliminar_Click(object sender, EventArgs e)
+        private async void buttonEliminar_Click(object sender, EventArgs e)
         {
             if (dataGridViewTurnos.SelectedRows.Count > 0)
             {
                 var filaSeleccionada = dataGridViewTurnos.SelectedRows[0];
                 int turnoId = (int)filaSeleccionada.Cells["Turno_ID"].Value;
 
-                using (var context = new ProyectoDbContext())
+                // Obtener el turno existente
+                var response = await _httpClient.GetAsync($"turnos/{turnoId}");
+                if (response.IsSuccessStatusCode)
                 {
-                    var turno = context.Turnos.Find(turnoId);
+                    var turno = await response.Content.ReadFromJsonAsync<Turnos>();
                     if (turno != null)
                     {
-                        // También elimina la consumición asociada
-                        var consumicion = context.Consumiciones.Find(turno.Consumicion_ID);
-                        if (consumicion != null)
-                        {
-                            context.Consumiciones.Remove(consumicion);
-                        }
+                        // Obtener la consumición y eliminarla
+                        await _httpClient.DeleteAsync($"consumiciones/{turno.Consumicion_ID}");
 
-                        context.Turnos.Remove(turno);
-                        context.SaveChanges();
+                        // Eliminar el turno
+                        await _httpClient.DeleteAsync($"turnos/{turnoId}");
                         MessageBox.Show("Turno eliminado correctamente.");
-                        ActualizarDataGridView();
+                        await ActualizarDataGridView();
                     }
                 }
             }
@@ -164,44 +186,38 @@ namespace WinForm.Form_Home
             }
         }
 
+        private async Task ActualizarDataGridView()
+        {
+            var turnos = await _httpClient.GetFromJsonAsync<List<Turnos>>("turnos");
+
+            dataGridViewTurnos.DataSource = turnos.Select(t => new
+            {
+                t.Turno_ID,
+                Cancha = t.Canchas.Deporte_ID,
+                Cliente = t.Cliente.Nombre,
+                Producto = _context.Productos.FirstOrDefault(p => p.Producto_ID == t.Consumicion_ID)?.Tipo,
+                t.HoraInicio,
+                t.HoraFin
+            }).ToList();
+        }
+
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
-            // Limpia los campos
             comboBoxCancha.SelectedIndex = -1;
             comboBoxConsumicion.SelectedIndex = -1;
-            numericUpDownCantidad.Value = 1; // o el valor que consideres por defecto
-            dateTimePicker1.Value = DateTime.Now; // o el valor por defecto que quieras
-            dateTimePicker2.Value = DateTime.Now.AddHours(1); // por ejemplo, agregar una hora por defecto
+            comboBoxCliente.SelectedIndex = -1;
+            numericUpDownCantidad.Value = 0;
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now.AddHours(1);
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-            this.Close(); // Cierra el formulario actual
-            var homeForm = new Form1(); // Reemplaza Form1 con el nombre real de tu formulario de inicio
-            homeForm.Show(); // Muestra el formulario de inicio
-        }
-
-        private void ActualizarDataGridView()
-        {
-            using (var context = new ProyectoDbContext())
-            {
-                var turnos = context.Turnos
-                    .Include(t => t.Canchas)
-                    .Include(t => t.Consumicion) // Esta línea se debe ajustar para mostrar productos
-                    .ToList();
-
-                dataGridViewTurnos.DataSource = turnos.Select(t => new
-                {
-                    t.Turno_ID,
-                    Cancha = t.Canchas.Deporte_ID, // Muestra el nombre o código de la cancha
-                    Producto = context.Productos.FirstOrDefault(p => p.Producto_ID == t.Consumicion_ID)?.Tipo, // Muestra el tipo de producto
-                    t.HoraInicio,
-                    t.HoraFin
-                }).ToList();
-            }
+            this.Close();
+            var homeForm = new Form1();
+            homeForm.Show();
         }
     }
-
-
-
 }
+
+
