@@ -1,4 +1,5 @@
 ﻿using API.Data;
+using System.Net.Http.Json;
 using Microsoft.EntityFrameworkCore;
 using Shared.Entidades;
 using System;
@@ -11,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Implementations;
+using Shared.Dtos;
 
 namespace WinForm.Form_Home
 {
@@ -188,14 +190,18 @@ namespace WinForm.Form_Home
 
         private async Task ActualizarDataGridView()
         {
-            var turnos = await _httpClient.GetFromJsonAsync<List<Turnos>>("turnos");
+            // Obtén los turnos de la API
+            var turnos = await _httpClient.GetFromJsonAsync<List<TurnoDTO>>("api/turnos");
+
+            // Obtén los productos de la API
+            var productos = await _httpClient.GetFromJsonAsync<List<ProductoDTO>>("api/productos");
 
             dataGridViewTurnos.DataSource = turnos.Select(t => new
             {
                 t.Turno_ID,
-                Cancha = t.Canchas.Deporte_ID,
-                Cliente = t.Cliente.Nombre,
-                Producto = _context.Productos.FirstOrDefault(p => p.Producto_ID == t.Consumicion_ID)?.Tipo,
+                Cancha = t.Cancha_ID,
+                Cliente = t.Cliente_ID,
+                Producto = productos.FirstOrDefault(p => p.Producto_ID == t.Consumicion_ID)?.Tipo,
                 t.HoraInicio,
                 t.HoraFin
             }).ToList();
