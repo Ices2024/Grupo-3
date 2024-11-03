@@ -1,6 +1,6 @@
 ﻿namespace WinForm.FormAdmin
 {
-    partial class TurnoForm
+    partial class InicoSesion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TurnoForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicoSesion));
             label1 = new Label();
             label2 = new Label();
             textBoxEmail = new TextBox();

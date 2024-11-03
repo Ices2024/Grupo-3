@@ -14,5 +14,6 @@ namespace Shared.Entidades
         public string? Nombre { get; set; }
         public int NumeroTelefono { get; set; }
 
+        public string DisplayName => $"{Cliente_ID} - {Nombre}";
     }
 }

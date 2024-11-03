@@ -21,5 +21,16 @@ namespace WinForm.Form_Home
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTurno_Click(object sender, EventArgs e)
+        {
+            TurnoForm turnoForm = new TurnoForm();
+            turnoForm.Show();
+        }
     }
 }

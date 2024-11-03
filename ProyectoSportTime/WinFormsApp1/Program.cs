@@ -10,7 +10,7 @@ namespace WinForm
         {
             
             ApplicationConfiguration.Initialize();
-            Application.Run(new TurnoForm());
+            Application.Run(new Form1());
         }
     }
 }

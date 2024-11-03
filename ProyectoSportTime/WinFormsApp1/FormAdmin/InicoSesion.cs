@@ -34,45 +34,44 @@ namespace WinForm.FormAdmin
         // aca ta la papa 
         private async void buttonInSc_Click(object sender, EventArgs e)
         {
-            // Crea el DTO para enviar el email y la contraseña del formulario
             LoginDTO login = new LoginDTO
             {
-                Email = textBoxEmail.Text,
+                Email = textBoxEmail.Text,  
                 Password = textBoxPassword.Text,
             };
+            
+            // TOdo esto lo van a tener que generar por cada solicitud que hagan a menos que reutilicen creando meotodos por cada verbo
 
-            // El HttpClient puede ser una variable reutilizable en toda la aplicación, pero si lo usas solo acá, está bien
-            using (HttpClient httpClient = new HttpClient())
-            {
-                // Serializa el DTO a JSON
-                var json = JsonConvert.SerializeObject(login);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                try
-                {
-                    // Realiza la solicitud HTTP POST al API de login
-                    var response = await httpClient.PostAsync("https://localhost:7094/api/administrador/login", content);
 
-                    // Lee la respuesta como string
-                    var jsonResponse = await response.Content.ReadAsStringAsync();
 
-                    // Puedes deserializar la respuesta si sabes qué tipo de objeto esperas
-                    // Ejemplo: var responseObj = JsonConvert.DeserializeObject<ResponseDTO>(jsonResponse);
-                    // Para ahora, simplemente lo deserializas como objeto dinámico
-                    var responseObj = JsonConvert.DeserializeObject(jsonResponse);
+            // este es el objeto que te permite hacer solicitudes http asi chiquito como lo ves es mas potente que la mierda
+            HttpClient httpClient = new HttpClient();
 
-                    // Muestra el código de estado de la respuesta (OK, Unauthorized, etc.)
-                    MessageBox.Show(response.StatusCode.ToString());
+            // se crea un json serializando el dto loginDTO
+            
+            var json = JsonConvert.SerializeObject(login);
 
-                    // Muestra el contenido de la respuesta (puedes darle formato para mayor claridad)
-                    MessageBox.Show(jsonResponse);
-                }
-                catch (Exception ex)
-                {
-                    // Captura cualquier excepción y muestra un mensaje de error
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
+            // se crea un content con ese json , lo demas es configuracion por defeco osea el encofing y el formato application/json
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            // aca se usa el objeto httpclient para hacer la solidictud post, se le pasa el endpoint y el content para sumarlo al body de la solicitu 
+            var response = await httpClient.PostAsync("https://localhost:7094/api/administrador/login",content);
+
+            // aca se lee el content de la repsuesta y se lo convierte en un string , pero tiene formato json
+            var jsonResponse = await response.Content.ReadAsStringAsync();
+
+            // aca podrian deserializar ese json y convertirlo en un objeto para poder acceder a sus propiedades, asi seria:
+            //var Response = JsonConvert.DeserializeObject<ELobjeto>(jsonResponse);
+            var Response = JsonConvert.DeserializeObject(jsonResponse);
+            
+            // aca para que el usuraio vean si anda o no , osea tendria que tiar OK si ta bien Unauthorized si esta mal la password o el email
+            MessageBox.Show(response.StatusCode.ToString());
+
+            // esto es lo que ustedes pusieron en el action resultmostrado en pantalla
+            MessageBox.Show(jsonResponse);
+
+            //suerte
         }
     }
 }

@@ -43,8 +43,6 @@
             buttonEliminar = new Button();
             buttonLimpiar = new Button();
             buttonVolver = new Button();
-            comboBoxDeporte = new ComboBox();
-            label5 = new Label();
             comboBoxCliente = new ComboBox();
             label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTurnos).BeginInit();
@@ -56,13 +54,14 @@
             dataGridViewTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewTurnos.Location = new Point(32, 27);
             dataGridViewTurnos.Name = "dataGridViewTurnos";
-            dataGridViewTurnos.Size = new Size(780, 210);
+            dataGridViewTurnos.Size = new Size(653, 210);
             dataGridViewTurnos.TabIndex = 0;
             // 
             // comboBoxCancha
             // 
             comboBoxCancha.FormattingEnabled = true;
-            comboBoxCancha.Location = new Point(281, 299);
+            comboBoxCancha.Items.AddRange(new object[] { "1 - futbol", "2 - futbol", "3 - basquet", "4 - basquet", "5 -  voley" });
+            comboBoxCancha.Location = new Point(157, 299);
             comboBoxCancha.Name = "comboBoxCancha";
             comboBoxCancha.Size = new Size(121, 23);
             comboBoxCancha.TabIndex = 1;
@@ -70,36 +69,43 @@
             // comboBoxConsumicion
             // 
             comboBoxConsumicion.FormattingEnabled = true;
-            comboBoxConsumicion.Location = new Point(413, 300);
+            comboBoxConsumicion.Items.AddRange(new object[] { "1 - Coca Cola 500ml", "2 - Seven Up 500ml", "3 - Cerveza 1 litro", "4 - Agua Saborizada 500ml" });
+            comboBoxConsumicion.Location = new Point(305, 299);
             comboBoxConsumicion.Name = "comboBoxConsumicion";
             comboBoxConsumicion.Size = new Size(121, 23);
             comboBoxConsumicion.TabIndex = 2;
             // 
             // numericUpDownCantidad
             // 
-            numericUpDownCantidad.Location = new Point(540, 300);
+            numericUpDownCantidad.Location = new Point(432, 299);
             numericUpDownCantidad.Name = "numericUpDownCantidad";
             numericUpDownCantidad.Size = new Size(30, 23);
             numericUpDownCantidad.TabIndex = 3;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(610, 301);
+            dateTimePicker1.CustomFormat = "HH:mm";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.Location = new Point(521, 297);
             dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.ShowUpDown = true;
             dateTimePicker1.Size = new Size(98, 23);
             dateTimePicker1.TabIndex = 4;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(714, 301);
+            dateTimePicker2.CustomFormat = "HH:mm";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.Location = new Point(625, 297);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(98, 23);
+            dateTimePicker2.ShowUpDown = true;
+            dateTimePicker2.Size = new Size(93, 23);
             dateTimePicker2.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(281, 281);
+            label1.Location = new Point(157, 283);
             label1.Name = "label1";
             label1.Size = new Size(47, 15);
             label1.TabIndex = 6;
@@ -108,7 +114,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(413, 282);
+            label2.Location = new Point(305, 283);
             label2.Name = "label2";
             label2.Size = new Size(78, 15);
             label2.TabIndex = 7;
@@ -117,7 +123,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(610, 281);
+            label3.Location = new Point(521, 282);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 8;
@@ -126,7 +132,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(708, 283);
+            label4.Location = new Point(625, 283);
             label4.Name = "label4";
             label4.Size = new Size(23, 15);
             label4.TabIndex = 9;
@@ -164,7 +170,7 @@
             // 
             // buttonLimpiar
             // 
-            buttonLimpiar.Location = new Point(611, 373);
+            buttonLimpiar.Location = new Point(509, 373);
             buttonLimpiar.Name = "buttonLimpiar";
             buttonLimpiar.Size = new Size(75, 23);
             buttonLimpiar.TabIndex = 13;
@@ -174,7 +180,7 @@
             // 
             // buttonVolver
             // 
-            buttonVolver.Location = new Point(695, 373);
+            buttonVolver.Location = new Point(590, 373);
             buttonVolver.Name = "buttonVolver";
             buttonVolver.Size = new Size(75, 23);
             buttonVolver.TabIndex = 14;
@@ -182,29 +188,13 @@
             buttonVolver.UseVisualStyleBackColor = true;
             buttonVolver.Click += buttonVolver_Click;
             // 
-            // comboBoxDeporte
-            // 
-            comboBoxDeporte.FormattingEnabled = true;
-            comboBoxDeporte.Location = new Point(148, 299);
-            comboBoxDeporte.Name = "comboBoxDeporte";
-            comboBoxDeporte.Size = new Size(121, 23);
-            comboBoxDeporte.TabIndex = 15;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(148, 281);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 15);
-            label5.TabIndex = 16;
-            label5.Text = "Deporte";
-            // 
             // comboBoxCliente
             // 
             comboBoxCliente.FormattingEnabled = true;
+            comboBoxCliente.Items.AddRange(new object[] { "1 ", "2", "3" });
             comboBoxCliente.Location = new Point(12, 300);
             comboBoxCliente.Name = "comboBoxCliente";
-            comboBoxCliente.Size = new Size(121, 23);
+            comboBoxCliente.Size = new Size(110, 23);
             comboBoxCliente.TabIndex = 17;
             // 
             // label6
@@ -220,11 +210,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(862, 450);
+            ClientSize = new Size(756, 450);
             Controls.Add(label6);
             Controls.Add(comboBoxCliente);
-            Controls.Add(label5);
-            Controls.Add(comboBoxDeporte);
             Controls.Add(buttonVolver);
             Controls.Add(buttonLimpiar);
             Controls.Add(buttonEliminar);
@@ -265,8 +253,6 @@
         private Button buttonEliminar;
         private Button buttonLimpiar;
         private Button buttonVolver;
-        private ComboBox comboBoxDeporte;
-        private Label label5;
         private ComboBox comboBoxCliente;
         private Label label6;
     }

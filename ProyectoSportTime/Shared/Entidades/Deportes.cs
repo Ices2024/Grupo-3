@@ -12,7 +12,7 @@ namespace Shared.Entidades
         [Key]
         public int Deporte_ID { get; set; }
         public string? Tipo { get; set; }
-
+        
         public ICollection<Canchas>? Canchas { get; set; }
     }
 }

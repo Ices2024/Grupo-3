@@ -14,6 +14,8 @@ namespace Shared.Entidades
         public string? Tipo { get; set; }
         public string? Descripcion { get; set; }
 
+        public string DisplayName => $"{Producto_ID} - {Descripcion}";
+
         public int Proveedor_ID { get; set; } // Clave Foránea
         public Proveedores? Proveedores { get; set; }
 

@@ -14,6 +14,7 @@ namespace Shared.Entidades
         public int Deporte_ID { get; set; }
         public Deportes? Deporte { get; set; }  // Propiedad de navegación
 
+        public string DisplayName => $"{Cancha_ID} - {Deporte?.Tipo}";
         public ICollection<Turnos>? Turnos { get; set; }
         public ICollection<Elementos>? Elementos { get; set; }
     }
