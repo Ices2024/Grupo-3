@@ -106,7 +106,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(157, 330);
+            label1.Location = new Point(160, 333);
             label1.Name = "label1";
             label1.Size = new Size(47, 15);
             label1.TabIndex = 6;
@@ -115,7 +115,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(305, 330);
+            label2.Location = new Point(308, 333);
             label2.Name = "label2";
             label2.Size = new Size(78, 15);
             label2.TabIndex = 7;
@@ -124,7 +124,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(521, 330);
+            label3.Location = new Point(524, 333);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
             label3.TabIndex = 8;
@@ -133,7 +133,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(625, 330);
+            label4.Location = new Point(628, 333);
             label4.Name = "label4";
             label4.Size = new Size(23, 15);
             label4.TabIndex = 9;
@@ -208,7 +208,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 330);
+            label6.Location = new Point(15, 333);
             label6.Name = "label6";
             label6.Size = new Size(44, 15);
             label6.TabIndex = 18;
@@ -249,7 +249,9 @@
             Controls.Add(comboBoxConsumicion);
             Controls.Add(comboBoxCancha);
             Controls.Add(dataGridViewTurnos);
+            Cursor = Cursors.Default;
             Name = "TurnoForm";
+            Padding = new Padding(3);
             Text = "TurnoForm";
             TransparencyKey = Color.Black;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTurnos).EndInit();

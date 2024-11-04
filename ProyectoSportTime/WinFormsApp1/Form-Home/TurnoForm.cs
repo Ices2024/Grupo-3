@@ -215,8 +215,7 @@ namespace WinForm.Form_Home
                 Producto = productos.FirstOrDefault(p => p.Producto_ID == t.Consumicion_ID)?.Tipo,
                 t.HoraInicio,
                 t.HoraFin,
-                t.Consumicion.Cantidad,
-                t.Consumicion.Producto.DisplayName
+
             
             }).ToList();
         }

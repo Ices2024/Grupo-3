@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A8545ADC-2133-4B82-8B44-842467CF63CB}|Shared\\Shared.csproj|c:\\users\\mateo\\onedrive\\documentos\\github\\grupo-3\\proyectosporttime\\shared\\entidades\\turnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,8 +58,7 @@
               "RelativeToolTip": "API\\Controllers\\TurnosController\\Turnos.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAQwCYAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T21:19:02.49Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T21:19:02.49Z"
             },
             {
               "$type": "Document",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "Shared\\Dtos\\TurnoDTO.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T21:17:34.747Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T21:17:34.747Z"
             },
             {
               "$type": "Document",
@@ -84,12 +82,11 @@
               "RelativeToolTip": "Shared\\Entidades\\Turnos.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T21:15:42.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T21:15:42.919Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "TurnoForm.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
@@ -101,7 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "InicoSesion.cs",
               "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\FormAdmin\\InicoSesion.cs",
@@ -109,18 +106,17 @@
               "RelativeToolTip": "WinFormsApp1\\FormAdmin\\InicoSesion.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAowBEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T21:09:26.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T21:09:26.225Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TurnoForm.cs",
               "DocumentMoniker": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "ToolTip": "C:\\Users\\mateo\\OneDrive\\Documentos\\GitHub\\Grupo-3\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
               "RelativeToolTip": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
-              "ViewState": "AQIAAMcAAAAAAAAAAAAcwNEAAABCAAAA",
+              "ViewState": "AQIAAMoAAAAAAAAAAAAcwNkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-04T21:09:19.44Z",
               "EditorCaption": ""
