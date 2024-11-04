@@ -27,7 +27,7 @@ namespace API.Controllers.TurnosController
             var turnos = await _context.Turnos
                 .Include(t => t.Administrador) // Incluye el administrador relacionado
                 .Include(t => t.Canchas) // Incluye la cancha relacionada
-                .Include(t => t.Consumicion) // Incluye la consumición relacionada
+                .Include(t => t.Consumicion).ThenInclude(c => c.Producto) // Incluye la consumición relacionada
                 .Include(t => t.Cliente) // Incluye el cliente relacionado
                 .Select(t => new TurnoDTO
                 {
@@ -37,6 +37,7 @@ namespace API.Controllers.TurnosController
                     HoraInicio = t.HoraInicio,
                     HoraFin = t.HoraFin,
                     Consumicion_ID = t.Consumicion_ID,
+                    Consumicion = t.Consumicion,
                     Cliente_ID = t.Cliente_ID // Agregado para reflejar la relación con Cliente
                 })
                 .ToListAsync();

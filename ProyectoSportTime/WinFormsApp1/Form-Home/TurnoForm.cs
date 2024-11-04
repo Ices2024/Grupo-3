@@ -214,7 +214,10 @@ namespace WinForm.Form_Home
                 Cliente = t.Cliente_ID,
                 Producto = productos.FirstOrDefault(p => p.Producto_ID == t.Consumicion_ID)?.Tipo,
                 t.HoraInicio,
-                t.HoraFin
+                t.HoraFin,
+                t.Consumicion.Cantidad,
+                t.Consumicion.Producto.DisplayName
+            
             }).ToList();
         }
 
