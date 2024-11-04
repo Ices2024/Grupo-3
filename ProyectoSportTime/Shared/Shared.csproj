@@ -9,14 +9,13 @@
   <ItemGroup>
     <Compile Remove="Entities\**" />
     <Compile Remove="Migrations\**" />
+    <Compile Remove="Repositories\**" />
     <EmbeddedResource Remove="Entities\**" />
     <EmbeddedResource Remove="Migrations\**" />
+    <EmbeddedResource Remove="Repositories\**" />
     <None Remove="Entities\**" />
     <None Remove="Migrations\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repositories\" />
+    <None Remove="Repositories\**" />
   </ItemGroup>
 
   <ItemGroup>

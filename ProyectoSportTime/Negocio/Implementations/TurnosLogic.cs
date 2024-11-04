@@ -7,62 +7,64 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Shared.Dtos;
+using Negocio.Repositorios;
 
 namespace Negocio.Implementations
 {
     public class TurnosLogic : InterfaceTurnos
     {
-        private readonly ProyectoDbContext _context;
+        private readonly ITurnosRepository _turnosRepository;
 
-        // Constructor donde se inyecta el DbContext
-        public TurnosLogic(ProyectoDbContext context)
+        public TurnosLogic(ITurnosRepository turnosRepository)
         {
-            _context = context;
+            _turnosRepository = turnosRepository;
         }
 
-        public void AltaTurno(int adminID, int canchaID, DateTime horaInicio, DateTime horaFin, int consumicionID, int clienteID)
+        public async Task CrearTurno(TurnoDTO nuevoTurno)
         {
-            var nuevoTurno = new Turnos
-            {
-                Admin_ID = adminID,
-                Cancha_ID = canchaID,
-                HoraInicio = horaInicio,
-                HoraFin = horaFin,
-                Consumicion_ID = consumicionID,
-                Cliente_ID = clienteID
-            };
-            _context.Turnos.Add(nuevoTurno);
-            _context.SaveChanges();
+            ArgumentNullException.ThrowIfNull(nuevoTurno);
+
+            if (nuevoTurno.Admin_ID <= 0)
+                throw new ArgumentException("El ID del administrador debe ser mayor a cero.");
+
+            // Aquí podrías agregar más validaciones según sea necesario.
+
+            await _turnosRepository.CrearAsync(nuevoTurno);
         }
 
-        public void ModificarTurno(int turnoID, DateTime nuevaHoraInicio, DateTime nuevaHoraFin)
+        public async Task ModificarTurno(int id, TurnoDTO turnoModificado)
         {
-            var turno = _context.Turnos.Find(turnoID);
-            if (turno != null)
-            {
-                turno.HoraInicio = nuevaHoraInicio;
-                turno.HoraFin = nuevaHoraFin;
-                _context.SaveChanges();
-            }
-            else
-            {
-                throw new Exception($"No se encontró un turno con ID {turnoID}.");
-            }
+            ArgumentNullException.ThrowIfNull(turnoModificado);
+
+            if (id <= 0)
+                throw new ArgumentException("El ID del turno debe ser mayor a cero.");
+
+            // Validaciones adicionales pueden ser añadidas aquí.
+
+            await _turnosRepository.UpdateAsync(id, turnoModificado);
         }
 
-        public void BajaTurno(int turnoID)
+        public async Task<List<TurnoDTO>> ObtenerTodos()
         {
-            var turno = _context.Turnos.Find(turnoID);
-            if (turno != null)
-            {
-                _context.Turnos.Remove(turno);
-                _context.SaveChanges();
-            }
-            else
-            {
-                throw new Exception($"No se encontró un turno con ID {turnoID}.");
-            }
+            return await _turnosRepository.ObtenerTodosAsync();
         }
+
+        public async Task<TurnoDTO?> ObtenerPorId(int id)
+        {
+            if (id <= 0)
+                throw new ArgumentException("El ID del turno debe ser mayor a cero.");
+
+            return await _turnosRepository.ObtenerPorIdAsync(id);
+        }
+
+        public async Task Borrar(int id)
+        {
+            if (id <= 0)
+                throw new ArgumentException("El ID del turno debe ser mayor a cero.");
+
+            await _turnosRepository.EliminarAsync(id);
+        }
+
     }
-
 }
