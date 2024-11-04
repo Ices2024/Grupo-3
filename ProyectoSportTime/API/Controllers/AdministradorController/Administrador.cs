@@ -55,7 +55,7 @@ namespace API.Controllers.AdministradorController
         }
 
         // GET: api/administrador (Obtener los datos del administrador)
-        [HttpGet]
+        [HttpGet("get")]
         public ActionResult<AdministradorDTO> Get()
         {
             return Ok(administrador);

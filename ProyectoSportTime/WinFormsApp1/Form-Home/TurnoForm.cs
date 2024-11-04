@@ -3,19 +3,18 @@ using Shared.Entidades;
 using System.Data;
 using Shared.Dtos;
 using System.Text.Json;
-using Negocio.Implementations;
-using Negocio.Repositorios;
+using Newtonsoft.Json;
 
 namespace WinForm.Form_Home
 {
     public partial class TurnoForm : Form
     {
-        private readonly TurnosLogic _turnosLogic;
+        private readonly HttpClient _httpClient;
 
-        public TurnoForm(TurnosLogic turnosLogic)
+        public TurnoForm()
         {
             InitializeComponent();
-            _turnosLogic = turnosLogic;
+            _httpClient = new HttpClient { BaseAddress = new Uri("https://localhost:7094/api/") };
             CargarDatos();
             ActualizarDataGridView();
         }
@@ -24,20 +23,72 @@ namespace WinForm.Form_Home
         {
             try
             {
-                var canchas = await _turnosLogic.ObtenerCanchasAsync();
-                comboBoxCancha.DataSource = canchas;
-                comboBoxCancha.DisplayMember = "DisplayName";
-                comboBoxCancha.ValueMember = "Cancha_ID";
+                var responseCanchas = await _httpClient.GetAsync("Canchas");
+              
+                if (responseCanchas.IsSuccessStatusCode)
+                {
+                    var canchasJson = await responseCanchas.Content.ReadAsStringAsync();
+                    var canchas = JsonConvert.DeserializeObject<List<Canchas>>(canchasJson);
 
-                var productos = await _turnosLogic.ObtenerProductosAsync();
-                comboBoxConsumicion.DataSource = productos;
-                comboBoxConsumicion.DisplayMember = "DisplayName";
-                comboBoxConsumicion.ValueMember = "Producto_ID";
+                    if (canchas != null && canchas.Count > 0)
+                    {
+                        comboBoxCancha.DataSource = canchas;
+                        comboBoxCancha.DisplayMember = "DisplayName"; // Usar la propiedad calculada
+                        comboBoxCancha.ValueMember = "Cancha_ID";
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron canchas.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar canchas.");
+                }
 
-                var clientes = await _turnosLogic.ObtenerClientesAsync();
-                comboBoxCliente.DataSource = clientes;
-                comboBoxCliente.DisplayMember = "DisplayName";
-                comboBoxCliente.ValueMember = "Cliente_ID";
+                var responseProductos = await _httpClient.GetAsync("productos");
+                if (responseProductos.IsSuccessStatusCode)
+                {
+                    var productosJson = await responseProductos.Content.ReadAsStringAsync();
+                    var productos = JsonConvert.DeserializeObject<List<Productos>>(productosJson);
+
+                    if (productos != null && productos.Count > 0)
+                    {
+                        comboBoxConsumicion.DataSource = productos;
+                        comboBoxConsumicion.DisplayMember = "DisplayName"; // Usar la propiedad calculada
+                        comboBoxConsumicion.ValueMember = "Producto_ID";
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron productos.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar productos.");
+                }
+
+                var responseClientes = await _httpClient.GetAsync("clientes");
+                if (responseClientes.IsSuccessStatusCode)
+                {
+                    var clientesJson = await responseClientes.Content.ReadAsStringAsync();
+                    var clientes = JsonConvert.DeserializeObject<List<Clientes>>(clientesJson);
+
+                    if (clientes != null && clientes.Count > 0)
+                    {
+                        comboBoxCliente.DataSource = clientes;
+                        comboBoxCliente.DisplayMember = "DisplayName"; // Usar la propiedad calculada
+                        comboBoxCliente.ValueMember = "Cliente_ID";
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontraron clientes.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar clientes.");
+                }
             }
             catch (Exception ex)
             {
@@ -45,7 +96,7 @@ namespace WinForm.Form_Home
             }
         }
 
-        private async void buttonGuardar_Click(object sender, EventArgs e)
+        private void buttonGuardar_Click(object sender, EventArgs e)
         {
             if (comboBoxCancha.SelectedValue is int canchaId &&
                 comboBoxConsumicion.SelectedValue is int productoId &&
@@ -59,7 +110,10 @@ namespace WinForm.Form_Home
                     Cod_Producto = productoId
                 };
 
-                var consumicionCreada = await _turnosLogic.CrearConsumicionAsync(nuevaConsumicion);
+                var responseConsumicion = _httpClient.PostAsJsonAsync("consumiciones", nuevaConsumicion).Result;
+                responseConsumicion.EnsureSuccessStatusCode();
+                var consumicionCreada = responseConsumicion.Content.ReadFromJsonAsync<Consumiciones>().Result;
+
                 var nuevoTurno = new Turnos
                 {
                     Cancha_ID = canchaId,
@@ -69,7 +123,9 @@ namespace WinForm.Form_Home
                     Cliente_ID = clienteId
                 };
 
-                await _turnosLogic.CrearTurnoAsync(nuevoTurno);
+                var responseTurno = _httpClient.PostAsJsonAsync("turnos", nuevoTurno).Result;
+                responseTurno.EnsureSuccessStatusCode();
+
                 MessageBox.Show("Turno guardado correctamente.");
                 ActualizarDataGridView();
             }
@@ -79,7 +135,7 @@ namespace WinForm.Form_Home
             }
         }
 
-        private async void buttonModificar_Click(object sender, EventArgs e)
+        private void buttonModificar_Click(object sender, EventArgs e)
         {
             if (dataGridViewTurnos.SelectedRows.Count > 0 &&
                 comboBoxCliente.SelectedValue is int clienteId)
@@ -87,22 +143,31 @@ namespace WinForm.Form_Home
                 var filaSeleccionada = dataGridViewTurnos.SelectedRows[0];
                 int turnoId = (int)filaSeleccionada.Cells["Turno_ID"].Value;
 
-                var turno = await _turnosLogic.ObtenerPorId(turnoId);
-                if (turno != null)
+                var response = _httpClient.GetAsync($"turnos/{turnoId}").Result;
+                if (response.IsSuccessStatusCode)
                 {
-                    turno.Cancha_ID = (int)comboBoxCancha.SelectedValue;
-                    turno.HoraInicio = dateTimePicker1.Value;
-                    turno.HoraFin = dateTimePicker2.Value;
-                    turno.Cliente_ID = clienteId;
+                    var turno = response.Content.ReadFromJsonAsync<Turnos>().Result;
+                    if (turno != null)
+                    {
+                        turno.Cancha_ID = (int)comboBoxCancha.SelectedValue;
+                        turno.HoraInicio = dateTimePicker1.Value;
+                        turno.HoraFin = dateTimePicker2.Value;
+                        turno.Cliente_ID = clienteId;
 
-                    var consumicion = await _turnosLogic.ObtenerConsumicion(turno.Consumicion_ID);
-                    consumicion.Cantidad = (int)numericUpDownCantidad.Value;
-                    consumicion.Cod_Producto = (int)comboBoxConsumicion.SelectedValue;
+                        var consumicionResponse = _httpClient.GetAsync($"consumiciones/{turno.Consumicion_ID}").Result;
+                        if (consumicionResponse.IsSuccessStatusCode)
+                        {
+                            var consumicion = consumicionResponse.Content.ReadFromJsonAsync<Consumiciones>().Result;
+                            consumicion.Cantidad = (int)numericUpDownCantidad.Value;
+                            consumicion.Cod_Producto = (int)comboBoxConsumicion.SelectedValue;
 
-                    await _turnosLogic.ModificarConsumicionAsync(consumicion);
-                    await _turnosLogic.ModificarTurnoAsync(turnoId, turno);
-                    MessageBox.Show("Turno modificado correctamente.");
-                    ActualizarDataGridView();
+                            _httpClient.PutAsJsonAsync($"consumiciones/{consumicion.Consumicion_ID}", consumicion).Wait();
+                        }
+
+                        _httpClient.PutAsJsonAsync($"turnos/{turnoId}", turno).Wait();
+                        MessageBox.Show("Turno modificado correctamente.");
+                        ActualizarDataGridView();
+                    }
                 }
             }
             else
@@ -111,20 +176,24 @@ namespace WinForm.Form_Home
             }
         }
 
-        private async void buttonEliminar_Click(object sender, EventArgs e)
+        private void buttonEliminar_Click(object sender, EventArgs e)
         {
             if (dataGridViewTurnos.SelectedRows.Count > 0)
             {
                 var filaSeleccionada = dataGridViewTurnos.SelectedRows[0];
                 int turnoId = (int)filaSeleccionada.Cells["Turno_ID"].Value;
 
-                var turno = await _turnosLogic.ObtenerPorId(turnoId);
-                if (turno != null)
+                var response = _httpClient.GetAsync($"turnos/{turnoId}").Result;
+                if (response.IsSuccessStatusCode)
                 {
-                    await _turnosLogic.Borrar(turnoId);
-                    await _turnosLogic.BorrarConsumicion(turno.Consumicion_ID);
-                    MessageBox.Show("Turno eliminado correctamente.");
-                    ActualizarDataGridView();
+                    var turno = response.Content.ReadFromJsonAsync<Turnos>().Result;
+                    if (turno != null)
+                    {
+                        _httpClient.DeleteAsync($"consumiciones/{turno.Consumicion_ID}").Wait();
+                        _httpClient.DeleteAsync($"turnos/{turnoId}").Wait();
+                        MessageBox.Show("Turno eliminado correctamente.");
+                        ActualizarDataGridView();
+                    }
                 }
             }
             else
@@ -133,10 +202,10 @@ namespace WinForm.Form_Home
             }
         }
 
-        private async void ActualizarDataGridView()
+        private void ActualizarDataGridView()
         {
-            var turnos = await _turnosLogic.ObtenerTodos();
-            var productos = await _turnosLogic.ObtenerProductosAsync();
+            var turnos = _httpClient.GetFromJsonAsync<List<TurnoDTO>>("turnos").Result;
+            var productos = _httpClient.GetFromJsonAsync<List<ProductoDTO>>("productos").Result;
 
             dataGridViewTurnos.DataSource = turnos.Select(t => new
             {
@@ -156,17 +225,18 @@ namespace WinForm.Form_Home
             comboBoxCliente.SelectedIndex = -1;
             numericUpDownCantidad.Value = 0;
             dateTimePicker1.Value = DateTime.Now;
-            dateTimePicker2.Value = DateTime.Now.AddHours(1);
+            dateTimePicker2.Value = DateTime.Now;
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
             var homeForm = new Form1();
             homeForm.Show();
         }
-
     }
+
+}
 
 
 

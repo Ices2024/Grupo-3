@@ -54,12 +54,14 @@
             // 
             // buttonTurno
             // 
-            buttonTurno.Location = new Point(337, 81);
+            buttonTurno.BackColor = Color.FromArgb(21, 109, 99);
+            buttonTurno.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonTurno.Location = new Point(34, 68);
             buttonTurno.Name = "buttonTurno";
-            buttonTurno.Size = new Size(75, 23);
+            buttonTurno.Size = new Size(689, 58);
             buttonTurno.TabIndex = 11;
             buttonTurno.Text = "Turnos";
-            buttonTurno.UseVisualStyleBackColor = true;
+            buttonTurno.UseVisualStyleBackColor = false;
             buttonTurno.Click += buttonTurno_Click;
             // 
             // Form1

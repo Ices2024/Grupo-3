@@ -29,6 +29,7 @@ namespace WinForm.Form_Home
 
         private void buttonTurno_Click(object sender, EventArgs e)
         {
+            Close();
             TurnoForm turnoForm = new TurnoForm();
             turnoForm.Show();
         }
