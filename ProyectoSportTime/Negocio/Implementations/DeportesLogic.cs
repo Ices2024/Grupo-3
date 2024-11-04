@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Negocio.Contracts;
-using Shared.Dtos;
+using API.Data;
 using Shared.Entidades;
 using System;
 using System.Collections.Generic;
@@ -12,42 +12,49 @@ namespace Negocio.Implementations
 {
     public class DeportesLogic : InterfaceDeportes
     {
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public DeportesLogic(ProyectoDbContext context)
+        {
+            _context = context;
+        }
+
         public void AltaDeporte(string tipo)
         {
-            using (var context = new ProyectoDbContext())
+            var nuevoDeporte = new Deportes
             {
-                var nuevoDeporte = new Deportes
-                {
-                    Tipo = tipo
-                };
-                context.Deportes.Add(nuevoDeporte);
-                context.SaveChanges();
-            }
+                Tipo = tipo
+            };
+            _context.Deportes.Add(nuevoDeporte);
+            _context.SaveChanges();
         }
 
         public void ModificarDeporte(int deporteID, string nuevoTipo)
         {
-            using (var context = new ProyectoDbContext())
+            var deporte = _context.Deportes.Find(deporteID);
+            if (deporte != null)
             {
-                var deporte = context.Deportes.Find(deporteID);
-                if (deporte != null)
-                {
-                    deporte.Tipo = nuevoTipo;
-                    context.SaveChanges();
-                }
+                deporte.Tipo = nuevoTipo;
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró un deporte con ID {deporteID}.");
             }
         }
 
         public void BajaDeporte(int deporteID)
         {
-            using (var context = new ProyectoDbContext())
+            var deporte = _context.Deportes.Find(deporteID);
+            if (deporte != null)
             {
-                var deporte = context.Deportes.Find(deporteID);
-                if (deporte != null)
-                {
-                    context.Deportes.Remove(deporte);
-                    context.SaveChanges();
-                }
+                _context.Deportes.Remove(deporte);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró un deporte con ID {deporteID}.");
             }
         }
     }

@@ -13,7 +13,10 @@ namespace Shared.Entidades
         public int Producto_ID { get; set; }
         public string? Tipo { get; set; }
         public string? Descripcion { get; set; }
-        public int Proveedor_ID { get; set; }
+
+        public string DisplayName => $"{Producto_ID} - {Descripcion}";
+
+        public int Proveedor_ID { get; set; } // Clave Foránea
         public Proveedores? Proveedores { get; set; }
 
         public ICollection<Consumiciones>? Consumiciones { get; set; }

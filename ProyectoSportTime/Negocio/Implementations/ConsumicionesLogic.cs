@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Negocio.Contracts;
-using Shared.Dtos;
+using API.Data;
 using Shared.Entidades;
 using System;
 using System.Collections.Generic;
@@ -12,45 +12,52 @@ namespace Negocio.Implementations
 {
     public class ConsumicionesLogic : InterfaceConsumicion
     {
-        public void AltaConsumicion(int cantidad, bool precio, int codProducto)
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public ConsumicionesLogic(ProyectoDbContext context)
         {
-            using (var context = new ProyectoDbContext())
-            {
-                var nuevaConsumicion = new Consumiciones
-                {
-                    Cantidad = cantidad,
-                    Precio = precio,
-                    Cod_Producto = codProducto
-                };
-                context.Consumiciones.Add(nuevaConsumicion);
-                context.SaveChanges();
-            }
+            _context = context;
         }
 
-        public void ModificarConsumicion(int consumicionID, int nuevaCantidad, bool nuevoPrecio)
+        public void AltaConsumicion(int cantidad, decimal precio, int codProducto)
         {
-            using (var context = new ProyectoDbContext())
+            var nuevaConsumicion = new Consumiciones
             {
-                var consumicion = context.Consumiciones.Find(consumicionID);
-                if (consumicion != null)
-                {
-                    consumicion.Cantidad = nuevaCantidad;
-                    consumicion.Precio = nuevoPrecio;
-                    context.SaveChanges();
-                }
+                Cantidad = cantidad,
+                Precio = precio,
+                Cod_Producto = codProducto
+            };
+            _context.Consumiciones.Add(nuevaConsumicion);
+            _context.SaveChanges();
+        }
+
+        public void ModificarConsumicion(int consumicionID, int nuevaCantidad, decimal nuevoPrecio)
+        {
+            var consumicion = _context.Consumiciones.Find(consumicionID);
+            if (consumicion != null)
+            {
+                consumicion.Cantidad = nuevaCantidad;
+                consumicion.Precio = nuevoPrecio;
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró una consumición con ID {consumicionID}.");
             }
         }
 
         public void BajaConsumicion(int consumicionID)
         {
-            using (var context = new ProyectoDbContext())
+            var consumicion = _context.Consumiciones.Find(consumicionID);
+            if (consumicion != null)
             {
-                var consumicion = context.Consumiciones.Find(consumicionID);
-                if (consumicion != null)
-                {
-                    context.Consumiciones.Remove(consumicion);
-                    context.SaveChanges();
-                }
+                _context.Consumiciones.Remove(consumicion);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró una consumición con ID {consumicionID}.");
             }
         }
     }

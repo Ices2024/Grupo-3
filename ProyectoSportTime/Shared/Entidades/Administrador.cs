@@ -13,6 +13,7 @@ namespace Shared.Entidades
         public int Admin_ID { get; set; }
         public string? Nombre { get; set; }
         public string? Email { get; set; }
+        public string? Contraseña { get; set; }
 
         public ICollection<Turnos>? Turnos { get; set; }
     }

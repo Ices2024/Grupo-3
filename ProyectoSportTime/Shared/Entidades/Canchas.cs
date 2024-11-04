@@ -11,10 +11,12 @@ namespace Shared.Entidades
     {
         [Key]
         public int Cancha_ID { get; set; }
-        public int Codigo_Deporte { get; set; }
-        public Deportes? Deporte { get; set; }
+        public int Deporte_ID { get; set; }
+        public Deportes? Deporte { get; set; }  // Propiedad de navegación
 
+        public string DisplayName => $"{Cancha_ID} - {Deporte?.Tipo}";
         public ICollection<Turnos>? Turnos { get; set; }
         public ICollection<Elementos>? Elementos { get; set; }
     }
+
 }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Negocio.Contracts;
-using Shared.Dtos;
+using API.Data;
 using Shared.Entidades;
 using System;
 using System.Collections.Generic;
@@ -12,45 +12,52 @@ namespace Negocio.Implementations
 {
     public class ElementosLogic : InterfaceElementos
     {
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public ElementosLogic(ProyectoDbContext context)
+        {
+            _context = context;
+        }
+
         public void AltaElemento(string nombre, int cantidad, int canchaID)
         {
-            using (var context = new ProyectoDbContext())
+            var nuevoElemento = new Elementos
             {
-                var nuevoElemento = new Elementos
-                {
-                    Nombre = nombre,
-                    Cantidad = cantidad,
-                    Cancha_ID = canchaID
-                };
-                context.Elementos.Add(nuevoElemento);
-                context.SaveChanges();
-            }
+                Nombre = nombre,
+                Cantidad = cantidad,
+                Cancha_ID = canchaID
+            };
+            _context.Elementos.Add(nuevoElemento);
+            _context.SaveChanges();
         }
 
         public void ModificarElemento(int elementoID, string nuevoNombre, int nuevaCantidad)
         {
-            using (var context = new ProyectoDbContext())
+            var elemento = _context.Elementos.Find(elementoID);
+            if (elemento != null)
             {
-                var elemento = context.Elementos.Find(elementoID);
-                if (elemento != null)
-                {
-                    elemento.Nombre = nuevoNombre;
-                    elemento.Cantidad = nuevaCantidad;
-                    context.SaveChanges();
-                }
+                elemento.Nombre = nuevoNombre;
+                elemento.Cantidad = nuevaCantidad;
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró un elemento con ID {elementoID}.");
             }
         }
 
         public void BajaElemento(int elementoID)
         {
-            using (var context = new ProyectoDbContext())
+            var elemento = _context.Elementos.Find(elementoID);
+            if (elemento != null)
             {
-                var elemento = context.Elementos.Find(elementoID);
-                if (elemento != null)
-                {
-                    context.Elementos.Remove(elemento);
-                    context.SaveChanges();
-                }
+                _context.Elementos.Remove(elemento);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró un elemento con ID {elementoID}.");
             }
         }
     }

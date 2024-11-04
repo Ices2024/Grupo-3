@@ -11,14 +11,16 @@ namespace Shared.Entidades
     {
         [Key]
         public int Turno_ID { get; set; }
-        public int Admin_ID { get; set; }
-        public int Cancha_ID { get; set; }
+        public int Admin_ID { get; set; } // Clave Foránea
+        public int Cancha_ID { get; set; } // Clave Foránea
         public DateTime HoraInicio { get; set; }
         public DateTime HoraFin { get; set; }
-        public int Consumicion_ID { get; set; }
+        public int Consumicion_ID { get; set; } // Clave Foránea
+        public int Cliente_ID { get; set; } // Clave Foránea a Clientes
 
         public Administrador? Administrador { get; set; }
         public Canchas? Canchas { get; set; }
         public Consumiciones? Consumicion { get; set; }
+        public Clientes? Cliente { get; set; } // Relación con Cliente
     }
 }

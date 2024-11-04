@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Negocio.Contracts;
-using Shared.Dtos;
+using API.Data;
 using Shared.Entidades;
 using System;
 using System.Collections.Generic;
@@ -12,44 +12,64 @@ namespace Negocio.Implementations
 {
     public class CanchasLogic : InterfaceCanchas
     {
-        public void AltaCancha(int codigoDeporte)
+        private readonly ProyectoDbContext _context;
+
+        // Constructor donde se inyecta el DbContext
+        public CanchasLogic(ProyectoDbContext context)
         {
-            using (var context = new ProyectoDbContext())
-            {
-                var nuevaCancha = new Canchas
-                {
-                    Codigo_Deporte = codigoDeporte
-                };
-                context.Canchas.Add(nuevaCancha);
-                context.SaveChanges();
-            }
+            _context = context;
         }
 
-        public void ModificarCancha(int canchaID, int nuevoCodigoDeporte)
+        public void AltaCancha(int deporteID)
         {
-            using (var context = new ProyectoDbContext())
+            // Opcional: validar si el deporte con el ID existe
+            var deporte = _context.Deportes.Find(deporteID);
+            if (deporte == null)
             {
-                var cancha = context.Canchas.Find(canchaID);
-                if (cancha != null)
+                throw new Exception($"No se encontró un deporte con el ID {deporteID}.");
+            }
+
+            var nuevaCancha = new Canchas
+            {
+                Deporte_ID = deporteID // Utiliza la clave foránea correcta
+            };
+            _context.Canchas.Add(nuevaCancha);
+            _context.SaveChanges();
+        }
+
+        public void ModificarCancha(int canchaID, int nuevoDeporteID)
+        {
+            var cancha = _context.Canchas.Find(canchaID);
+            if (cancha != null)
+            {
+                // Opcional: validar si el deporte con el nuevo ID existe
+                var nuevoDeporte = _context.Deportes.Find(nuevoDeporteID);
+                if (nuevoDeporte == null)
                 {
-                    cancha.Codigo_Deporte = nuevoCodigoDeporte;
-                    context.SaveChanges();
+                    throw new Exception($"No se encontró un deporte con el ID {nuevoDeporteID}.");
                 }
+
+                cancha.Deporte_ID = nuevoDeporteID; // Actualiza la clave foránea
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró una cancha con el ID {canchaID}.");
             }
         }
 
         public void BajaCancha(int canchaID)
         {
-            using (var context = new ProyectoDbContext())
+            var cancha = _context.Canchas.Find(canchaID);
+            if (cancha != null)
             {
-                var cancha = context.Canchas.Find(canchaID);
-                if (cancha != null)
-                {
-                    context.Canchas.Remove(cancha);
-                    context.SaveChanges();
-                }
+                _context.Canchas.Remove(cancha);
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception($"No se encontró una cancha con el ID {canchaID}.");
             }
         }
     }
-
 }

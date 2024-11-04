@@ -12,8 +12,8 @@ namespace Shared.Entidades
         [Key]
         public int Consumicion_ID { get; set; }
         public int Cantidad { get; set; }
-        public bool Precio { get; set; }
-        public int Cod_Producto { get; set; } // Clave Foranea
+        public decimal Precio { get; set; } // Debería ser decimal en lugar de bool
+        public int Cod_Producto { get; set; } // Clave Foránea
 
         public Productos? Producto { get; set; }
     }
