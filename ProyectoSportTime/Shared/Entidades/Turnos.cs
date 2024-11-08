@@ -19,8 +19,8 @@ namespace Shared.Entidades
         public int Cliente_ID { get; set; } // Clave Foránea a Clientes
 
         public Administrador? Administrador { get; set; }
-        public Canchas? Canchas { get; set; }
+        public Canchas Canchas { get; set; }
         public Consumiciones? Consumicion { get; set; }
-        public Clientes? Cliente { get; set; } // Relación con Cliente
+        public Clientes Cliente { get; set; } // Relación con Cliente
     }
 }

@@ -7,69 +7,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Negocio.Repositorys;
+using Shared.Dtos;
 
 namespace Negocio.Implementations
 {
-    public class CanchasLogic : InterfaceCanchas
+    public class CanchasLogic
     {
-        private readonly ProyectoDbContext _context;
+        public CanchasLogic() { }
 
-        // Constructor donde se inyecta el DbContext
-        public CanchasLogic(ProyectoDbContext context)
+        public async Task AltaCancha(CanchaDTO nuevaCancha)
         {
-            _context = context;
+            ArgumentNullException.ThrowIfNull(nuevaCancha);
+
+            // Validaciones adicionales si las necesitas
+            if (nuevaCancha.Deporte_ID <= 0)
+                throw new ArgumentException("Deporte_ID debe ser mayor a cero");
+
+            await CanchasRepository.CreateCancha(nuevaCancha);  
         }
 
-        public void AltaCancha(int deporteID)
+        public async Task ModificarCancha(int canchaID, CanchaDTO canchaModificada)
         {
-            // Opcional: validar si el deporte con el ID existe
-            var deporte = _context.Deportes.Find(deporteID);
-            if (deporte == null)
-            {
-                throw new Exception($"No se encontró un deporte con el ID {deporteID}.");
-            }
+            ArgumentNullException.ThrowIfNull(canchaModificada);
 
-            var nuevaCancha = new Canchas
-            {
-                Deporte_ID = deporteID // Utiliza la clave foránea correcta
-            };
-            _context.Canchas.Add(nuevaCancha);
-            _context.SaveChanges();
+            if (canchaID <= 0)
+                throw new ArgumentException("Cancha_ID debe ser mayor a cero");
+
+            await CanchasRepository.UpdateCancha(canchaID, canchaModificada);  
         }
 
-        public void ModificarCancha(int canchaID, int nuevoDeporteID)
+        public async Task BajaCancha(int canchaID)
         {
-            var cancha = _context.Canchas.Find(canchaID);
-            if (cancha != null)
-            {
-                // Opcional: validar si el deporte con el nuevo ID existe
-                var nuevoDeporte = _context.Deportes.Find(nuevoDeporteID);
-                if (nuevoDeporte == null)
-                {
-                    throw new Exception($"No se encontró un deporte con el ID {nuevoDeporteID}.");
-                }
+            if (canchaID <= 0)
+                throw new ArgumentException("Cancha_ID debe ser mayor a cero");
 
-                cancha.Deporte_ID = nuevoDeporteID; // Actualiza la clave foránea
-                _context.SaveChanges();
-            }
-            else
-            {
-                throw new Exception($"No se encontró una cancha con el ID {canchaID}.");
-            }
+            await CanchasRepository.DeleteCancha(canchaID);  
         }
 
-        public void BajaCancha(int canchaID)
+        public async Task<List<CanchaDTO>> ObtenerTodasLasCanchas()
         {
-            var cancha = _context.Canchas.Find(canchaID);
-            if (cancha != null)
-            {
-                _context.Canchas.Remove(cancha);
-                _context.SaveChanges();
-            }
-            else
-            {
-                throw new Exception($"No se encontró una cancha con el ID {canchaID}.");
-            }
+            return await CanchasRepository.GetAllCanchas();  
+        }
+
+        public async Task<CanchaDTO?> ObtenerCanchaPorId(int id)
+        {
+            if (id <= 0)
+                throw new ArgumentException("Cancha_ID debe ser mayor a cero");
+
+            return await CanchasRepository.GetCanchaById(id);  
         }
     }
+
 }

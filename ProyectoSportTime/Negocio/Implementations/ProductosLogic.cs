@@ -7,58 +7,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Negocio.Repositorys;
+using Shared.Dtos;
 
 namespace Negocio.Implementations
 {
-    public class ProductosLogic : InterfaceProductos
+    public class ProductosLogic 
     {
-        private readonly ProyectoDbContext _context;
-
-        // Constructor donde se inyecta el DbContext
-        public ProductosLogic(ProyectoDbContext context)
+        public async Task AltaProducto(ProductoDTO nuevoProducto)
         {
-            _context = context;
+            ArgumentNullException.ThrowIfNull(nuevoProducto);
+
+            await ProductosRepository.CreateProducto(nuevoProducto);  // Llamamos al repositorio para crear el producto
         }
 
-        public void AltaProducto(string tipo, string descripcion, int proveedorID)
+        public async Task ModificarProducto(int productoID, ProductoDTO productoModificado)
         {
-            var nuevoProducto = new Productos
+            ArgumentNullException.ThrowIfNull(productoModificado);
+
+            if (productoID <= 0)
             {
-                Tipo = tipo,
-                Descripcion = descripcion,
-                Proveedor_ID = proveedorID
-            };
-            _context.Productos.Add(nuevoProducto);
-            _context.SaveChanges();
+                throw new ArgumentException("Id debe ser mayor a cero");
+            }
+
+            await ProductosRepository.UpdateProducto(productoID, productoModificado);  // Llamamos al repositorio para modificar el producto
         }
 
-        public void ModificarProducto(int productoID, string nuevoTipo, string nuevaDescripcion)
+        public async Task BajaProducto(int productoID)
         {
-            var producto = _context.Productos.Find(productoID);
-            if (producto != null)
+            if (productoID <= 0)
             {
-                producto.Tipo = nuevoTipo;
-                producto.Descripcion = nuevaDescripcion;
-                _context.SaveChanges();
+                throw new ArgumentException("Id debe ser mayor a cero");
             }
-            else
-            {
-                throw new Exception($"No se encontró un producto con ID {productoID}.");
-            }
+
+            await ProductosRepository.DeleteProducto(productoID);  // Llamamos al repositorio para eliminar el producto
         }
 
-        public void BajaProducto(int productoID)
+        public async Task<List<ProductoDTO>> ObtenerTodosLosProductos()
         {
-            var producto = _context.Productos.Find(productoID);
-            if (producto != null)
+            return await ProductosRepository.GetAllProductos();  // Llamamos al repositorio para obtener todos los productos
+        }
+
+        public async Task<ProductoDTO?> ObtenerProductoPorId(int productoID)
+        {
+            if (productoID <= 0)
             {
-                _context.Productos.Remove(producto);
-                _context.SaveChanges();
+                throw new ArgumentException("Id debe ser mayor a cero");
             }
-            else
-            {
-                throw new Exception($"No se encontró un producto con ID {productoID}.");
-            }
+
+            return await ProductosRepository.GetProductoById(productoID);  // Llamamos al repositorio para obtener un producto por ID
         }
     }
 

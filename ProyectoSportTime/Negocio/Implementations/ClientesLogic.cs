@@ -7,58 +7,85 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Negocio.Repositorys;
+using Shared.Dtos;
 
 namespace Negocio.Implementations
 {
-    public class ClientesLogic : InterfaceClientes
+    public class ClientesLogic
     {
-        private readonly ProyectoDbContext _context;
-
-        // Constructor donde se inyecta el DbContext
-        public ClientesLogic(ProyectoDbContext context)
+        // Crear un nuevo cliente
+        public async Task AltaCliente(ClienteDTO nuevoCliente)
         {
-            _context = context;
+            ArgumentNullException.ThrowIfNull(nuevoCliente);
+
+            // Validación de los datos
+            if (string.IsNullOrEmpty(nuevoCliente.Nombre))
+            {
+                throw new ArgumentException("El nombre no puede estar vacío.");
+            }
+
+            if (nuevoCliente.NumeroTelefono <= 0)
+            {
+                throw new ArgumentException("El número de teléfono debe ser válido.");
+            }
+
+            // Llamamos al repositorio para crear el cliente
+            await ClientesRepository.CreateCliente(nuevoCliente);
         }
 
-        public void AltaCliente(string nombre, int numeroTelefono)
+        // Modificar un cliente existente
+        public async Task ModificarCliente(int clienteID, ClienteDTO clienteModificado)
         {
-            var nuevoCliente = new Clientes
+            ArgumentNullException.ThrowIfNull(clienteModificado);
+
+            // Validaciones
+            if (clienteID <= 0)
             {
-                Nombre = nombre,
-                NumeroTelefono = numeroTelefono
-            };
-            _context.Clientes.Add(nuevoCliente);
-            _context.SaveChanges();
+                throw new ArgumentException("El ID debe ser mayor a cero.");
+            }
+
+            if (string.IsNullOrEmpty(clienteModificado.Nombre))
+            {
+                throw new ArgumentException("El nombre no puede estar vacío.");
+            }
+
+            if (clienteModificado.NumeroTelefono <= 0)
+            {
+                throw new ArgumentException("El número de teléfono debe ser válido.");
+            }
+
+            // Llamamos al repositorio para modificar el cliente
+            await ClientesRepository.UpdateCliente(clienteID, clienteModificado);
         }
 
-        public void ModificarCliente(int clienteID, string nuevoNombre, int nuevoTelefono)
+        // Eliminar un cliente
+        public async Task BajaCliente(int clienteID)
         {
-            var cliente = _context.Clientes.Find(clienteID);
-            if (cliente != null)
+            if (clienteID <= 0)
             {
-                cliente.Nombre = nuevoNombre;
-                cliente.NumeroTelefono = nuevoTelefono;
-                _context.SaveChanges();
+                throw new ArgumentException("El ID debe ser mayor a cero.");
             }
-            else
-            {
-                throw new Exception($"No se encontró un cliente con ID {clienteID}.");
-            }
+
+            // Llamamos al repositorio para eliminar el cliente
+            await ClientesRepository.DeleteCliente(clienteID);
         }
 
-        public void BajaCliente(int clienteID)
+        // Obtener todos los clientes
+        public async Task<List<ClienteDTO>> ObtenerTodosLosClientes()
         {
-            var cliente = _context.Clientes.Find(clienteID);
-            if (cliente != null)
+            return await ClientesRepository.GetAllClientes();
+        }
+
+        // Obtener un cliente por ID
+        public async Task<ClienteDTO?> ObtenerClientePorId(int clienteID)
+        {
+            if (clienteID <= 0)
             {
-                _context.Clientes.Remove(cliente);
-                _context.SaveChanges();
+                throw new ArgumentException("El ID debe ser mayor a cero.");
             }
-            else
-            {
-                throw new Exception($"No se encontró un cliente con ID {clienteID}.");
-            }
+
+            return await ClientesRepository.GetClienteById(clienteID);
         }
     }
-
 }

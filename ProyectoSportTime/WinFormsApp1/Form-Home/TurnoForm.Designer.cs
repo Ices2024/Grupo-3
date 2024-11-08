@@ -230,6 +230,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 204, 181);
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(756, 450);
             Controls.Add(label5);
             Controls.Add(label6);
@@ -249,7 +250,6 @@
             Controls.Add(comboBoxConsumicion);
             Controls.Add(comboBoxCancha);
             Controls.Add(dataGridViewTurnos);
-            Cursor = Cursors.Default;
             Name = "TurnoForm";
             Padding = new Padding(3);
             Text = "TurnoForm";

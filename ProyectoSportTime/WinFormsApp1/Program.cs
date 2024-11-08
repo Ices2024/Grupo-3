@@ -1,4 +1,4 @@
-using WinForm.FormAdmin;
+using WinForm.Form_Home;
 
 namespace WinForm
 {
@@ -10,7 +10,7 @@ namespace WinForm
         {
             
             ApplicationConfiguration.Initialize();
-            Application.Run(new InicoSesion());
+            Application.Run(new FormInicio());
         }
     }
 }

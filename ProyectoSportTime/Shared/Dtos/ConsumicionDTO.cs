@@ -11,7 +11,7 @@ namespace Shared.Dtos
         public int Consumicion_ID { get; set; }
         public int Cantidad { get; set; }
         public decimal Precio { get; set; }
-        public int Cod_Producto { get; set; }
+        public List<ProductoDTO> Productos { get; set; }
     }
 
 }

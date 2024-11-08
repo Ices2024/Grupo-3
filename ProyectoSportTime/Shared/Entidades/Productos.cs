@@ -19,6 +19,6 @@ namespace Shared.Entidades
         public int Proveedor_ID { get; set; } // Clave Foránea
         public Proveedores? Proveedores { get; set; }
 
-        public ICollection<Consumiciones>? Consumiciones { get; set; }
+        public ICollection<ConsumicionProducto> ConsumicionProductos { get; set; } 
     }
 }

@@ -8,7 +8,6 @@ using Shared.Dtos;
 
 namespace API.Controllers.CanchasController
 {
-
     [ApiController]
     [Route("api/[controller]")]
     public class CanchasController : ControllerBase

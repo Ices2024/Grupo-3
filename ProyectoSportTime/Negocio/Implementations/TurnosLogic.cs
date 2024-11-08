@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Negocio.Repositorys;
 using Negocio.Contracts;
 using API.Data;
 using Shared.Entidades;
@@ -7,62 +8,69 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Shared.Dtos;
 
 namespace Negocio.Implementations
 {
-    public class TurnosLogic : InterfaceTurnos
+    public class TurnosLogic
     {
-        private readonly ProyectoDbContext _context;
-
-        // Constructor donde se inyecta el DbContext
-        public TurnosLogic(ProyectoDbContext context)
+        public async Task CrearTurno(TurnoDTO turno)
         {
-            _context = context;
+            ArgumentNullException.ThrowIfNull(turno);
+
+            // Validaciones adicionales si las necesitas
+            if (turno.Admin_ID <= 0)
+                throw new ArgumentException("Admin_ID debe ser mayor a cero");
+
+            if (turno.Cancha_ID <= 0)
+                throw new ArgumentException("Cancha_ID debe ser mayor a cero");
+
+            if (turno.Consumicion_ID <= 0)
+                throw new ArgumentException("Consumicion_ID debe ser mayor a cero");
+
+            if (turno.Cliente_ID <= 0)
+                throw new ArgumentException("Cliente_ID debe ser mayor a cero");
+
+            if (turno.HoraInicio >= turno.HoraFin)
+                throw new ArgumentException("Hora de inicio debe ser menor que la hora de fin");
+
+            await TurnosRepository.CreateTurno(turno);  // Llamamos al servicio para crear el turno
         }
 
-        public void AltaTurno(int adminID, int canchaID, DateTime horaInicio, DateTime horaFin, int consumicionID, int clienteID)
+        public async Task ModificarTurno(int turnoID, TurnoDTO turnoModificar)
         {
-            var nuevoTurno = new Turnos
-            {
-                Admin_ID = adminID,
-                Cancha_ID = canchaID,
-                HoraInicio = horaInicio,
-                HoraFin = horaFin,
-                Consumicion_ID = consumicionID,
-                Cliente_ID = clienteID
-            };
-            _context.Turnos.Add(nuevoTurno);
-            _context.SaveChanges();
+            ArgumentNullException.ThrowIfNull(turnoModificar);
+
+            if (turnoID <= 0)
+                throw new ArgumentException("Id debe ser mayor a cero");
+
+            if (turnoModificar.HoraInicio >= turnoModificar.HoraFin)
+                throw new ArgumentException("Hora de inicio debe ser menor que la hora de fin");
+
+            await TurnosRepository.UpdateTurno(turnoID, turnoModificar);  // Llamamos al servicio para modificar el turno
         }
 
-        public void ModificarTurno(int turnoID, DateTime nuevaHoraInicio, DateTime nuevaHoraFin)
+        public async Task BorrarTurno(int turnoID)
         {
-            var turno = _context.Turnos.Find(turnoID);
-            if (turno != null)
-            {
-                turno.HoraInicio = nuevaHoraInicio;
-                turno.HoraFin = nuevaHoraFin;
-                _context.SaveChanges();
-            }
-            else
-            {
-                throw new Exception($"No se encontró un turno con ID {turnoID}.");
-            }
+            if (turnoID <= 0)
+                throw new ArgumentException("Id debe ser mayor a cero");
+
+            await TurnosRepository.DeleteTurno(turnoID);  // Llamamos al servicio para eliminar el turno
         }
 
-        public void BajaTurno(int turnoID)
+        public async Task<List<TurnoDTO>> ObtenerTodosLosTurnos()
         {
-            var turno = _context.Turnos.Find(turnoID);
-            if (turno != null)
-            {
-                _context.Turnos.Remove(turno);
-                _context.SaveChanges();
-            }
-            else
-            {
-                throw new Exception($"No se encontró un turno con ID {turnoID}.");
-            }
+            return await TurnosRepository.GetAllTurnos();  // Llamamos al servicio para obtener los turnos
+        }
+
+        public async Task<TurnoDTO?> ObtenerTurnoPorId(int id)
+        {
+            if (id <= 0)
+                throw new ArgumentException("Id debe ser mayor a cero");
+
+            return await TurnosRepository.GetTurnoById(id);  // Llamamos al servicio para obtener un turno por ID
         }
     }
 
 }
+

@@ -47,7 +47,7 @@ namespace WinForm.FormAdmin
             MessageBox.Show(jsonResponse);
 
 
-            var homeForm = new Form1();
+            var homeForm = new FormInicio();
             homeForm.Show();
 
         }

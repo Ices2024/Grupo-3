@@ -13,8 +13,8 @@ namespace Shared.Entidades
         public int Consumicion_ID { get; set; }
         public int Cantidad { get; set; }
         public decimal Precio { get; set; } // Debería ser decimal en lugar de bool
-        public int Cod_Producto { get; set; } // Clave Foránea
 
-        public Productos? Producto { get; set; }
+        public ICollection<ConsumicionProducto> ConsumicionProductos { get; set; }
+
     }
 }

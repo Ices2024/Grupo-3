@@ -7,55 +7,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Negocio.Repositorys;
+using Shared.Dtos;
 
 namespace Negocio.Implementations
 {
-    public class DeportesLogic : InterfaceDeportes
+    public class DeportesLogic 
     {
-        private readonly ProyectoDbContext _context;
-
-        // Constructor donde se inyecta el DbContext
-        public DeportesLogic(ProyectoDbContext context)
+        public async Task AltaDeporte(DeporteDTO nuevoDeporte)
         {
-            _context = context;
+            ArgumentNullException.ThrowIfNull(nuevoDeporte);
+
+            await DeportesRepository.CreateDeporte(nuevoDeporte);  // Llamamos al repositorio para crear el deporte
         }
 
-        public void AltaDeporte(string tipo)
+        public async Task ModificarDeporte(int deporteID, DeporteDTO deporteModificado)
         {
-            var nuevoDeporte = new Deportes
+            ArgumentNullException.ThrowIfNull(deporteModificado);
+
+            if (deporteID <= 0)
             {
-                Tipo = tipo
-            };
-            _context.Deportes.Add(nuevoDeporte);
-            _context.SaveChanges();
+                throw new ArgumentException("Id debe ser mayor a cero");
+            }
+
+            await DeportesRepository.UpdateDeporte(deporteID, deporteModificado);  // Llamamos al repositorio para modificar el deporte
         }
 
-        public void ModificarDeporte(int deporteID, string nuevoTipo)
+        public async Task BajaDeporte(int deporteID)
         {
-            var deporte = _context.Deportes.Find(deporteID);
-            if (deporte != null)
+            if (deporteID <= 0)
             {
-                deporte.Tipo = nuevoTipo;
-                _context.SaveChanges();
+                throw new ArgumentException("Id debe ser mayor a cero");
             }
-            else
-            {
-                throw new Exception($"No se encontró un deporte con ID {deporteID}.");
-            }
+
+            await DeportesRepository.DeleteDeporte(deporteID);  // Llamamos al repositorio para eliminar el deporte
         }
 
-        public void BajaDeporte(int deporteID)
+        public async Task<List<DeporteDTO>> ObtenerTodosLosDeportes()
         {
-            var deporte = _context.Deportes.Find(deporteID);
-            if (deporte != null)
+            return await DeportesRepository.GetAllDeportes();  // Llamamos al repositorio para obtener todos los deportes
+        }
+
+        public async Task<DeporteDTO?> ObtenerDeportePorId(int deporteID)
+        {
+            if (deporteID <= 0)
             {
-                _context.Deportes.Remove(deporte);
-                _context.SaveChanges();
+                throw new ArgumentException("Id debe ser mayor a cero");
             }
-            else
-            {
-                throw new Exception($"No se encontró un deporte con ID {deporteID}.");
-            }
+
+            return await DeportesRepository.GetDeporteById(deporteID);  // Llamamos al repositorio para obtener un deporte por ID
         }
     }
 

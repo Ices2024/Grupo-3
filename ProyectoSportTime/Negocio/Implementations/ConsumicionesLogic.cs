@@ -7,58 +7,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Negocio.Repositorys;
+using Shared.Dtos;
 
 namespace Negocio.Implementations
 {
-    public class ConsumicionesLogic : InterfaceConsumicion
+    public class ConsumicionesLogic 
     {
-        private readonly ProyectoDbContext _context;
-
-        // Constructor donde se inyecta el DbContext
-        public ConsumicionesLogic(ProyectoDbContext context)
+        public async Task AltaConsumicion(ConsumicionDTO nuevaConsumicion)
         {
-            _context = context;
+            ArgumentNullException.ThrowIfNull(nuevaConsumicion);
+
+            await ConsumicionesRepository.CreateConsumicion(nuevaConsumicion);  // Llamamos al repositorio para crear la consumición
         }
 
-        public void AltaConsumicion(int cantidad, decimal precio, int codProducto)
+        public async Task ModificarConsumicion(int consumicionID, ConsumicionDTO consumicionModificada)
         {
-            var nuevaConsumicion = new Consumiciones
+            ArgumentNullException.ThrowIfNull(consumicionModificada);
+
+            if (consumicionID <= 0)
             {
-                Cantidad = cantidad,
-                Precio = precio,
-                Cod_Producto = codProducto
-            };
-            _context.Consumiciones.Add(nuevaConsumicion);
-            _context.SaveChanges();
+                throw new ArgumentException("Id debe ser mayor a cero");
+            }
+
+            await ConsumicionesRepository.UpdateConsumicion(consumicionID, consumicionModificada);  // Llamamos al repositorio para modificar la consumición
         }
 
-        public void ModificarConsumicion(int consumicionID, int nuevaCantidad, decimal nuevoPrecio)
+        public async Task BajaConsumicion(int consumicionID)
         {
-            var consumicion = _context.Consumiciones.Find(consumicionID);
-            if (consumicion != null)
+            if (consumicionID <= 0)
             {
-                consumicion.Cantidad = nuevaCantidad;
-                consumicion.Precio = nuevoPrecio;
-                _context.SaveChanges();
+                throw new ArgumentException("Id debe ser mayor a cero");
             }
-            else
-            {
-                throw new Exception($"No se encontró una consumición con ID {consumicionID}.");
-            }
+
+            await ConsumicionesRepository.DeleteConsumicion(consumicionID);  // Llamamos al repositorio para eliminar la consumición
         }
 
-        public void BajaConsumicion(int consumicionID)
+        public async Task<List<ConsumicionDTO>> ObtenerTodasLasConsumiciones()
         {
-            var consumicion = _context.Consumiciones.Find(consumicionID);
-            if (consumicion != null)
+            return await ConsumicionesRepository.GetAllConsumiciones();  // Llamamos al repositorio para obtener todas las consumiciones
+        }
+
+        public async Task<ConsumicionDTO?> ObtenerConsumicionPorId(int consumicionID)
+        {
+            if (consumicionID <= 0)
             {
-                _context.Consumiciones.Remove(consumicion);
-                _context.SaveChanges();
+                throw new ArgumentException("Id debe ser mayor a cero");
             }
-            else
-            {
-                throw new Exception($"No se encontró una consumición con ID {consumicionID}.");
-            }
+
+            return await ConsumicionesRepository.GetConsumicionById(consumicionID);  // Llamamos al repositorio para obtener una consumición por ID
         }
     }
 

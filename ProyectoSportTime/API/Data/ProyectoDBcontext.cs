@@ -17,6 +17,7 @@ namespace API.Data
         public DbSet<Productos> Productos { get; set; }
         public DbSet<Proveedores> Proveedores { get; set; }
         public DbSet<Turnos> Turnos { get; set; }
+        public DbSet<ConsumicionProducto> consumicionProductos { get; set; }
 
         public ProyectoDbContext(DbContextOptions<ProyectoDbContext> options)
             : base(options) { }
