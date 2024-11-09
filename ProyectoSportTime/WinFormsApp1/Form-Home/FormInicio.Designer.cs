@@ -31,6 +31,7 @@
             label1 = new Label();
             label2 = new Label();
             buttonTurno = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -64,15 +65,26 @@
             buttonTurno.UseVisualStyleBackColor = false;
             buttonTurno.Click += buttonTurno_Click;
             // 
-            // Form1
+            // button1
+            // 
+            button1.Location = new Point(334, 148);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 12;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // FormInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(buttonTurno);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Form1";
+            Name = "FormInicio";
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
@@ -83,5 +95,6 @@
         private Label label1;
         private Label label2;
         private Button buttonTurno;
+        private Button button1;
     }
 }

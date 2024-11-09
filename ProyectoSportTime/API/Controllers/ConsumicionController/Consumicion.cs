@@ -129,7 +129,7 @@ namespace API.Controllers.ConsumicionController
             consumicion.Precio = consumicionModificadaDto.Precio;
 
             // Limpiar productos antiguos
-            _context.ConsumicionProductos.RemoveRange(consumicion.ConsumicionProductos);
+            _context.consumicionProductos.RemoveRange(consumicion.ConsumicionProductos);
 
             // Asociar los nuevos productos a la consumición
             foreach (var productoDto in consumicionModificadaDto.Productos)
@@ -166,11 +166,15 @@ namespace API.Controllers.ConsumicionController
                 return NotFound(); // Devuelve 404 si no se encuentra la consumición
             }
 
-            _context.ConsumicionProductos.RemoveRange(consumicion.ConsumicionProductos); // Eliminar las relaciones en la tabla intermedia
+            _context.consumicionProductos.RemoveRange(consumicion.ConsumicionProductos); // Eliminar las relaciones en la tabla intermedia
             _context.Consumiciones.Remove(consumicion);
             await _context.SaveChangesAsync();
 
             return NoContent(); // Devuelve 204 No Content
         }
+       
+
+
+
     }
 }

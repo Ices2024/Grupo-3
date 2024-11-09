@@ -102,26 +102,26 @@ namespace WinForm.Form_Home
         private async void buttonGuardar_Click(object sender, EventArgs e)
         {
             if (comboBoxCancha.SelectedValue is int canchaId &&
-                comboBoxConsumicion.SelectedValue is int productoId &&
+                //comboBoxConsumicion.SelectedValue is int productoId &&
                 comboBoxCliente.SelectedValue is int clienteId)
             {
-                int cantidad = (int)numericUpDownCantidad.Value;
+                //int cantidad = (int)numericUpDownCantidad.Value;
 
-                var nuevaConsumicion = new Consumiciones
-                {
-                    Cantidad = cantidad,
-                    Cod_Producto = productoId
-                };
+                //var nuevaConsumicion = new ConsumicionDTO();
+                ////{
+                ////    Cantidad = cantidad,
+                ////    Cod_Producto = productoId
+                ////};
 
                 // Asumiendo que tienes un método para crear consumiciones en el repositorio
-                var consumicionCreada = await TurnosRepository.CreateConsumicion(nuevaConsumicion);
+                //var consumicionCreada =  ConsumicionesRepository.CreateConsumicion(nuevaConsumicion);
 
                 var nuevoTurno = new TurnoDTO
                 {
                     Cancha_ID = canchaId,
                     HoraInicio = dateTimePicker1.Value,
                     HoraFin = dateTimePicker2.Value,
-                    Consumicion_ID = consumicionCreada.Consumicion_ID,
+                    Consumicion_ID = 0,
                     Cliente_ID = clienteId
                 };
 
@@ -157,7 +157,7 @@ namespace WinForm.Form_Home
                     {
                         var consumicion = await consumicionResponse.Content.ReadFromJsonAsync<Consumiciones>();
                         consumicion.Cantidad = (int)numericUpDownCantidad.Value;
-                        consumicion.Cod_Producto = (int)comboBoxConsumicion.SelectedValue;
+                       
 
                         await _httpClient.PutAsJsonAsync($"consumiciones/{consumicion.Consumicion_ID}", consumicion);
                     }

@@ -14,6 +14,7 @@ namespace Shared.Entidades
         public int Cantidad { get; set; }
         public decimal Precio { get; set; } // Debería ser decimal en lugar de bool
 
+
         public ICollection<ConsumicionProducto> ConsumicionProductos { get; set; }
 
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Shared.Entidades
 
         public string DisplayName => $"{Producto_ID} - {Descripcion}";
 
+        [ForeignKey("Proveedores")]
         public int Proveedor_ID { get; set; } // Clave Foránea
         public Proveedores? Proveedores { get; set; }
 

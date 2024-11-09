@@ -31,7 +31,7 @@ namespace WinForm.Form_Home
                 p.Producto_ID,
                 p.Tipo,
                 p.Descripcion,
-                p.Proveedor
+                p.Proveedor_ID
             }).ToList();
         }
 
@@ -45,7 +45,7 @@ namespace WinForm.Form_Home
                 {
                     Tipo = txtTipo.Text,
                     Descripcion = txtDescripcion.Text,
-                    Proveedor = txtProveedor.Text
+                    Proveedor_ID = Convert.ToInt32(txtProveedor.Text)
                 };
 
                 await _productosLogic.AltaProducto(nuevoProducto);  // Llamar a la lógica para guardar el producto
@@ -89,7 +89,7 @@ namespace WinForm.Form_Home
                 {
                     Tipo = txtTipo.Text,
                     Descripcion = txtDescripcion.Text,
-                    Proveedor = textBoxProveedor.Text
+                    Proveedor_ID = Convert.ToInt32(txtProveedor.Text)
                 };
 
                 await _productosLogic.ModificarProducto(productoId, productoModificado);  // Llamar a la lógica para modificar

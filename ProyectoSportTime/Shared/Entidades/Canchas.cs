@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace Shared.Entidades
     {
         [Key]
         public int Cancha_ID { get; set; }
+        [ForeignKey("Deporte")]
         public int Deporte_ID { get; set; }
         public Deportes Deporte { get; set; }  // Propiedad de navegación
 

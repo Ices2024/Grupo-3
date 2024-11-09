@@ -15,18 +15,21 @@ namespace WinForm.Form_Home
     public partial class FormCanchas : Form
     {
         private readonly CanchasLogic _canchasLogic;
+        private readonly DeportesLogic _deportesLogic;
         private List<DeporteDTO> _deportes;
 
         public FormCanchas()
         {
             InitializeComponent();
-            _canchasLogic = new CanchasLogic();  // Lógica de negocio
+            _canchasLogic = new CanchasLogic();
+            _deportesLogic = new DeportesLogic();
+            // Lógica de negocio
             CargarDeportes();
         }
 
         private async void CargarDeportes()
         {
-            _deportes = await _canchasLogic.ObtenerTodosLosDeportes();  // Obtiene los deportes desde la lógica
+            _deportes = await _deportesLogic.ObtenerTodosLosDeportes();  // Obtiene los deportes desde la lógica
             comboBoxDeporte.DataSource = _deportes;
             comboBoxDeporte.DisplayMember = "Nombre";
             comboBoxDeporte.ValueMember = "Deporte_ID";
@@ -39,7 +42,7 @@ namespace WinForm.Form_Home
                 var nuevaCancha = new CanchaDTO
                 {
                     Deporte_ID = deporteId,
-                    Tipo = textBoxTipo.Text
+                    Tipo = txtTipo.Text
                 };
 
                 await _canchasLogic.AltaCancha(nuevaCancha);  // Llamar a la lógica para guardar
@@ -97,12 +100,16 @@ namespace WinForm.Form_Home
         private async void ActualizarDataGridView()
         {
             var canchas = await _canchasLogic.ObtenerTodasLasCanchas();  // Obtiene las canchas desde la lógica
+            var deporte = _deportes.FirstOrDefault(d => d.Deporte_ID == d.Deporte_ID);
+               
             dataGridView1.DataSource = canchas.Select(c => new
             {
                 c.Cancha_ID,
                 Deporte = _deportes.FirstOrDefault(d => d.Deporte_ID == c.Deporte_ID)?.Nombre,
-                c.Tipo
-            }).ToList();
+                Tipo = _deportes.FirstOrDefault(d => d.Deporte_ID == d.Deporte_ID).Tipo
+
+
+        }).ToList();
         }
 
     }

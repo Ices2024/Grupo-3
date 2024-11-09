@@ -29,9 +29,15 @@ namespace WinForm.Form_Home
 
         private void buttonTurno_Click(object sender, EventArgs e)
         {
-            
+
             TurnoForm turnoForm = new TurnoForm();
             turnoForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormCanchas formCanchas = new FormCanchas();
+            formCanchas.Show();
         }
     }
 }

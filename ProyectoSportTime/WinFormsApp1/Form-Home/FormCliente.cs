@@ -22,7 +22,7 @@ namespace WinForm.Form_Home
         public FormCliente()
         {
             InitializeComponent();
-            clientesLogic = new ClientesLogic();
+            _clientesLogic = new ClientesLogic();
             CargarClientes();
         }
 

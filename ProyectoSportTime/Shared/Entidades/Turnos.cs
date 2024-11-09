@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,16 +12,24 @@ namespace Shared.Entidades
     {
         [Key]
         public int Turno_ID { get; set; }
-        public int Admin_ID { get; set; } // Clave Foránea
-        public int Cancha_ID { get; set; } // Clave Foránea
         public DateTime HoraInicio { get; set; }
         public DateTime HoraFin { get; set; }
-        public int Consumicion_ID { get; set; } // Clave Foránea
-        public int Cliente_ID { get; set; } // Clave Foránea a Clientes
+        
 
-        public Administrador? Administrador { get; set; }
-        public Canchas Canchas { get; set; }
-        public Consumiciones? Consumicion { get; set; }
+        [ForeignKey("Cliente")]
+        public int Cliente_ID { get; set; } // Clave Foránea a Clientes
         public Clientes Cliente { get; set; } // Relación con Cliente
+
+        [ForeignKey("Administrador")]
+        public int Admin_ID { get; set; } // Clave Foránea
+        public Administrador? Administrador { get; set; }
+
+        [ForeignKey("Canchas")]
+        public int Cancha_ID { get; set; } // Clave Foránea
+        public Canchas Canchas { get; set; }
+
+        [ForeignKey("Consumicion")]
+        public int Consumicion_ID { get; set; } // Clave Foránea
+        public Consumiciones? Consumicion { get; set; }
     }
 }
