@@ -17,7 +17,7 @@ namespace Negocio.Repositorys
             ArgumentNullException.ThrowIfNull(cancha);
 
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint("canchas");
+            var url = ApiServer.ObtenerUrlEndPoint("/api/canchas/");
             var content = new StringContent(JsonConvert.SerializeObject(cancha), Encoding.UTF8, "application/json");
 
             var response = await client.PostAsync(url, content);
@@ -30,7 +30,7 @@ namespace Negocio.Repositorys
             ArgumentNullException.ThrowIfNull(canchaModificada);
 
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"canchas/{canchaID}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/canchas/{canchaID}");
             var content = new StringContent(JsonConvert.SerializeObject(canchaModificada), Encoding.UTF8, "application/json");
 
             var response = await client.PutAsync(url, content);
@@ -41,7 +41,7 @@ namespace Negocio.Repositorys
         public static async Task DeleteCancha(int canchaID)
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"canchas/{canchaID}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/canchas/{canchaID}");
 
             var response = await client.DeleteAsync(url);
             response.EnsureSuccessStatusCode();
@@ -51,7 +51,7 @@ namespace Negocio.Repositorys
         public static async Task<List<CanchaDTO>> GetAllCanchas()
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint("canchas");
+            var url = ApiServer.ObtenerUrlEndPoint("/api/canchas");
 
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();
@@ -64,7 +64,7 @@ namespace Negocio.Repositorys
         public static async Task<CanchaDTO?> GetCanchaById(int id)
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"canchas/{id}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/canchas/{id}");
 
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();

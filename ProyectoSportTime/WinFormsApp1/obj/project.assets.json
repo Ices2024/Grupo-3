@@ -3448,24 +3448,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mateo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\chris\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\WinFormsApp1\\WinForm.csproj",
+      "projectUniqueName": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\WinFormsApp1\\WinForm.csproj",
       "projectName": "WinForm",
-      "projectPath": "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\WinFormsApp1\\WinForm.csproj",
-      "packagesPath": "C:\\Users\\mateo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\WinFormsApp1\\obj\\",
+      "projectPath": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\WinFormsApp1\\WinForm.csproj",
+      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mateo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3480,11 +3475,11 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\API\\API.csproj": {
-              "projectPath": "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\API\\API.csproj"
+            "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\API\\API.csproj": {
+              "projectPath": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\API\\API.csproj"
             },
-            "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\Negocio\\Negocio.csproj": {
-              "projectPath": "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\Negocio\\Negocio.csproj"
+            "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Negocio.csproj": {
+              "projectPath": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Negocio.csproj"
             }
           }
         }
@@ -3528,7 +3523,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

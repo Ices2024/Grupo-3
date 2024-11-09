@@ -16,9 +16,8 @@ namespace Negocio.Helper
 
         public static string GetSetting(string key)
         {
-            return (
-                (_configuration != null && _configuration[key] != null) ? _configuration[key]! : ""
-            );
+            return _configuration?.GetValue<string>(key) ?? string.Empty;
         }
+
     }
 }

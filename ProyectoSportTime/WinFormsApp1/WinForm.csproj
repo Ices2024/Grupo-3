@@ -32,4 +32,11 @@
     </EmbeddedResource>
   </ItemGroup>
 
+
+	<ItemGroup>
+		<None Update="negociosettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
 </Project>

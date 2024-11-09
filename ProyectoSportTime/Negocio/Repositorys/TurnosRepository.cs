@@ -18,10 +18,12 @@ namespace Negocio.Repositorys
             ArgumentNullException.ThrowIfNull(turno);
 
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint("turnos");
+            var url = ApiServer.ObtenerUrlEndPoint("/api/turnos");
             var content = new StringContent(JsonConvert.SerializeObject(turno), Encoding.UTF8, "application/json");
 
             var response = await client.PostAsync(url, content);
+
+            string responseMsg = await response.Content.ReadAsStringAsync();
             response.EnsureSuccessStatusCode();
         }
 
@@ -30,7 +32,7 @@ namespace Negocio.Repositorys
             ArgumentNullException.ThrowIfNull(turnoModificar);
 
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"turnos/{turnoID}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/turnos/{turnoID}");
             var content = new StringContent(JsonConvert.SerializeObject(turnoModificar), Encoding.UTF8, "application/json");
 
             var response = await client.PutAsync(url, content);
@@ -40,7 +42,7 @@ namespace Negocio.Repositorys
         public static async Task DeleteTurno(int turnoID)
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"turnos/{turnoID}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/turnos/{turnoID}");
 
             var response = await client.DeleteAsync(url);
             response.EnsureSuccessStatusCode();
@@ -49,7 +51,7 @@ namespace Negocio.Repositorys
         public static async Task<List<TurnoDTO>> GetAllTurnos()
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint("turnos");
+            var url = ApiServer.ObtenerUrlEndPoint("/api/turnos");
 
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();
@@ -61,7 +63,7 @@ namespace Negocio.Repositorys
         public static async Task<TurnoDTO?> GetTurnoById(int id)
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"turnos/{id}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/turnos/{id}");
 
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();

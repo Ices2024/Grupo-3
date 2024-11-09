@@ -10,7 +10,7 @@ namespace API.Data
     {
         public DbSet<Administrador> Administradores { get; set; }
         public DbSet<Canchas> Canchas { get; set; }
-        public DbSet<Clientes> Clientes { get; set; }
+        public DbSet<Clientes> Clientes { get; set; }   
         public DbSet<Consumiciones> Consumiciones { get; set; }
         public DbSet<Deportes> Deportes { get; set; }
         public DbSet<Elementos> Elementos { get; set; }
@@ -45,7 +45,7 @@ namespace API.Data
 
             foreach (var relationship in relationships)
             {
-                relationship.DeleteBehavior = DeleteBehavior.Restrict; // Configurar comportamiento de eliminación
+                relationship.DeleteBehavior = DeleteBehavior.Restrict; 
             }
         }
     }

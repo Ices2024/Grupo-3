@@ -14,7 +14,6 @@ namespace Negocio.ClienteHttp
             HttpClient _client = new HttpClient();
             _client.DefaultRequestHeaders.Add("Accept", "application/json");
             _client.Timeout = TimeSpan.FromSeconds(15);
-
             return _client;
         }
 
@@ -22,5 +21,7 @@ namespace Negocio.ClienteHttp
         {
             return ApplicationConfiguration.GetSetting("ApiServer:BaseURL") + Path;
         }
+
+
     }
 }

@@ -17,7 +17,7 @@ namespace Negocio.Repositorys
             ArgumentNullException.ThrowIfNull(productoDto);
 
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint("productos");
+            var url = ApiServer.ObtenerUrlEndPoint("/api/productos");
             var content = new StringContent(JsonConvert.SerializeObject(productoDto), Encoding.UTF8, "application/json");
 
             var response = await client.PostAsync(url, content);
@@ -30,7 +30,7 @@ namespace Negocio.Repositorys
             ArgumentNullException.ThrowIfNull(productoModificadoDto);
 
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"productos/{productoID}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/productos/{productoID}");
             var content = new StringContent(JsonConvert.SerializeObject(productoModificadoDto), Encoding.UTF8, "application/json");
 
             var response = await client.PutAsync(url, content);
@@ -41,7 +41,7 @@ namespace Negocio.Repositorys
         public static async Task DeleteProducto(int productoID)
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"productos/{productoID}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/productos/{productoID}");
 
             var response = await client.DeleteAsync(url);
             response.EnsureSuccessStatusCode();
@@ -51,7 +51,7 @@ namespace Negocio.Repositorys
         public static async Task<List<ProductoDTO>> GetAllProductos()
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint("productos");
+            var url = ApiServer.ObtenerUrlEndPoint("/api/productos");
 
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();
@@ -64,7 +64,7 @@ namespace Negocio.Repositorys
         public static async Task<ProductoDTO?> GetProductoById(int id)
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"productos/{id}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/productos/{id}");
 
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();

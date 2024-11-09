@@ -1,14 +1,5 @@
 {
   "ApiServer": {
-    "BaseURL": "https://localhost:7183", // Asegúrate de usar la misma URL de tu API
-    "EndPoints": {
-      "Turnos": {
-        "ObtenerTodos": "/api/turnos", // GET: api/turnos
-        "ObtenerPorId": "/api/turnos/{0}", // GET: api/turnos/{id}
-        "Crear": "/api/turnos", // POST: api/turnos
-        "Actualizar": "/api/turnos/{0}", // PUT: api/turnos/{id}
-        "Borrar": "/api/turnos/{0}"
-      }
-    }
+    "BaseURL": "https://localhost:7094", // Asegúrate de usar la misma URL de tu API
   }
 }

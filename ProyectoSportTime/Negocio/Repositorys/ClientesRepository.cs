@@ -17,7 +17,7 @@ namespace Negocio.Repositorys
             ArgumentNullException.ThrowIfNull(clienteDto);
 
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint("clientes");
+            var url = ApiServer.ObtenerUrlEndPoint("/api/clientes");
             var content = new StringContent(JsonConvert.SerializeObject(clienteDto), Encoding.UTF8, "application/json");
 
             var response = await client.PostAsync(url, content);
@@ -30,7 +30,7 @@ namespace Negocio.Repositorys
             ArgumentNullException.ThrowIfNull(clienteModificadoDto);
 
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"clientes/{clienteID}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/clientes/{clienteID}");
             var content = new StringContent(JsonConvert.SerializeObject(clienteModificadoDto), Encoding.UTF8, "application/json");
 
             var response = await client.PutAsync(url, content);
@@ -41,7 +41,7 @@ namespace Negocio.Repositorys
         public static async Task DeleteCliente(int clienteID)
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"clientes/{clienteID}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/clientes/{clienteID}");
 
             var response = await client.DeleteAsync(url);
             response.EnsureSuccessStatusCode();
@@ -51,7 +51,7 @@ namespace Negocio.Repositorys
         public static async Task<List<ClienteDTO>> GetAllClientes()
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint("clientes");
+            var url = ApiServer.ObtenerUrlEndPoint("/api/clientes");
 
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();
@@ -64,7 +64,7 @@ namespace Negocio.Repositorys
         public static async Task<ClienteDTO?> GetClienteById(int id)
         {
             var client = ApiServer.ObtenerClientHttp();
-            var url = ApiServer.ObtenerUrlEndPoint($"clientes/{id}");
+            var url = ApiServer.ObtenerUrlEndPoint($"/api/clientes/{id}");
 
             var response = await client.GetAsync(url);
             response.EnsureSuccessStatusCode();

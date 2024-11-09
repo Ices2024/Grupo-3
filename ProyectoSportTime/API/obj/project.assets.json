@@ -4550,24 +4550,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mateo\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\chris\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\mateo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\API\\obj\\",
+      "projectPath": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mateo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4582,8 +4577,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\mateo\\Desktop\\proyecto\\ProyectoSportTime\\Shared\\Shared.csproj"
+            "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Shared\\Shared.csproj"
             }
           }
         }
@@ -4645,7 +4640,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
