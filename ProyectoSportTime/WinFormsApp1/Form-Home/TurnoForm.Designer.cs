@@ -120,7 +120,7 @@
             buttonGuardar.Size = new Size(75, 23);
             buttonGuardar.TabIndex = 10;
             buttonGuardar.Text = "Guardar";
- 
+            buttonGuardar.UseVisualStyleBackColor = false;
             buttonGuardar.Click += buttonGuardar_Click;
             // 
             // buttonModificar
@@ -132,6 +132,7 @@
             buttonModificar.Size = new Size(75, 23);
             buttonModificar.TabIndex = 11;
             buttonModificar.Text = "Modificar";
+            buttonModificar.UseVisualStyleBackColor = false;
             buttonModificar.Click += buttonModificar_Click;
             // 
             // buttonEliminar
@@ -143,29 +144,31 @@
             buttonEliminar.Size = new Size(75, 23);
             buttonEliminar.TabIndex = 12;
             buttonEliminar.Text = "Eliminar";
-  
+            buttonEliminar.UseVisualStyleBackColor = false;
             buttonEliminar.Click += buttonEliminar_Click;
             // 
             // buttonLimpiar
             // 
             buttonLimpiar.BackColor = Color.FromArgb(21, 109, 99);
+            buttonLimpiar.FlatStyle = FlatStyle.Popup;
             buttonLimpiar.Location = new Point(543, 391);
             buttonLimpiar.Name = "buttonLimpiar";
             buttonLimpiar.Size = new Size(75, 23);
             buttonLimpiar.TabIndex = 13;
             buttonLimpiar.Text = "Limpiar";
-     
+            buttonLimpiar.UseVisualStyleBackColor = false;
             buttonLimpiar.Click += buttonLimpiar_Click;
             // 
             // buttonVolver
             // 
             buttonVolver.BackColor = Color.FromArgb(21, 109, 99);
+            buttonVolver.FlatStyle = FlatStyle.Popup;
             buttonVolver.Location = new Point(648, 391);
             buttonVolver.Name = "buttonVolver";
             buttonVolver.Size = new Size(75, 23);
             buttonVolver.TabIndex = 14;
             buttonVolver.Text = "Volver";
-      
+            buttonVolver.UseVisualStyleBackColor = false;
             buttonVolver.Click += buttonVolver_Click;
             // 
             // comboBoxCliente
@@ -178,7 +181,6 @@
             // 
             // label6
             // 
-     
             label6.AutoSize = true;
             label6.Location = new Point(15, 333);
             label6.Name = "label6";
@@ -225,7 +227,6 @@
             Padding = new Padding(3);
             Text = "TurnoForm";
             TopMost = true;
-           // TransparencyKey = Color.Black;
             ((System.ComponentModel.ISupportInitialize)dataGridViewTurnos).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,7 @@ namespace Shared.Dtos
         public int Cancha_ID { get; set; }
         public int Deporte_ID { get; set; } // Asegúrate de que esto sea parte del DTO
         public string? Tipo { get; set; }
+
+        public Deportes? deporte {  get; set; }   
     }
 }

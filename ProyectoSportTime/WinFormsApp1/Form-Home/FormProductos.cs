@@ -104,9 +104,7 @@ namespace WinForm.Form_Home
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
-            var homeForm = new FormInicio();
-            homeForm.Show();
+            this.Close();
         }
     }
 }

@@ -142,9 +142,7 @@ namespace WinForm.Form_Home
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-            Close();
-            var homeForm = new FormInicio();
-            homeForm.Show();
+            this.Close();
         }
     }
 }

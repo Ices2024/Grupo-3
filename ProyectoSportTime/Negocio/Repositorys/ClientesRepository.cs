@@ -26,6 +26,23 @@ namespace Negocio.Repositorys
         }
 
 
+        public static async Task<bool> ExisteClienteConNombreYTelefono(string nombre, int numeroTelefono, int clienteID = 0)
+        {
+            var client = ApiServer.ObtenerClientHttp();
+            var url = ApiServer.ObtenerUrlEndPoint("/api/clientes");
+
+            var response = await client.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            var result = await response.Content.ReadAsStringAsync();
+            var clientes = JsonConvert.DeserializeObject<List<ClienteDTO>>(result);
+
+            // Verificamos si existe un cliente con el mismo nombre y número de teléfono
+            // y aseguramos que no sea el mismo cliente que está siendo modificado
+            return clientes.Any(c => c.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase)
+                                      && c.NumeroTelefono == numeroTelefono
+                                      && c.Cliente_ID != clienteID);
+        }
 
         public static async Task<bool> ExisteClienteConNumeroTelefono(int numeroTelefono, int clienteID = 0)
         {
@@ -42,8 +59,6 @@ namespace Negocio.Repositorys
             // y aseguramos que no sea el mismo cliente que está siendo modificado
             return clientes.Any(c => c.NumeroTelefono == numeroTelefono && c.Cliente_ID != clienteID);
         }
-
-
 
 
         // Actualizar un cliente existente

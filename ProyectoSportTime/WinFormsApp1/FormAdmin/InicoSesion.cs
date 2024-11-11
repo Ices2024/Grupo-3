@@ -26,29 +26,29 @@ namespace WinForm.FormAdmin
         {
             LoginDTO login = new LoginDTO
             {
-                Email = textBoxEmail.Text,  
+                Email = textBoxEmail.Text,
                 Password = textBoxPassword.Text,
             };
 
             HttpClient httpClient = new HttpClient();
-            
             var json = JsonConvert.SerializeObject(login);
-
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await httpClient.PostAsync("https://localhost:7094/api/administrador/login",content);
-
+            var response = await httpClient.PostAsync("https://localhost:7094/api/administrador/login", content);
             var jsonResponse = await response.Content.ReadAsStringAsync();
 
-            var Response = JsonConvert.DeserializeObject(jsonResponse);
-            
-            MessageBox.Show(response.StatusCode.ToString());
+            if (response.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Inicio de sesión exitoso.");
 
-            MessageBox.Show(jsonResponse);
-
-
-            var homeForm = new FormInicio();
-            homeForm.Show();
+                var homeForm = new FormInicio();
+                homeForm.Show();
+                this.Hide(); // Oculta el formulario de inicio de sesión en lugar de cerrarlo
+            }
+            else
+            {
+                MessageBox.Show("Error en el inicio de sesión: " + jsonResponse);
+            }
 
         }
     }

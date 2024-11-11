@@ -30,6 +30,7 @@ namespace API.Controllers.CanchasController
                 {
                     Cancha_ID = c.Cancha_ID,
                     Deporte_ID = c.Deporte_ID,
+                    deporte = c.Deporte,
                     Tipo = c.Deporte.Tipo // Asigna el tipo del deporte al DTO
                 })
                 .ToListAsync();

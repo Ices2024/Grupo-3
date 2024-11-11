@@ -30,7 +30,19 @@ namespace Negocio.Implementations
                 return (false, "El número de teléfono debe ser válido.");
             }
 
+            // Validar si ya existe un cliente con el mismo nombre y teléfono
+            bool existeClientePorNombreYTelefono = await ClientesRepository.ExisteClienteConNombreYTelefono(nuevoCliente.Nombre, nuevoCliente.NumeroTelefono);
+            if (existeClientePorNombreYTelefono)
+            {
+                return (false, "Ya existe un cliente con el mismo nombre y número de teléfono.");
+            }
 
+            // Validar si ya existe un cliente con el mismo número de teléfono (pero nombre diferente)
+            bool existeClientePorNumeroTelefono = await ClientesRepository.ExisteClienteConNumeroTelefono(nuevoCliente.NumeroTelefono);
+            if (existeClientePorNumeroTelefono)
+            {
+                return (false, "El número de teléfono ya está registrado para otro cliente.");
+            }
 
             // Llamamos al repositorio para crear el cliente
             await ClientesRepository.CreateCliente(nuevoCliente);
