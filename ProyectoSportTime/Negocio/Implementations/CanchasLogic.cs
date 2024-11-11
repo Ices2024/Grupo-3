@@ -14,8 +14,6 @@ namespace Negocio.Implementations
 {
     public class CanchasLogic
     {
-        public CanchasLogic() { }
-
         public async Task AltaCancha(CanchaDTO nuevaCancha)
         {
             ArgumentNullException.ThrowIfNull(nuevaCancha);

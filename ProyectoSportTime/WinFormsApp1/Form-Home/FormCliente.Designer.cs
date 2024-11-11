@@ -36,13 +36,15 @@
             dataGridView1 = new DataGridView();
             buttonModificar = new Button();
             buttonEliminar = new Button();
+            buttonVolver = new Button();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(26, 51);
+            label1.Location = new Point(12, 159);
             label1.Name = "label1";
             label1.Size = new Size(51, 15);
             label1.TabIndex = 0;
@@ -50,7 +52,7 @@
             // 
             // textBoxNombre
             // 
-            textBoxNombre.Location = new Point(26, 69);
+            textBoxNombre.Location = new Point(12, 177);
             textBoxNombre.Name = "textBoxNombre";
             textBoxNombre.Size = new Size(100, 23);
             textBoxNombre.TabIndex = 1;
@@ -58,7 +60,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(26, 119);
+            label2.Location = new Point(12, 214);
             label2.Name = "label2";
             label2.Size = new Size(52, 15);
             label2.TabIndex = 2;
@@ -66,54 +68,88 @@
             // 
             // textBoxTelefono
             // 
-            textBoxTelefono.Location = new Point(26, 137);
+            textBoxTelefono.Location = new Point(12, 232);
             textBoxTelefono.Name = "textBoxTelefono";
             textBoxTelefono.Size = new Size(100, 23);
             textBoxTelefono.TabIndex = 3;
             // 
             // buttonGuardar
             // 
-            buttonGuardar.Location = new Point(26, 189);
+            buttonGuardar.BackColor = Color.FromArgb(21, 109, 99);
+            buttonGuardar.FlatStyle = FlatStyle.Popup;
+            buttonGuardar.Location = new Point(12, 270);
             buttonGuardar.Name = "buttonGuardar";
             buttonGuardar.Size = new Size(75, 23);
             buttonGuardar.TabIndex = 4;
             buttonGuardar.Text = "Guardar";
-            buttonGuardar.UseVisualStyleBackColor = true;
+            buttonGuardar.UseVisualStyleBackColor = false;
             buttonGuardar.Click += buttonGuardar_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(173, 51);
+            dataGridView1.Location = new Point(173, 103);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(248, 161);
+            dataGridView1.Size = new Size(336, 161);
             dataGridView1.TabIndex = 5;
             // 
             // buttonModificar
             // 
-            buttonModificar.Location = new Point(173, 218);
+            buttonModificar.BackColor = Color.FromArgb(21, 109, 99);
+            buttonModificar.FlatStyle = FlatStyle.Popup;
+            buttonModificar.Location = new Point(173, 270);
             buttonModificar.Name = "buttonModificar";
             buttonModificar.Size = new Size(75, 23);
             buttonModificar.TabIndex = 6;
             buttonModificar.Text = "Modificar";
-            buttonModificar.UseVisualStyleBackColor = true;
+            buttonModificar.UseVisualStyleBackColor = false;
             buttonModificar.Click += buttonModificar_Click;
             // 
             // buttonEliminar
             // 
-            buttonEliminar.Location = new Point(346, 218);
+            buttonEliminar.BackColor = Color.FromArgb(21, 109, 99);
+            buttonEliminar.FlatStyle = FlatStyle.Popup;
+            buttonEliminar.Location = new Point(434, 270);
             buttonEliminar.Name = "buttonEliminar";
             buttonEliminar.Size = new Size(75, 23);
             buttonEliminar.TabIndex = 7;
             buttonEliminar.Text = "Eliminar";
-            buttonEliminar.UseVisualStyleBackColor = true;
+            buttonEliminar.UseVisualStyleBackColor = false;
             buttonEliminar.Click += buttonEliminar_Click;
             // 
-            // Form1
+            // buttonVolver
+            // 
+            buttonVolver.BackColor = Color.FromArgb(21, 109, 99);
+            buttonVolver.FlatStyle = FlatStyle.Popup;
+            buttonVolver.Location = new Point(522, 312);
+            buttonVolver.Name = "buttonVolver";
+            buttonVolver.Size = new Size(75, 23);
+            buttonVolver.TabIndex = 8;
+            buttonVolver.TabStop = false;
+            buttonVolver.Text = "Volver";
+            buttonVolver.UseVisualStyleBackColor = false;
+            buttonVolver.Click += buttonVolver_Click;
+            // 
+            // label5
+            // 
+            label5.BackColor = Color.FromArgb(21, 109, 99);
+            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ImageAlign = ContentAlignment.BottomLeft;
+            label5.Location = new Point(0, -1);
+            label5.Name = "label5";
+            label5.Size = new Size(610, 49);
+            label5.TabIndex = 20;
+            label5.Text = "Clientes";
+            label5.TextAlign = ContentAlignment.BottomLeft;
+            // 
+            // FormCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(486, 286);
+            BackColor = Color.FromArgb(11, 204, 181);
+            ClientSize = new Size(609, 347);
+            Controls.Add(label5);
+            Controls.Add(buttonVolver);
             Controls.Add(buttonEliminar);
             Controls.Add(buttonModificar);
             Controls.Add(dataGridView1);
@@ -122,7 +158,7 @@
             Controls.Add(label2);
             Controls.Add(textBoxNombre);
             Controls.Add(label1);
-            Name = "Form1";
+            Name = "FormCliente";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -139,5 +175,7 @@
         private DataGridView dataGridView1;
         private Button buttonModificar;
         private Button buttonEliminar;
+        private Button buttonVolver;
+        private Label label5;
     }
 }

@@ -14,27 +14,25 @@ namespace Negocio.Implementations
 {
     public class TurnosLogic
     {
-        public async Task CrearTurno(TurnoDTO turno)
+        public async Task<(bool EsExitoso, string MensajeError)> CrearTurno(TurnoDTO turno)
         {
-            ArgumentNullException.ThrowIfNull(turno);
-
-            // Validaciones adicionales si las necesitas
-            if (turno.Admin_ID <= 0)
-                throw new ArgumentException("Admin_ID debe ser mayor a cero");
+            if (turno == null)
+                return (false, "El turno no puede ser nulo.");
 
             if (turno.Cancha_ID <= 0)
-                throw new ArgumentException("Cancha_ID debe ser mayor a cero");
+                return (false, "Seleccione una cancha válida.");
 
-            if (turno.Consumicion_ID <= 0)
-                throw new ArgumentException("Consumicion_ID debe ser mayor a cero");
+            //if (turno.Consumicion_ID <= 0)
+            //    return (false, "Seleccione una consumición válida.");
 
             if (turno.Cliente_ID <= 0)
-                throw new ArgumentException("Cliente_ID debe ser mayor a cero");
+                return (false, "Seleccione un cliente válido.");
 
             if (turno.HoraInicio >= turno.HoraFin)
-                throw new ArgumentException("Hora de inicio debe ser menor que la hora de fin");
+                return (false, "La hora de inicio debe ser menor que la hora de fin.");
 
-            await TurnosRepository.CreateTurno(turno);  // Llamamos al servicio para crear el turno
+            await TurnosRepository.CreateTurno(turno);  // Llamada al repositorio
+            return (true, "Turno creado correctamente.");
         }
 
         public async Task ModificarTurno(int turnoID, TurnoDTO turnoModificar)

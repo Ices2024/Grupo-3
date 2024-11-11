@@ -1,38 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\",
+  "WorkspaceRootPath": "C:\\Users\\chris\\Downloads\\proyecto (1)\\proyecto\\ProyectoSportTime\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\chris\\downloads\\proyecto\\proyecto\\proyectosporttime\\negocio\\repositorys\\turnosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\chris\\downloads\\proyecto (1)\\proyecto\\proyectosporttime\\winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\chris\\downloads\\proyecto (1)\\proyecto\\proyectosporttime\\winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\turnoform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\chris\\downloads\\proyecto (1)\\proyecto\\proyectosporttime\\negocio\\repositorys\\turnosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\repositorys\\turnosrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\chris\\downloads\\proyecto\\proyecto\\proyectosporttime\\negocio\\implementations\\turnoslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\implementations\\turnoslogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\chris\\downloads\\proyecto\\proyecto\\proyectosporttime\\winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\formadmin\\inicosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\chris\\downloads\\proyecto\\proyecto\\proyectosporttime\\winformsapp1\\winform.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\winform.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\chris\\downloads\\proyecto\\proyecto\\proyectosporttime\\negocio\\repositorys\\deportesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\repositorys\\deportesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\chris\\downloads\\proyecto\\proyecto\\proyectosporttime\\negocio\\repositorys\\clientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\repositorys\\clientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|c:\\users\\chris\\downloads\\proyecto\\proyecto\\proyectosporttime\\negocio\\repositorys\\canchasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA11351-1B9B-41CC-A91E-9F48E504F211}|Negocio\\Negocio.csproj|solutionrelative:negocio\\repositorys\\canchasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\chris\\downloads\\proyecto\\proyecto\\proyectosporttime\\winformsapp1\\negociosettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\negociosettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|c:\\users\\chris\\downloads\\proyecto (1)\\proyecto\\proyectosporttime\\winformsapp1\\form-home\\formcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F321FEDB-AA5B-4478-A101-08816CDC60CC}|WinFormsApp1\\WinForm.csproj|solutionrelative:winformsapp1\\form-home\\formcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,110 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "TurnosRepository.cs",
-              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Repositorys\\TurnosRepository.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto (1)\\proyecto\\ProyectoSportTime\\Negocio\\Repositorys\\TurnosRepository.cs",
               "RelativeDocumentMoniker": "Negocio\\Repositorys\\TurnosRepository.cs",
-              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Repositorys\\TurnosRepository.cs",
+              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto (1)\\proyecto\\ProyectoSportTime\\Negocio\\Repositorys\\TurnosRepository.cs",
               "RelativeToolTip": "Negocio\\Repositorys\\TurnosRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBQAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAEwBoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T22:42:51.244Z",
+              "WhenOpened": "2024-11-10T22:46:14.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TurnoForm.cs",
+              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto (1)\\proyecto\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
+              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto (1)\\proyecto\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
+              "RelativeToolTip": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAcwNIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T22:44:23.112Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TurnosLogic.cs",
-              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Implementations\\TurnosLogic.cs",
-              "RelativeDocumentMoniker": "Negocio\\Implementations\\TurnosLogic.cs",
-              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Implementations\\TurnosLogic.cs",
-              "RelativeToolTip": "Negocio\\Implementations\\TurnosLogic.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAwB0AAAAQAAAAAAAAAA==",
+              "Title": "TurnoForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto (1)\\proyecto\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\TurnoForm.cs",
+              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto (1)\\proyecto\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\TurnoForm.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\Form-Home\\TurnoForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T22:39:45.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InicoSesion.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs",
-              "RelativeDocumentMoniker": "WinFormsApp1\\FormAdmin\\InicoSesion.cs",
-              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\WinFormsApp1\\FormAdmin\\InicoSesion.cs [Design]",
-              "RelativeToolTip": "WinFormsApp1\\FormAdmin\\InicoSesion.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T22:39:57.45Z",
+              "WhenOpened": "2024-11-10T22:44:21.339Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "WinForm",
-              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\WinFormsApp1\\WinForm.csproj",
-              "RelativeDocumentMoniker": "WinFormsApp1\\WinForm.csproj",
-              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\WinFormsApp1\\WinForm.csproj",
-              "RelativeToolTip": "WinFormsApp1\\WinForm.csproj",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-09T22:37:50.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DeportesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Repositorys\\DeportesRepository.cs",
-              "RelativeDocumentMoniker": "Negocio\\Repositorys\\DeportesRepository.cs",
-              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Repositorys\\DeportesRepository.cs",
-              "RelativeToolTip": "Negocio\\Repositorys\\DeportesRepository.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwDMAAAAJAAAAAAAAAA==",
+              "Title": "FormCliente.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto (1)\\proyecto\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\FormCliente.cs",
+              "RelativeDocumentMoniker": "WinFormsApp1\\Form-Home\\FormCliente.cs",
+              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto (1)\\proyecto\\ProyectoSportTime\\WinFormsApp1\\Form-Home\\FormCliente.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\Form-Home\\FormCliente.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T22:36:15.846Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ClientesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Repositorys\\ClientesRepository.cs",
-              "RelativeDocumentMoniker": "Negocio\\Repositorys\\ClientesRepository.cs",
-              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Repositorys\\ClientesRepository.cs",
-              "RelativeToolTip": "Negocio\\Repositorys\\ClientesRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T22:36:03.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CanchasRepository.cs",
-              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Repositorys\\CanchasRepository.cs",
-              "RelativeDocumentMoniker": "Negocio\\Repositorys\\CanchasRepository.cs",
-              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\Negocio\\Repositorys\\CanchasRepository.cs",
-              "RelativeToolTip": "Negocio\\Repositorys\\CanchasRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T22:35:59.642Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "negociosettings.json",
-              "DocumentMoniker": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\WinFormsApp1\\negociosettings.json",
-              "RelativeDocumentMoniker": "WinFormsApp1\\negociosettings.json",
-              "ToolTip": "C:\\Users\\chris\\Downloads\\proyecto\\proyecto\\ProyectoSportTime\\WinFormsApp1\\negociosettings.json",
-              "RelativeToolTip": "WinFormsApp1\\negociosettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-09T22:35:26.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T22:44:18.988Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

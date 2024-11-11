@@ -15,23 +15,27 @@ namespace Negocio.Implementations
     public class ClientesLogic
     {
         // Crear un nuevo cliente
-        public async Task AltaCliente(ClienteDTO nuevoCliente)
+        public async Task<(bool success, string message)> AltaCliente(ClienteDTO nuevoCliente)
         {
             ArgumentNullException.ThrowIfNull(nuevoCliente);
 
             // Validación de los datos
             if (string.IsNullOrEmpty(nuevoCliente.Nombre))
             {
-                throw new ArgumentException("El nombre no puede estar vacío.");
+                return (false, "El nombre no puede estar vacío.");
             }
 
             if (nuevoCliente.NumeroTelefono <= 0)
             {
-                throw new ArgumentException("El número de teléfono debe ser válido.");
+                return (false, "El número de teléfono debe ser válido.");
             }
+
+
 
             // Llamamos al repositorio para crear el cliente
             await ClientesRepository.CreateCliente(nuevoCliente);
+
+            return (true, "Cliente guardado correctamente.");
         }
 
         // Modificar un cliente existente
@@ -55,6 +59,8 @@ namespace Negocio.Implementations
                 throw new ArgumentException("El número de teléfono debe ser válido.");
             }
 
+
+
             // Llamamos al repositorio para modificar el cliente
             await ClientesRepository.UpdateCliente(clienteID, clienteModificado);
         }
@@ -68,7 +74,10 @@ namespace Negocio.Implementations
             }
 
             // Llamamos al repositorio para eliminar el cliente
-            await ClientesRepository.DeleteCliente(clienteID);
+              await ClientesRepository.DeleteCliente(clienteID);
+            
+         
+          
         }
 
         // Obtener todos los clientes

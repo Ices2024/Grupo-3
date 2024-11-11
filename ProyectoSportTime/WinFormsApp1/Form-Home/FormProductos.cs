@@ -48,9 +48,9 @@ namespace WinForm.Form_Home
                     Proveedor_ID = Convert.ToInt32(txtProveedor.Text)
                 };
 
-                await _productosLogic.AltaProducto(nuevoProducto);  // Llamar a la lógica para guardar el producto
+                await _productosLogic.AltaProducto(nuevoProducto);
                 MessageBox.Show("Producto guardado correctamente.");
-                ActualizarDataGridView();  // Actualizar la vista
+                ActualizarDataGridView();
             }
             else
             {
@@ -100,6 +100,13 @@ namespace WinForm.Form_Home
             {
                 MessageBox.Show("Seleccione un producto para modificar.");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+            var homeForm = new FormInicio();
+            homeForm.Show();
         }
     }
 }

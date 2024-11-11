@@ -4,6 +4,7 @@ using Shared.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,11 +25,34 @@ namespace Negocio.Repositorys
             response.EnsureSuccessStatusCode();
         }
 
+
+
+        public static async Task<bool> ExisteClienteConNumeroTelefono(int numeroTelefono, int clienteID = 0)
+        {
+            var client = ApiServer.ObtenerClientHttp();
+            var url = ApiServer.ObtenerUrlEndPoint("/api/clientes");
+
+            var response = await client.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+
+            var result = await response.Content.ReadAsStringAsync();
+            var clientes = JsonConvert.DeserializeObject<List<ClienteDTO>>(result);
+
+            // Verificamos si existe un cliente con el mismo número de teléfono
+            // y aseguramos que no sea el mismo cliente que está siendo modificado
+            return clientes.Any(c => c.NumeroTelefono == numeroTelefono && c.Cliente_ID != clienteID);
+        }
+
+
+
+
         // Actualizar un cliente existente
         public static async Task UpdateCliente(int clienteID, ClienteDTO clienteModificadoDto)
         {
             ArgumentNullException.ThrowIfNull(clienteModificadoDto);
 
+
+            // Si pasa las validaciones, procedemos con la actualización
             var client = ApiServer.ObtenerClientHttp();
             var url = ApiServer.ObtenerUrlEndPoint($"/api/clientes/{clienteID}");
             var content = new StringContent(JsonConvert.SerializeObject(clienteModificadoDto), Encoding.UTF8, "application/json");
@@ -44,6 +68,14 @@ namespace Negocio.Repositorys
             var url = ApiServer.ObtenerUrlEndPoint($"/api/clientes/{clienteID}");
 
             var response = await client.DeleteAsync(url);
+            try
+            {
+                response.EnsureSuccessStatusCode();
+            }catch
+            {
+                throw new Exception("EL cliente no se puede eliminar, tiene turnos pedidos");
+            }
+                
             response.EnsureSuccessStatusCode();
         }
 

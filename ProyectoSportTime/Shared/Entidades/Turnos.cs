@@ -14,22 +14,20 @@ namespace Shared.Entidades
         public int Turno_ID { get; set; }
         public DateTime HoraInicio { get; set; }
         public DateTime HoraFin { get; set; }
-        
 
         [ForeignKey("Cliente")]
-        public int Cliente_ID { get; set; } // Clave Foránea a Clientes
-        public Clientes Cliente { get; set; } // Relación con Cliente
+        public int Cliente_ID { get; set; }
+        public Clientes Cliente { get; set; }
 
         [ForeignKey("Administrador")]
-        public int Admin_ID { get; set; } // Clave Foránea
+        public int Admin_ID { get; set; }
         public Administrador? Administrador { get; set; }
 
         [ForeignKey("Canchas")]
-        public int Cancha_ID { get; set; } // Clave Foránea
+        public int Cancha_ID { get; set; }
         public Canchas Canchas { get; set; }
 
-        [ForeignKey("Consumicion")]
-        public int Consumicion_ID { get; set; } // Clave Foránea
-        public Consumiciones? Consumicion { get; set; }
+        // Cambiar la relación de Consumicion_ID por una colección de ConsumicionProducto
+        public List<ConsumicionProducto>? ConsumicionProductos { get; set; }
     }
 }

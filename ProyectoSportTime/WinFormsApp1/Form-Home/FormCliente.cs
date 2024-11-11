@@ -1,4 +1,5 @@
 ﻿using Negocio.Implementations;
+using Negocio.Repositorys;
 using Shared.Dtos;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace WinForm.Form_Home
         private async void buttonGuardar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBoxNombre.Text) &&
-        !string.IsNullOrEmpty(textBoxTelefono.Text))
+            !string.IsNullOrEmpty(textBoxTelefono.Text))
             {
                 var nuevoCliente = new ClienteDTO
                 {
@@ -43,10 +44,18 @@ namespace WinForm.Form_Home
                     NumeroTelefono = int.Parse(textBoxTelefono.Text)
                 };
 
-                await _clientesLogic.AltaCliente(nuevoCliente);  // Guardamos el nuevo cliente en la lógica
+                // Llamamos a la lógica para guardar el cliente
+                var (success, message) = await _clientesLogic.AltaCliente(nuevoCliente);
 
-                MessageBox.Show("Cliente guardado correctamente.");
-                ActualizarDataGridView();  // Actualizamos el DataGridView
+                if (success)
+                {
+                    MessageBox.Show(message);  // Mensaje de éxito
+                    ActualizarDataGridView();  // Actualizamos el DataGridView
+                }
+                else
+                {
+                    MessageBox.Show(message);  // Mensaje de error (si el cliente no se puede guardar)
+                }
             }
             else
             {
@@ -67,9 +76,8 @@ namespace WinForm.Form_Home
                     cliente.Nombre = textBoxNombre.Text;
                     cliente.NumeroTelefono = int.Parse(textBoxTelefono.Text);
 
-                    await _clientesLogic.ModificarCliente(clienteId, cliente);  // Llamamos a la lógica para modificar el cliente
-                    MessageBox.Show("Cliente modificado correctamente.");
-                    ActualizarDataGridView();  // Actualizamos el DataGridView
+                    await _clientesLogic.ModificarCliente(clienteId, cliente);
+                    ActualizarDataGridView();
                 }
             }
             else
@@ -88,7 +96,15 @@ namespace WinForm.Form_Home
                 var cliente = await _clientesLogic.ObtenerClientePorId(clienteId);
                 if (cliente != null)
                 {
-                    await _clientesLogic.BajaCliente(clienteId);  // Llamamos a la lógica para eliminar el cliente
+                    try
+                    {
+                        await _clientesLogic.BajaCliente(clienteId);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    // Llamamos a la lógica para eliminar el cliente
                     MessageBox.Show("Cliente eliminado correctamente.");
                     ActualizarDataGridView();  // Actualizamos el DataGridView
                 }
@@ -108,6 +124,13 @@ namespace WinForm.Form_Home
                 c.Nombre,
                 c.NumeroTelefono
             }).ToList();  // Llenamos el DataGridView con los clientes
+        }
+
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+            var homeForm = new FormInicio();
+            homeForm.Show();
         }
     }
 }

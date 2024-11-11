@@ -27,6 +27,7 @@ namespace Negocio.Repositorys
             response.EnsureSuccessStatusCode();
         }
 
+
         public static async Task UpdateTurno(int turnoID, TurnoDTO turnoModificar)
         {
             ArgumentNullException.ThrowIfNull(turnoModificar);

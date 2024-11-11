@@ -18,11 +18,12 @@ namespace Negocio.Repositorys
 
             var client = ApiServer.ObtenerClientHttp();
             var url = ApiServer.ObtenerUrlEndPoint("/api/canchas/");
-            var content = new StringContent(JsonConvert.SerializeObject(cancha), Encoding.UTF8, "application/json");
+            var content = new StringContent(JsonConvert.SerializeObject(new { Deporte_ID = cancha.Deporte_ID }), Encoding.UTF8, "application/json");
 
             var response = await client.PostAsync(url, content);
             response.EnsureSuccessStatusCode();
         }
+
 
         // Actualizar una cancha existente
         public static async Task UpdateCancha(int canchaID, CanchaDTO canchaModificada)
@@ -31,11 +32,12 @@ namespace Negocio.Repositorys
 
             var client = ApiServer.ObtenerClientHttp();
             var url = ApiServer.ObtenerUrlEndPoint($"/api/canchas/{canchaID}");
-            var content = new StringContent(JsonConvert.SerializeObject(canchaModificada), Encoding.UTF8, "application/json");
+            var content = new StringContent(JsonConvert.SerializeObject(new { Deporte_ID = canchaModificada.Deporte_ID }), Encoding.UTF8, "application/json");
 
             var response = await client.PutAsync(url, content);
             response.EnsureSuccessStatusCode();
         }
+
 
         // Eliminar una cancha
         public static async Task DeleteCancha(int canchaID)

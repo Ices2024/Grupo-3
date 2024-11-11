@@ -13,13 +13,15 @@ namespace Shared.Entidades
     {
         [Key]
         public int ConsumicionProducto_ID { get; set; }
-        
+
         [ForeignKey("Consumicion")]
-        public int Consumicion_ID { get; set; } // Clave foránea hacia Consumiciones
+        public int Consumicion_ID { get; set; }
         public Consumiciones Consumicion { get; set; }
 
         [ForeignKey("Producto")]
-        public int Producto_ID { get; set; } // Clave foránea hacia Productos
+        public int Producto_ID { get; set; }
         public Productos Producto { get; set; }
+
+        public int Cantidad { get; set; } // Representa la cantidad del producto
     }
 }

@@ -22,21 +22,41 @@ namespace API.Controllers.CanchasController
 
         // GET: api/canchas (Obtener todas las canchas)
         [HttpGet]
-        public async Task<ActionResult<List<Canchas>>> Get()
+        public async Task<ActionResult<List<CanchaDTO>>> Get()
         {
-            var canchas = await _context.Canchas.ToListAsync();
+            var canchas = await _context.Canchas
+                .Include(c => c.Deporte) // Incluye el deporte asociado
+                .Select(c => new CanchaDTO
+                {
+                    Cancha_ID = c.Cancha_ID,
+                    Deporte_ID = c.Deporte_ID,
+                    Tipo = c.Deporte.Tipo // Asigna el tipo del deporte al DTO
+                })
+                .ToListAsync();
+
             return Ok(canchas);
         }
 
         // GET: api/canchas/{id} (Obtener una cancha específica por ID)
         [HttpGet("{id}")]
-        public async Task<ActionResult<Canchas>> Get(int id)
+        public async Task<ActionResult<CanchaDTO>> Get(int id)
         {
-            var cancha = await _context.Canchas.FindAsync(id);
+            var cancha = await _context.Canchas
+                .Include(c => c.Deporte) // Incluye el deporte asociado
+                .Where(c => c.Cancha_ID == id)
+                .Select(c => new CanchaDTO
+                {
+                    Cancha_ID = c.Cancha_ID,
+                    Deporte_ID = c.Deporte_ID,
+                    Tipo = c.Deporte.Tipo // Asigna el tipo del deporte al DTO
+                })
+                .FirstOrDefaultAsync();
+
             if (cancha == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra la cancha
             }
+
             return Ok(cancha);
         }
 
@@ -46,9 +66,7 @@ namespace API.Controllers.CanchasController
         {
             var nuevaCancha = new Canchas
             {
-                Deporte_ID = nuevaCanchaDto.Deporte_ID,
-                // Puedes establecer la propiedad Deporte aquí si es necesario, 
-                // o dejarla en null si no se necesita
+                Deporte_ID = nuevaCanchaDto.Deporte_ID // Solo guardamos el Deporte_ID
             };
 
             _context.Canchas.Add(nuevaCancha);
@@ -68,8 +86,7 @@ namespace API.Controllers.CanchasController
             }
 
             // Actualizamos los datos de la cancha
-            cancha.Deporte_ID = canchaModificadaDto.Deporte_ID;
-            // Puedes actualizar la propiedad Deporte si es necesario
+            cancha.Deporte_ID = canchaModificadaDto.Deporte_ID; // Solo actualizamos el Deporte_ID
 
             await _context.SaveChangesAsync();
 
@@ -92,5 +109,4 @@ namespace API.Controllers.CanchasController
             return NoContent(); // Devuelve 204 No Content
         }
     }
-
 }

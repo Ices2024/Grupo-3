@@ -172,9 +172,5 @@ namespace API.Controllers.ConsumicionController
 
             return NoContent(); // Devuelve 204 No Content
         }
-       
-
-
-
     }
 }

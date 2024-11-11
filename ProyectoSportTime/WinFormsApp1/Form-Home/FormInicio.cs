@@ -39,5 +39,17 @@ namespace WinForm.Form_Home
             FormCanchas formCanchas = new FormCanchas();
             formCanchas.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormCliente formCliente = new FormCliente();
+            formCliente.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormProductos formProductos = new FormProductos();
+            formProductos.Show();
+        }
     }
 }

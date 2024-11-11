@@ -27,7 +27,6 @@ namespace API.Controllers.TurnosController
             var turnos = await _context.Turnos
                 .Include(t => t.Administrador) // Incluye el administrador relacionado
                 .Include(t => t.Canchas) // Incluye la cancha relacionada
-                .Include(t => t.Consumicion)// Incluye la consumición relacionada
                 .Include(t => t.Cliente) // Incluye el cliente relacionado
                 .Select(t => new TurnoDTO
                 {
@@ -36,8 +35,6 @@ namespace API.Controllers.TurnosController
                     Cancha_ID = t.Cancha_ID,
                     HoraInicio = t.HoraInicio,
                     HoraFin = t.HoraFin,
-                    Consumicion_ID = t.Consumicion_ID,
-                    Consumicion = t.Consumicion,
                     Cliente_ID = t.Cliente_ID // Agregado para reflejar la relación con Cliente
                 })
                 .ToListAsync();
@@ -52,7 +49,6 @@ namespace API.Controllers.TurnosController
             var turno = await _context.Turnos
                 .Include(t => t.Administrador)
                 .Include(t => t.Canchas)
-                .Include(t => t.Consumicion)
                 .Include(t => t.Cliente)
                 .Where(t => t.Turno_ID == id)
                 .Select(t => new TurnoDTO
@@ -62,7 +58,6 @@ namespace API.Controllers.TurnosController
                     Cancha_ID = t.Cancha_ID,
                     HoraInicio = t.HoraInicio,
                     HoraFin = t.HoraFin,
-                    Consumicion_ID = t.Consumicion_ID,
                     Cliente_ID = t.Cliente_ID // Agregado para reflejar la relación con Cliente
                 })
                 .FirstOrDefaultAsync();
@@ -85,14 +80,31 @@ namespace API.Controllers.TurnosController
                 Cancha_ID = nuevoTurno.Cancha_ID,
                 HoraInicio = nuevoTurno.HoraInicio,
                 HoraFin = nuevoTurno.HoraFin,
-                Consumicion_ID = nuevoTurno.Consumicion_ID,
-                Cliente_ID = nuevoTurno.Cliente_ID // Agregado para reflejar la relación con Cliente
+                Cliente_ID = nuevoTurno.Cliente_ID
             };
 
+            // Guardar el turno
             _context.Turnos.Add(turno);
             await _context.SaveChangesAsync();
 
-            nuevoTurno.Turno_ID = turno.Turno_ID; // Asignar el ID generado
+            // Guardar los productos asociados con cantidad
+            if (nuevoTurno.ConsumicionProductos != null)
+            {
+                foreach (var consumicionProductoDTO in nuevoTurno.ConsumicionProductos)
+                {
+                    var consumicionProducto = new ConsumicionProducto
+                    {
+                        Consumicion_ID = consumicionProductoDTO.Consumicion_ID,
+                        Producto_ID = consumicionProductoDTO.Producto_ID,
+                        Cantidad = consumicionProductoDTO.Cantidad // Establecer la cantidad
+                    };
+
+                    _context.consumicionProductos.Add(consumicionProducto);
+                }
+                await _context.SaveChangesAsync();
+            }
+
+            nuevoTurno.Turno_ID = turno.Turno_ID;
             return CreatedAtAction(nameof(Get), new { id = nuevoTurno.Turno_ID }, nuevoTurno);
         }
 
@@ -100,7 +112,10 @@ namespace API.Controllers.TurnosController
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] TurnoDTO turnoModificado)
         {
-            var turno = await _context.Turnos.FindAsync(id);
+            var turno = await _context.Turnos
+                .Include(t => t.ConsumicionProductos)  // Aseguramos que los productos se incluyan
+                .FirstOrDefaultAsync(t => t.Turno_ID == id);
+
             if (turno == null)
             {
                 return NotFound(); // Devuelve 404 si no se encuentra el turno
@@ -108,16 +123,33 @@ namespace API.Controllers.TurnosController
 
             // Actualizamos los datos del turno
             turno.Admin_ID = turnoModificado.Admin_ID;
-            turno.Cancha_ID = turnoModificado.Cancha_ID; // Cambiado de Canchas a Cancha_ID
+            turno.Cancha_ID = turnoModificado.Cancha_ID;
             turno.HoraInicio = turnoModificado.HoraInicio;
             turno.HoraFin = turnoModificado.HoraFin;
-            turno.Consumicion_ID = turnoModificado.Consumicion_ID;
-            turno.Cliente_ID = turnoModificado.Cliente_ID; // Agregado para reflejar la relación con Cliente
+            turno.Cliente_ID = turnoModificado.Cliente_ID;
+
+            // Eliminar productos antiguos
+            _context.consumicionProductos.RemoveRange(turno.ConsumicionProductos);
+
+            // Agregar nuevos productos con cantidad
+            if (turnoModificado.ConsumicionProductos != null)
+            {
+                foreach (var consumicionProductoDTO in turnoModificado.ConsumicionProductos)
+                {
+                    var consumicionProducto = new ConsumicionProducto
+                    {
+                        Consumicion_ID = consumicionProductoDTO.Consumicion_ID,
+                        Producto_ID = consumicionProductoDTO.Producto_ID,
+                        Cantidad = consumicionProductoDTO.Cantidad // Establecer la cantidad
+                    };
+                    _context.consumicionProductos.Add(consumicionProducto);
+                }
+            }
 
             await _context.SaveChangesAsync();
-
             return NoContent(); // Devuelve 204 No Content
         }
+
 
         // DELETE: api/turnos/{id} (Eliminar un turno)
         [HttpDelete("{id}")]
